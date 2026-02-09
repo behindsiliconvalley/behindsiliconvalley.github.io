@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SJUSD Financial Analysis — Behind Silicon Valley</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Source+Sans+3:wght@300;400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1a2e;--cream:#faf7f2;--rust:#c0392b;--gold:#d4a017;--teal:#16a085;--slate:#4a5568;--ls:#718096;--border:#e2d8cc;--hl:#fff3cd;--rbg:#fde8e8;--gbg:#e8f5e9;--bbg:#e3f2fd}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Source Sans 3',Georgia,serif;background:var(--cream);color:var(--ink);line-height:1.7;font-size:17px}
+.mast{text-align:center;padding:40px 20px 20px;border-bottom:4px double var(--ink);max-width:1100px;margin:0 auto}
+.mast-tag{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--rust);margin-bottom:8px}
+.mast h1{font-family:'Playfair Display',serif;font-size:clamp(2.4rem,6vw,4.2rem);font-weight:900;line-height:1.1;margin-bottom:10px;letter-spacing:-1px}
+.mast .sub{font-family:'Playfair Display',serif;font-size:clamp(1rem,2.5vw,1.3rem);font-weight:400;font-style:italic;color:var(--slate);max-width:700px;margin:0 auto 12px}
+.mast .dl{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:2px;color:var(--ls)}
+nav.tb{max-width:1100px;margin:0 auto;padding:14px 20px;border-bottom:1px solid var(--border);display:flex;flex-wrap:wrap;gap:6px 18px;justify-content:center}
+nav.tb a{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--slate);text-decoration:none;padding:4px 0;border-bottom:2px solid transparent;transition:all .2s}
+nav.tb a:hover{color:var(--rust);border-bottom-color:var(--rust)}
+.content{max-width:820px;margin:0 auto;padding:40px 24px}
+.sec{margin-bottom:60px}
+.sec-l{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--rust);margin-bottom:6px;display:flex;align-items:center;gap:10px}
+.sec-l::after{content:'';flex:1;height:1px;background:var(--border)}
+h2{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,4vw,2.2rem);font-weight:700;line-height:1.2;margin-bottom:20px}
+h3{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;margin:30px 0 14px;padding-top:20px;border-top:1px solid var(--border)}
+p{margin-bottom:16px}
+.lead{font-size:1.15rem;line-height:1.8;color:var(--slate);font-weight:300}
+.dc::first-letter{font-family:'Playfair Display',serif;font-size:4rem;float:left;line-height:.8;margin:4px 10px 0 0;color:var(--rust);font-weight:900}
+
+/* SOURCE CITATION BAR */
+.src{display:flex;flex-wrap:wrap;gap:4px 10px;padding:10px 14px;background:#f5f0e8;border-top:1px solid var(--border);font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.5px;line-height:1.9;align-items:baseline}
+
+/* SUPPORT */
+.src-l{color:var(--rust);font-weight:600;text-transform:uppercase;letter-spacing:1.5px;white-space:nowrap}
+.src a{color:var(--slate);text-decoration:none;border-bottom:1px dotted var(--ls);transition:color .2s}
+.src a:hover{color:var(--rust);border-bottom-color:var(--rust)}
+.src .d{color:var(--border);margin:0 2px}
+/* Inline source */
+.isrc{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--ls);margin-top:-8px;margin-bottom:16px;line-height:1.9}
+.isrc a{color:var(--slate);text-decoration:none;border-bottom:1px dotted var(--ls)}
+.isrc a:hover{color:var(--rust);border-bottom-color:var(--rust)}
+
+/* STAT CARDS */
+.sg{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin:28px 0}
+.sc{background:#fff;border:1px solid var(--border);padding:20px 20px 10px;text-align:center;position:relative;overflow:hidden}
+.sc::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.sc.r::before{background:var(--rust)}.sc.g::before{background:var(--gold)}.sc.t::before{background:var(--teal)}.sc.b::before{background:#2980b9}
+.sn{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1;margin-bottom:4px}
+.sc.r .sn{color:var(--rust)}.sc.g .sn{color:var(--gold)}.sc.t .sn{color:var(--teal)}.sc.b .sn{color:#2980b9}
+.sl{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ls)}
+.ss{font-family:'JetBrains Mono',monospace;font-size:9px;margin-top:8px;padding-top:6px;border-top:1px solid #f0ece6}
+.ss a{color:var(--ls);text-decoration:none;border-bottom:1px dotted var(--ls)}
+.ss a:hover{color:var(--rust)}
+
+/* TABLE */
+.tw{overflow-x:auto;margin:24px 0;border:1px solid var(--border);background:#fff}
+.tw table{width:100%;border-collapse:collapse;font-size:14px}
+.tw caption{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;text-align:left;padding:14px 16px 10px;color:var(--slate);border-bottom:1px solid var(--border)}
+.tw th{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:1px;text-transform:uppercase;background:var(--ink);color:#fff;padding:10px 12px;text-align:right;white-space:nowrap}
+.tw th:first-child{text-align:left}
+.tw td{padding:9px 12px;text-align:right;border-bottom:1px solid #f0ece6;font-variant-numeric:tabular-nums;font-family:'JetBrains Mono',monospace;font-size:13px}
+.tw td:first-child{text-align:left;font-weight:600}
+.tw tr:hover td{background:#fdf8f0}
+.tw tr.hl td{background:var(--hl)}.tw tr.es td{background:var(--bbg)}
+.tw .up{color:var(--teal)}.tw .dn{color:var(--rust)}
+
+/* BAR CHART */
+.bc{margin:24px 0;background:#fff;border:1px solid var(--border);padding:20px 20px 0}
+.bc-t{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;margin-bottom:16px;color:var(--slate)}
+.br{display:grid;grid-template-columns:72px 1fr 80px;align-items:center;gap:10px;margin-bottom:6px}
+.by{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600}
+.bt{height:22px;background:#f0ece6;border-radius:2px;overflow:hidden}
+.bf{height:100%;border-radius:2px;transition:width 1.5s ease-out}
+.bf.rv{background:var(--teal)}.bf.en{background:#2980b9}.bf.pp{background:var(--gold)}
+.bv{font-family:'JetBrains Mono',monospace;font-size:12px;text-align:right;color:var(--slate)}
+
+/* CALLOUT */
+.co{border-left:4px solid var(--rust);background:#fff;padding:20px 24px;margin:28px 0;font-size:15px;overflow:hidden}
+.co.q{border-left-color:var(--gold);background:var(--hl)}
+.co.i{border-left-color:var(--teal);background:var(--gbg)}
+.co.a{border-left-color:var(--rust);background:var(--rbg)}
+.co-h{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px}
+.co.q .co-h{color:#856404}.co.i .co-h{color:var(--teal)}.co.a .co-h{color:var(--rust)}
+.co .src{margin:12px -24px -20px;border-top:1px solid rgba(0,0,0,.1);background:rgba(0,0,0,.03)}
+
+/* TIMELINE */
+.tl{margin:30px 0;padding-left:28px;border-left:2px solid var(--border)}
+.ti{position:relative;margin-bottom:24px;padding-left:20px}
+.ti::before{content:'';position:absolute;left:-34px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--rust);border:2px solid var(--cream)}
+.ty{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600;color:var(--rust);letter-spacing:1px}
+.tt{font-size:15px;color:var(--slate);margin-top:2px}
+.ts{font-family:'JetBrains Mono',monospace;font-size:9px;margin-top:4px}
+.ts a{color:var(--ls);text-decoration:none;border-bottom:1px dotted var(--ls)}
+.ts a:hover{color:var(--rust)}
+
+/* COMPARE */
+.cg{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0}
+@media(max-width:600px){.cg{grid-template-columns:1fr}}
+.cc{padding:20px;border:1px solid var(--border)}
+.cc.gn{background:var(--gbg)}.cc.rd{background:var(--rbg)}
+.cc h4{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px}
+.cc .bn{font-family:'Playfair Display',serif;font-size:2.8rem;font-weight:900;line-height:1}
+.cc.gn .bn{color:var(--teal)}.cc.rd .bn{color:var(--rust)}
+
+/* ACCORDION */
+.ai{border:1px solid var(--border);margin-bottom:8px;background:#fff}
+.ab{width:100%;text-align:left;padding:16px 20px;background:none;border:none;cursor:pointer;font-family:'Source Sans 3',serif;font-size:16px;font-weight:600;color:var(--ink);display:flex;justify-content:space-between;align-items:center}
+.ab:hover{background:#fdf8f0}
+.ab::after{content:'+';font-family:'JetBrains Mono',monospace;font-size:18px;color:var(--rust);transition:transform .3s}
+.ai.open .ab::after{content:'−'}
+.aby{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.aby-in{padding:0 20px 20px;font-size:15px;color:var(--slate)}
+
+/* SOURCES LIST */
+.sources{margin-top:50px;padding-top:30px;border-top:4px double var(--ink)}
+.sources h2{font-size:1.3rem}
+.sources ul{list-style:none;padding:0}
+.sources li{font-size:13px;color:var(--ls);padding:8px 0;border-bottom:1px solid #f0ece6;line-height:1.6}
+.sources a{color:var(--slate)}.sources a:hover{color:var(--rust)}
+footer{text-align:center;padding:40px 20px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2px;color:var(--ls);border-top:1px solid var(--border);max-width:1100px;margin:0 auto}
+footer a{color:var(--ls)}
+@media(max-width:600px){.sg{grid-template-columns:1fr 1fr}.br{grid-template-columns:55px 1fr 60px}}
+@media print{nav.tb{display:none}.sec{page-break-inside:avoid}}
+/* STICKY ACTION BAR */
+.sticky-cta{position:fixed;bottom:0;left:0;right:0;background:rgba(183,28,28,0.97);color:#fff;z-index:9999;padding:10px 20px;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;box-shadow:0 -4px 20px rgba(0,0,0,0.3);backdrop-filter:blur(10px);transform:translateY(100%);transition:transform 0.4s ease}
+.sticky-cta.visible{transform:translateY(0)}
+.sticky-cta .cta-countdown{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:1px;opacity:0.9}
+.sticky-cta .cta-text{font-weight:700;font-size:15px}
+.sticky-cta a{display:inline-block;padding:8px 20px;border-radius:6px;font-weight:700;text-decoration:none;font-size:13px;letter-spacing:0.5px;white-space:nowrap}
+.sticky-cta .btn-petition{background:#fff;color:#b71c1c}
+.sticky-cta .btn-email{background:transparent;color:#fff;border:2px solid #fff}
+.sticky-cta .btn-close{position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:none;color:#fff;font-size:20px;cursor:pointer;opacity:0.7;padding:4px 8px}
+.sticky-cta .btn-close:hover{opacity:1}
+@media(max-width:600px){.sticky-cta{padding:8px 12px;gap:8px}.sticky-cta .cta-text{font-size:13px;text-align:center;width:100%}.sticky-cta a{padding:7px 14px;font-size:12px}}
+
+/* HERO CTA BANNER */
+.hero-cta{max-width:1100px;margin:0 auto;background:linear-gradient(135deg,#b71c1c,#c62828);color:#fff;padding:18px 24px;display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap}
+.hero-cta .hero-urgency{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;opacity:0.9}
+.hero-cta .hero-msg{font-weight:700;font-size:1.05em}
+.hero-cta a{display:inline-block;background:#fff;color:#b71c1c;padding:8px 22px;border-radius:6px;font-weight:700;text-decoration:none;font-size:14px;white-space:nowrap;transition:background 0.2s}
+.hero-cta a:hover{background:#f5f5f5}
+@media(max-width:600px){.hero-cta{text-align:center;padding:14px 16px;gap:10px}.hero-cta .hero-msg{font-size:0.95em}}
+</style>
+</head>
+<body>
+<header class="mast">
+<div class="mast-tag">BehindSiliconValley.com</div>
+<h1>Follow the Money</h1>
+<p class="sub">How San José Unified School District manages half a billion dollars a year — and why they say they need to close your neighborhood school</p>
+<div class="dl">Last updated: February 7, 2026 — Sources: SJUSD Official Reports · CA Dept. of Education · Ed-Data.org · U.S. Dept. of Education</div>
+</header>
+<nav class="tb">
+<a href="#snapshot">At a Glance</a><a href="#revenue">Revenue</a><a href="#spending">Spending</a><a href="#enrollment">Enrollment</a><a href="#per-pupil">Per-Pupil</a><a href="#esser">ESSER &amp; Grants</a><a href="#bonds">Bonds &amp; Taxes</a><a href="#closures">School Closures</a><a href="#analysis">Analysis</a><a href="#comparison">Other Districts</a><a href="#questions">Key Questions</a><a href="#action">Take Action</a><a href="#sources">Sources</a>
+</nav>
+
+<!-- HERO CTA BANNER -->
+<div class="hero-cta">
+<span class="hero-urgency">⏰ Board vote in <span id="hero-days"></span> days</span>
+<span class="hero-msg">Up to 9 schools closing — Make your voice heard before March 12</span>
+<a href="https://www.change.org/p/simonds-elementary-school-cornerstone-of-the-sjusd-needs-to-stay-open" target="_blank">✍️ Sign Petition</a>
+<a href="#" onclick="window.location.href='mailto:ccollins@sjusd.org,jmagana@sjusd.org,tcastellanos@sjusd.org,bwheatley@sjusd.org,ngribstad@sjusd.org,nalbarran@sjusd.org,schoolsoftomorrow@sjusd.org?subject='+encodeURIComponent('Demand for Financial Transparency Before School Closures — March 12 Vote')+'&body='+encodeURIComponent('Dear SJUSD Board of Education and Superintendent Albarrán,\n\nI am writing as a concerned [parent/community member/teacher] in the San José Unified School District regarding the proposed closure of up to 9 elementary schools.\n\nBefore the Board votes on March 12, I urge you to:\n\n1. CONDUCT AN INDEPENDENT FINANCIAL AUDIT — The district adopted a $30.3 million deficit budget for 2024-25 with $0 in reserves for economic uncertainties, below the state-required 2% minimum.\n\n2. EXPLAIN THE $49 MILLION SWING — SJUSD went from surpluses of $25.7M and $18.9M to a $30M deficit in just two years. What changed?\n\n3. REVIEW ADMINISTRATIVE COSTS BEFORE CLOSING SCHOOLS — With 99.5 administrators averaging $215K in salary, has the district explored reducing administrative overhead before disrupting children\'s education?\n\n4. ADDRESS THE GRAND JURY FINDINGS — In 2024, the Santa Clara County Civil Grand Jury found serious leadership and transparency issues. The Board rejected nearly all findings.\n\n5. ACCOUNT FOR BENEFITS UNDERFUNDING — Unions have revealed $30M+ in underfunded employee benefits.\n\nClosing schools is irreversible. Our children deserve better than rushed decisions based on incomplete financial data.\n\nSincerely,\n[Your Name]\n[Your School/Neighborhood]');return false;" style="background:transparent;color:#fff;border:2px solid #fff;">📧 Email the Board</a>
+</div>
+
+<main class="content">
+
+<!-- ===== AT A GLANCE ===== -->
+<section class="sec" id="snapshot">
+<div class="sec-l">The Big Picture</div>
+<h2>The Paradox: More Money, Fewer Students, Closing Schools</h2>
+<p class="lead">San José Unified ran <strong>healthy surpluses</strong> of $25.7M (2022–23) and $18.9M (2023–24) on general fund revenues of $476M and $504M respectively. Then for 2024–25, the district projects just <strong>$462 million in revenue</strong> while budgeting <strong>$492 million in expenditures</strong> — a <strong style="color:var(--rust)">$30 million deficit budget</strong>. That's a <strong>$49 million swing in two years</strong>. Over the past decade, enrollment dropped by more than 6,000 students — a 20% decline. Despite having more money per student than ever before, the district now says it must close up to 9 elementary schools.</p>
+<div class="sg">
+<div class="sc t"><div class="sn">$462M</div><div class="sl">GF Revenue (2024–25)</div><div class="ss"><a href="https://cdeunifiedstoragewest.blob.core.windows.net/lcaps/16dd9f84-5df8-498b-9509-9d5840b9838f.pdf" target="_blank">Source: SJUSD LCAP Budget Overview (CDE)</a></div></div>
+<div class="sc r"><div class="sn">−$30M</div><div class="sl">Deficit Budget (2024–25)</div><div class="ss"><a href="https://cdeunifiedstoragewest.blob.core.windows.net/lcaps/16dd9f84-5df8-498b-9509-9d5840b9838f.pdf" target="_blank">Revenue $462M − Spending $492M</a></div></div>
+<div class="sc g"><div class="sn">+34%</div><div class="sl">Spending Increase (5 Yrs)</div><div class="ss"><a href="https://www.mercurynews.com/2025/03/25/editorial-voters-reject-san-jose-unifieds-tax-measure-a/" target="_blank">Source: Mercury News, Mar 2025</a></div></div>
+<div class="sc b"><div class="sn">Up to 9</div><div class="sl">Schools May Close</div><div class="ss"><a href="https://www.mercurynews.com/2026/02/05/up-to-9-san-jose-unified-elementary-schools-could-close-here-are-the-options/" target="_blank">Source: Mercury News, Feb 2026</a></div></div>
+</div>
+<p>This website breaks down the publicly available financial data so you — parents, teachers, taxpayers, and community members — can understand where the money comes from, where it goes, and whether closing schools is truly the only option.</p>
+<div class="src">
+<span class="src-l">Section Sources:</span>
+<a href="https://cdeunifiedstoragewest.blob.core.windows.net/lcaps/16dd9f84-5df8-498b-9509-9d5840b9838f.pdf" target="_blank">SJUSD LCAP Budget Overview 2024–25 (CDE-hosted PDF)</a><span class="d">·</span>
+<a href="https://www.usnews.com/education/k12/california/districts/san-jose-unified-104657" target="_blank">U.S. News Education – SJUSD Profile</a><span class="d">·</span>
+<a href="https://www.sjusd.org/about/schools-of-tomorrow" target="_blank">SJUSD Schools of Tomorrow</a><span class="d">·</span>
+<a href="https://www.mercurynews.com/2025/03/25/editorial-voters-reject-san-jose-unifieds-tax-measure-a/" target="_blank">Mercury News Editorial, Mar 2025</a><span class="d">·</span>
+<a href="https://www.mercurynews.com/2026/02/05/up-to-9-san-jose-unified-elementary-schools-could-close-here-are-the-options/" target="_blank">Mercury News, Feb 2026</a>
+</div>
+</section>
+
+<!-- ===== REVENUE ===== -->
+<section class="sec" id="revenue">
+<div class="sec-l">Section 1</div>
+<h2>Revenue: Where Does the Money Come From?</h2>
+<p class="dc">Before diving into the numbers, it helps to understand <em>how</em> California school districts get their money. It's not as simple as "the government pays for schools." There are multiple streams, complex formulas, and a critical distinction that makes SJUSD different from most districts in the state.</p>
+
+<!-- FUNDING FLOW DIAGRAM -->
+<h3 style="border-top:none;padding-top:0;margin-top:24px">How the Money Flows to Your School</h3>
+<div style="margin:24px 0 30px;position:relative">
+<!-- The 3 sources -->
+<div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-bottom:16px">
+<div style="flex:1;min-width:160px;max-width:220px;background:#e3f2fd;border:2px solid #90caf9;border-radius:12px;padding:16px 14px;text-align:center">
+<div style="font-size:28px;margin-bottom:4px">🏠</div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#1565c0;font-weight:600">Local</div>
+<div style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;margin:4px 0">Property Taxes</div>
+<div style="font-size:13px;color:var(--slate);line-height:1.4">Homeowners pay property taxes → County collects → Sends share to school district</div>
+</div>
+<div style="flex:1;min-width:160px;max-width:220px;background:#fff3e0;border:2px solid #ffb74d;border-radius:12px;padding:16px 14px;text-align:center">
+<div style="font-size:28px;margin-bottom:4px">🏛️</div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#e65100;font-weight:600">State</div>
+<div style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;margin:4px 0">Sacramento</div>
+<div style="font-size:13px;color:var(--slate);line-height:1.4">State income &amp; sales taxes → Legislature budgets → Distributed via LCFF formula</div>
+</div>
+<div style="flex:1;min-width:160px;max-width:220px;background:#e8f5e9;border:2px solid #81c784;border-radius:12px;padding:16px 14px;text-align:center">
+<div style="font-size:28px;margin-bottom:4px">🇺🇸</div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#2e7d32;font-weight:600">Federal</div>
+<div style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;margin:4px 0">Washington D.C.</div>
+<div style="font-size:13px;color:var(--slate);line-height:1.4">Title I, Special Ed, free lunch programs → Flows through CDE to districts</div>
+</div>
+</div>
+<!-- Arrow down -->
+<div style="text-align:center;font-size:24px;color:var(--ls);margin:4px 0">▼ ▼ ▼</div>
+<!-- The district box -->
+<div style="background:var(--ink);color:var(--cream);border-radius:12px;padding:20px;text-align:center;max-width:500px;margin:8px auto 0">
+<div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:3px;text-transform:uppercase;opacity:.6">All money flows into</div>
+<div style="font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;margin:6px 0">San José Unified School District</div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:12px;opacity:.7">General Fund — $462M budgeted (2024–25)</div>
+</div>
+</div>
+
+<!-- DONUT CHART - SJUSD Revenue Breakdown -->
+<h3>Where SJUSD's Money Actually Comes From (2024–25)</h3>
+<p>Here's how the $462 million general fund budget breaks down by source. Notice how dominant property taxes are — that single blue slice is 85 cents of every dollar.</p>
+<div style="display:flex;gap:30px;align-items:center;flex-wrap:wrap;justify-content:center;margin:20px 0 24px">
+<!-- CSS Donut -->
+<div style="position:relative;width:200px;height:200px;border-radius:50%;background:conic-gradient(#1565c0 0% 85%, #e65100 85% 95%, #2e7d32 95% 98%, #78909c 98% 100%);flex-shrink:0">
+<div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:110px;height:110px;border-radius:50%;background:var(--cream);display:flex;align-items:center;justify-content:center;flex-direction:column">
+<div style="font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:900;line-height:1">$462M</div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--ls);letter-spacing:1px">TOTAL GF</div>
+</div>
+</div>
+<!-- Legend -->
+<div style="display:flex;flex-direction:column;gap:10px;min-width:200px">
+<div style="display:flex;align-items:center;gap:10px">
+<div style="width:16px;height:16px;border-radius:3px;background:#1565c0;flex-shrink:0"></div>
+<div><strong style="font-size:1.05rem">85%</strong> <span style="color:var(--slate)">— LCFF / Property Taxes</span><br><span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--ls)">$390.9M</span></div>
+</div>
+<div style="display:flex;align-items:center;gap:10px">
+<div style="width:16px;height:16px;border-radius:3px;background:#e65100;flex-shrink:0"></div>
+<div><strong style="font-size:1.05rem">10%</strong> <span style="color:var(--slate)">— Other State Funds</span><br><span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--ls)">$46.6M</span></div>
+</div>
+<div style="display:flex;align-items:center;gap:10px">
+<div style="width:16px;height:16px;border-radius:3px;background:#2e7d32;flex-shrink:0"></div>
+<div><strong style="font-size:1.05rem">3%</strong> <span style="color:var(--slate)">— Federal Funds</span><br><span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--ls)">$14.1M</span></div>
+</div>
+<div style="display:flex;align-items:center;gap:10px">
+<div style="width:16px;height:16px;border-radius:3px;background:#78909c;flex-shrink:0"></div>
+<div><strong style="font-size:1.05rem">2%</strong> <span style="color:var(--slate)">— Other Local</span><br><span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--ls)">$10.5M (grants, parcel taxes)</span></div>
+</div>
+</div>
+</div>
+<div class="isrc">Revenue breakdown: <a href="https://cdeunifiedstoragewest.blob.core.windows.net/lcaps/16dd9f84-5df8-498b-9509-9d5840b9838f.pdf" target="_blank">SJUSD LCAP Budget Overview 2024–25 (CDE-hosted PDF)</a></div>
+
+<!-- LCFF EXPLAINER -->
+<h3>The Key Formula: LCFF (Local Control Funding Formula)</h3>
+<p>Since 2013, California has funded schools through the <strong>LCFF</strong>. Here's the simple version: the state calculates a per-student funding target for every district, then checks how much the district already collects in local property taxes. If there's a gap, the state fills it.</p>
+
+<div style="display:flex;gap:16px;flex-wrap:wrap;margin:20px 0 28px">
+<!-- Most districts -->
+<div style="flex:1;min-width:260px;border:2px solid var(--border);border-radius:12px;overflow:hidden">
+<div style="background:#f5f0e8;padding:12px 16px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--slate);text-align:center;font-weight:600">Most California Districts</div>
+<div style="padding:16px">
+<div style="display:flex;align-items:stretch;height:120px;gap:2px;margin-bottom:12px">
+<div style="flex:4;background:linear-gradient(to top,#90caf9,#1565c0);border-radius:6px 0 0 6px;display:flex;align-items:flex-end;justify-content:center;padding-bottom:8px"><span style="color:#fff;font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600">Property Tax</span></div>
+<div style="flex:6;background:linear-gradient(to top,#ffcc80,#e65100);border-radius:0 6px 6px 0;display:flex;align-items:flex-end;justify-content:center;padding-bottom:8px"><span style="color:#fff;font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600">State Fill-Up $$$</span></div>
+</div>
+<p style="font-size:13px;color:var(--slate);line-height:1.5;margin:0">Property taxes cover <strong>part</strong> of the target. Sacramento sends the rest. If enrollment drops → state sends less.</p>
+</div>
+</div>
+<!-- Basic Aid -->
+<div style="flex:1;min-width:260px;border:2px solid var(--rust);border-radius:12px;overflow:hidden">
+<div style="background:var(--rust);padding:12px 16px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#fff;text-align:center;font-weight:600">SJUSD — "Basic Aid" District ★</div>
+<div style="padding:16px">
+<div style="display:flex;align-items:stretch;height:120px;gap:2px;margin-bottom:12px">
+<div style="flex:10;background:linear-gradient(to top,#90caf9,#1565c0);border-radius:6px;display:flex;align-items:flex-end;justify-content:center;padding-bottom:8px"><span style="color:#fff;font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600">Property Tax (exceeds target!)</span></div>
+</div>
+<p style="font-size:13px;color:var(--slate);line-height:1.5;margin:0">Property taxes <strong>exceed</strong> the state target. No state fill-up needed. District keeps ALL the extra. <strong style="color:var(--rust)">Enrollment drops ≠ less money.</strong></p>
+</div>
+</div>
+</div>
+
+<div class="co i">
+<div class="co-h">Why This Matters for SJUSD</div>
+<p>SJUSD became a Basic Aid district in <strong>2020–21</strong>. In Silicon Valley, where home values are among the highest in the nation, property tax revenue is enormous. This means SJUSD's funding is tied to <strong>property values, not student headcount</strong>. When families leave the district, the money doesn't leave with them. About 10% of California districts have this status.</p>
+<p style="margin-bottom:0"><strong>The question this raises:</strong> If losing students doesn't mean losing money, why is the district claiming a financial crisis that requires closing schools?</p>
+<div class="src">
+<span class="src-l">Sources:</span>
+<a href="https://www.sjusd.org/about/fiscal/california-public-school-funding" target="_blank">SJUSD – California Public School Funding</a><span class="d">·</span>
+<a href="https://edsource.org/2025/property-tax-driven-education-disparity/742256" target="_blank">EdSource – Property Tax Disparity, Oct 2025</a>
+</div>
+</div>
+
+<h3>Revenue Over 10 Years (General Fund)</h3>
+<p>The table below shows how SJUSD's financial position has grown year after year, even as enrollment fell. <strong>Important note:</strong> The NCES-reported $532M figure for 2021–22 is <em>all-funds</em> total revenue (including capital and special funds), not general fund alone. The 2024–25 data comes from SJUSD's own LCAP Budget Overview filed with CDE — this is a <strong>general fund</strong> figure of $462M.</p>
+<div class="tw">
+<table>
+<caption>SJUSD Revenue — Fiscal Year 2014–15 through 2024–25</caption>
+<thead><tr><th>Fiscal Year</th><th>Total Revenue</th><th>Year-over-Year</th><th>Enrollment</th><th>Source</th></tr></thead>
+<tbody>
+<tr><td>2014–15</td><td>$321M</td><td>—</td><td>~30,800</td><td>SVTA / Ed-Data</td></tr>
+<tr><td>2015–16</td><td>$337M</td><td class="up">+5.0%</td><td>~31,000</td><td>Ed-Data (est.)</td></tr>
+<tr><td>2016–17</td><td>$355M</td><td class="up">+5.3%</td><td>~30,700</td><td>Ed-Data (est.)</td></tr>
+<tr><td>2017–18</td><td>$370M</td><td class="up">+4.2%</td><td>~30,500</td><td>Ed-Data (est.)</td></tr>
+<tr><td>2018–19</td><td>$385M</td><td class="up">+4.1%</td><td>~29,600</td><td>Ed-Data (est.)</td></tr>
+<tr><td>2019–20</td><td>$397M</td><td class="up">+3.1%</td><td>~28,800</td><td>Ed-Data (est.)</td></tr>
+<tr class="hl"><td>2020–21 ★</td><td>$430M</td><td class="up">+8.3%</td><td>~26,300</td><td>Ed-Data (est.)</td></tr>
+<tr class="es"><td>2021–22</td><td>$532M ★★</td><td class="up">+23.7%</td><td>~25,700</td><td><strong>NCES CCD</strong> (all-funds)</td></tr>
+<tr class="es"><td>2022–23</td><td>$476M (GF)</td><td class="dn">−10.5%</td><td>25,451</td><td><strong>CDE SACS Unaudited Actuals</strong></td></tr>
+<tr class="es"><td>2023–24</td><td>$504M (GF)</td><td class="up">+5.7%</td><td>25,976</td><td><strong>CDE SACS Unaudited Actuals</strong></td></tr>
+<tr class="hl"><td>2024–25 ④</td><td>$462M (GF)</td><td>—</td><td>25,409</td><td><strong>SJUSD LCAP Budget Overview (CDE)</strong></td></tr>
+</tbody>
+</table>
+<div class="src">
+<span class="src-l">Sources:</span>
+<a href="https://nces.ed.gov/ccd/districtsearch/district_detail.asp?start=0&ID2=0634590" target="_blank">NCES CCD – $532M (FY 2021–22)</a><span class="d">·</span>
+<a href="https://www.ed-data.org/district/Santa-Clara/San-Jose-Unified" target="_blank">Ed-Data.org (CDE Partnership)</a><span class="d">·</span>
+<a href="https://www.svtaxpayers.org/2016-san-jose-unified-school-parcel-tax" target="_blank">SVTA – 2014–15 Revenue $320.9M</a><span class="d">·</span>
+<a href="https://www.sjusd.org/about/fiscal/financial-budget-reports-archive" target="_blank">SJUSD Budget Archive</a><span class="d">·</span>
+<a href="https://www.sjusd.org/about/schools-of-tomorrow" target="_blank">SJUSD Schools of Tomorrow – Enrollment</a><span class="d">·</span>
+<a href="https://www.cde.ca.gov/ds/fd/fd/" target="_blank">CDE Annual Financial Data (SACS)</a>
+</div>
+</div>
+<p style="font-size:13px;color:var(--ls);">★ SJUSD became a Basic Aid (locally funded) district. Blue-shaded rows include significant federal ESSER relief funding.<br>
+★★ $532M is the NCES-confirmed <strong>all-funds total revenue</strong> for FY 2021–22. General fund revenue alone is lower.<br>
+③ <strong>2022–23 GF actuals:</strong> Revenue $476.4M, Expenditures $443.0M — <strong style="color:var(--tl)">surplus of $25.7M</strong>. <strong>2023–24 GF actuals:</strong> Revenue $503.6M, Expenditures $476.9M — <strong style="color:var(--tl)">surplus of $18.9M</strong>. Both from CDE SACS Data Viewer, Unaudited Actuals (<a href="https://viewer.sacs-cde.org/" target="_blank">viewer.sacs-cde.org</a>).<br>
+④ <strong>2024–25 general fund revenue: $462,171,756</strong> — from SJUSD's official LCAP Budget Overview filed with CDE (<a href="https://cdeunifiedstoragewest.blob.core.windows.net/lcaps/16dd9f84-5df8-498b-9509-9d5840b9838f.pdf" target="_blank">PDF</a>). Breakdown: LCFF $390.9M (85%), Other state $46.6M (10%), Local $10.5M (2%), Federal $14.1M (3%). <strong>Budgeted expenditures: $492,473,846 — a $30.3M deficit budget.</strong><br>
+⑤ <strong>The trend:</strong> Surpluses shrank from $25.7M (2022–23) → $18.9M (2023–24) → then the district budgeted a <strong style="color:var(--rust)">$30.3M deficit</strong> for 2024–25 — a $49M swing in two years. Revenue dropped $41M while spending barely moved.</p>
+<p style="font-size:13px;color:var(--ls);"><strong>Related spending data (from Mercury News editorial, Mar 2025):</strong> Expenditures rose from $366M (2019–20) to $492M (2023–24) — a 34% increase in 5 years while enrollment fell 13% and inflation rose 20–22%.</p>
+
+<div class="bc">
+<div class="bc-t">Revenue Growth — Visual Scale (Approximate, see notes above)</div>
+<div class="br"><span class="by">2014–15</span><div class="bt"><div class="bf rv" style="width:60%"></div></div><span class="bv">$321M</span></div>
+<div class="br"><span class="by">2015–16</span><div class="bt"><div class="bf rv" style="width:63%"></div></div><span class="bv">$337M</span></div>
+<div class="br"><span class="by">2016–17</span><div class="bt"><div class="bf rv" style="width:67%"></div></div><span class="bv">$355M</span></div>
+<div class="br"><span class="by">2017–18</span><div class="bt"><div class="bf rv" style="width:70%"></div></div><span class="bv">$370M</span></div>
+<div class="br"><span class="by">2018–19</span><div class="bt"><div class="bf rv" style="width:72%"></div></div><span class="bv">$385M</span></div>
+<div class="br"><span class="by">2019–20</span><div class="bt"><div class="bf rv" style="width:75%"></div></div><span class="bv">$397M</span></div>
+<div class="br"><span class="by">2020–21</span><div class="bt"><div class="bf rv" style="width:81%"></div></div><span class="bv">$430M</span></div>
+<div class="br"><span class="by">2021–22</span><div class="bt"><div class="bf rv" style="width:100%"></div></div><span class="bv">$532M ★</span></div>
+<div class="br"><span class="by">2022–23</span><div class="bt"><div class="bf rv" style="width:89%"></div></div><span class="bv">$476M (GF)</span></div>
+<div class="br"><span class="by">2023–24</span><div class="bt"><div class="bf rv" style="width:95%"></div></div><span class="bv">$504M (GF)</span></div>
+<div class="br"><span class="by">2024–25</span><div class="bt"><div class="bf rv" style="width:87%"></div></div><span class="bv">$462M (GF) ④</span></div>
+<div class="src">
+<span class="src-l">Sources:</span>
+<a href="https://www.ed-data.org/district/Santa-Clara/San-Jose-Unified" target="_blank">Ed-Data.org</a><span class="d">·</span>
+<a href="https://nces.ed.gov/ccd/districtsearch/district_detail.asp?start=0&ID2=0634590" target="_blank">NCES CCD</a><span class="d">·</span>
+<a href="https://www.svtaxpayers.org/2016-san-jose-unified-school-parcel-tax" target="_blank">SVTA</a><span class="d">·</span>
+<a href="https://www.sjusd.org/about/fiscal/financial-budget-reports-archive" target="_blank">SJUSD Budget Archive</a><span class="d">·</span>
+<a href="https://viewer.sacs-cde.org/" target="_blank">CDE SACS Data Viewer</a><span class="d">·</span>
+<a href="https://www.cde.ca.gov/ds/fd/fd/" target="_blank">CDE Annual Financial Data</a>
+</div>
+</div>
+
+<div class="co q">
+<div class="co-h">Key Takeaway</div>
+<p>SJUSD's general fund revenue peaked at <strong>$504 million in 2023–24</strong> — up from $321 million a decade earlier — even as the district now serves about 5,400 fewer students. The district ran <strong>healthy surpluses</strong> of $25.7M (2022–23) and $18.9M (2023–24). Then for 2024–25, revenue dropped $41 million to $462M while spending barely changed — producing a <strong style="color:var(--rust)">$30.3 million deficit budget</strong>. That's a <strong>$49 million swing in two years</strong>. Where did the money go?</p>
+<div class="src">
+<span class="src-l">Based on:</span>
+<a href="https://cdeunifiedstoragewest.blob.core.windows.net/lcaps/16dd9f84-5df8-498b-9509-9d5840b9838f.pdf" target="_blank">SJUSD LCAP Budget Overview 2024–25 (CDE)</a><span class="d">·</span>
+<a href="https://www.ed-data.org/district/Santa-Clara/San-Jose-Unified" target="_blank">Ed-Data.org</a>
+</div>
+</div>
+</section>
+
+<!-- ===== SPENDING ===== -->
+<section class="sec" id="spending">
+<div class="sec-l">Section 2</div>
+<h2>Spending: Where Does the Money Go?</h2>
+<p class="dc">According to the Mercury News editorial board (March 2025), SJUSD expenditures increased from <strong>$366 million in 2019–20 to $492 million in 2023–24</strong> — a <strong style="color:var(--rust)">34% increase</strong> in just five years. During that same period, enrollment declined 13%. The number of district employees actually went <em>up</em> slightly, by 0.4%.</p>
+<div class="isrc">Source: <a href="https://www.mercurynews.com/2025/03/25/editorial-voters-reject-san-jose-unifieds-tax-measure-a/" target="_blank">Mercury News Editorial Board, "Voters should reject San Jose Unified's latest tax measure," March 25, 2025</a></div>
+
+<!-- SPENDING FLOW DIAGRAM -->
+<h3 style="border-top:none;padding-top:0;margin-top:24px">Where Every Dollar Goes</h3>
+<p>When SJUSD receives $462 million, here's how it gets divided up. Think of it like a household budget — but with half a billion dollars and 25,000 kids depending on it.</p>
+
+<div style="margin:20px 0 28px">
+<!-- The big money in box -->
+<div style="background:var(--ink);color:var(--cream);border-radius:12px 12px 0 0;padding:16px 20px;text-align:center">
+<div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:3px;text-transform:uppercase;opacity:.6">Total General Fund Expenditures (2024–25 Budget)</div>
+<div style="font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:900;margin:4px 0">$492 Million</div>
+</div>
+<!-- Arrow -->
+<div style="text-align:center;font-size:20px;color:var(--ls);background:#f5f0e8;padding:4px 0">▼ splits into ▼</div>
+
+<!-- The 3 big buckets -->
+<div style="display:flex;gap:0;border:2px solid var(--border);border-top:none;border-radius:0 0 12px 12px;overflow:hidden;flex-wrap:wrap">
+<!-- Salaries -->
+<div style="flex:3;min-width:200px;padding:20px 16px;background:#fff;border-right:1px solid var(--border)">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
+<div style="font-size:28px">👩‍🏫</div>
+<div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#1565c0;font-weight:600">~50% of Budget</div>
+<div style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700">Salaries</div>
+</div>
+</div>
+<div style="font-size:13px;color:var(--slate);line-height:1.5">
+<strong>~$247M</strong> for teacher salaries, administrator pay, custodians, bus drivers, counselors, office staff. This is the single largest cost.
+</div>
+<div style="margin-top:10px;height:8px;background:#e3f2fd;border-radius:4px;overflow:hidden"><div style="height:100%;width:100%;background:#1565c0;border-radius:4px"></div></div>
+</div>
+<!-- Benefits -->
+<div style="flex:2.5;min-width:180px;padding:20px 16px;background:#fff;border-right:1px solid var(--border)">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
+<div style="font-size:28px">🏥</div>
+<div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#e65100;font-weight:600">~25% of Budget</div>
+<div style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700">Benefits</div>
+</div>
+</div>
+<div style="font-size:13px;color:var(--slate);line-height:1.5">
+<strong>~$124M</strong> for pensions (CalSTRS, CalPERS), health insurance, retiree healthcare. <strong style="color:var(--rust)">This is the fastest-growing cost.</strong>
+</div>
+<div style="margin-top:10px;height:8px;background:#fff3e0;border-radius:4px;overflow:hidden"><div style="height:100%;width:100%;background:#e65100;border-radius:4px"></div></div>
+</div>
+<!-- Everything Else -->
+<div style="flex:2.5;min-width:180px;padding:20px 16px;background:#fff">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
+<div style="font-size:28px">🏫</div>
+<div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#2e7d32;font-weight:600">~25% of Budget</div>
+<div style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700">Operations</div>
+</div>
+</div>
+<div style="font-size:13px;color:var(--slate);line-height:1.5">
+<strong>~$121M</strong> for textbooks, utilities, maintenance, transportation, technology, supplies, contracts, and everything else.
+</div>
+<div style="margin-top:10px;height:8px;background:#e8f5e9;border-radius:4px;overflow:hidden"><div style="height:100%;width:100%;background:#2e7d32;border-radius:4px"></div></div>
+</div>
+</div>
+</div>
+
+<div class="co a" style="margin-top:20px">
+<div class="co-h">The Key Insight</div>
+<p style="margin-bottom:0"><strong>About 75 cents of every dollar</strong> goes to people — salaries and benefits. This is normal for school districts. But it means when costs rise (pension rates, healthcare premiums, negotiated raises), they rise <em>fast</em> — and there's very little room to cut without cutting staff. The question is whether SJUSD's staffing levels are right-sized for 25,000 students when they were built for 31,000.</p>
+</div>
+
+<p>According to U.S. News Education, SJUSD spends about <strong>$16,520 per student per year</strong>. The major spending categories break down roughly as follows:</p>
+<div class="sg">
+<div class="sc t"><div class="sn">59%</div><div class="sl">Instruction</div><div class="ss"><a href="https://www.usnews.com/education/k12/california/districts/san-jose-unified-104657" target="_blank">U.S. News Education</a></div></div>
+<div class="sc g"><div class="sn">38%</div><div class="sl">Support Services</div><div class="ss"><a href="https://www.usnews.com/education/k12/california/districts/san-jose-unified-104657" target="_blank">U.S. News Education</a></div></div>
+<div class="sc r"><div class="sn">3%</div><div class="sl">Other Expenses</div><div class="ss"><a href="https://www.usnews.com/education/k12/california/districts/san-jose-unified-104657" target="_blank">U.S. News Education</a></div></div>
+</div>
+
+<h3>The Employee Benefits Explosion</h3>
+<p>One major cost driver has been <strong>employee benefits</strong> — pensions (CalSTRS, CalPERS), retiree healthcare, and other benefits. A 2017 analysis by David Crane noted that employee benefits at SJUSD grew from $58.6 million in 2013–14 to $70 million in 2014–15 — a 19% jump in a single year. By 2019–20, benefits were projected to consume 25% of all district revenue.</p>
+<div class="isrc">Source: <a href="http://www.foxandhoundsdaily.com/2017/04/dissecting-san-jose-unified/" target="_blank">David Crane, "Dissecting San Jose Unified," Fox &amp; Hounds Daily, April 2017</a> · <a href="https://davidgcrane.medium.com/dissecting-san-jose-unified-9b364d4ed4cc" target="_blank">Medium republication</a></div>
+
+<div class="co a">
+<div class="co-h">$30 Million Underfunding Controversy</div>
+<p>In 2025, three unions (SJTA, CSEA, and AFSCME) accused SJUSD of <strong>underfunding employee health and welfare benefits by over $30 million since 2017–18</strong>. According to the unions, the district quietly switched from using the authorized number of employee positions to only the number of filled positions when calculating benefit contributions — resulting in millions of dollars not reaching the employee Health and Welfare Fund. SJUSD Chief Business Officer Seth Reddy acknowledged the issue and said the district was "committed to making this right."</p>
+<div class="src">
+<span class="src-l">Source:</span>
+<a href="https://lavozdeanza.com/news/2025/05/22/sjusd-funding-mismanaged/" target="_blank">La Voz News, "Unions claim SJUSD underfunded employee health benefits by over $30 million," May 22, 2025</a>
+</div>
+</div>
+
+<!-- RESERVE REQUIREMENT SECTION -->
+<h3>🚨 The Reserve Crisis: SJUSD's Empty Safety Net</h3>
+<p>California law requires every school district to maintain a minimum <strong>"Reserve for Economic Uncertainties"</strong> — essentially a rainy-day fund. For districts SJUSD's size (over 1,000 ADA), the state-recommended minimum is <strong>2% of total expenditures</strong>. This is codified in Title 5 of the California Code of Regulations and monitored by the County Office of Education.</p>
+
+<p>Here's how SJUSD measures up, based on the district's own filings with the state:</p>
+
+<!-- Visual reserve comparison -->
+<div style="margin:20px 0 24px">
+<!-- What should exist -->
+<div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:16px">
+<div style="flex:1;min-width:250px;border:2px solid #2e7d32;border-radius:12px;overflow:hidden">
+<div style="background:#e8f5e9;padding:10px 16px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#2e7d32;text-align:center;font-weight:600">What State Law Requires (2%)</div>
+<div style="padding:16px;text-align:center">
+<div style="font-family:'Playfair Display',serif;font-size:2rem;font-weight:900;color:#2e7d32">$9.5M</div>
+<div style="font-size:13px;color:var(--slate)">2% × $477M expenditures (2023–24)</div>
+<div style="margin:12px auto;width:80%;height:24px;background:#2e7d32;border-radius:6px;position:relative">
+<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#fff;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600">MINIMUM RESERVE</div>
+</div>
+</div>
+</div>
+<div style="flex:1;min-width:250px;border:2px solid var(--rust);border-radius:12px;overflow:hidden">
+<div style="background:var(--rbg);padding:10px 16px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--rust);text-align:center;font-weight:600">What SJUSD Actually Has</div>
+<div style="padding:16px;text-align:center">
+<div style="font-family:'Playfair Display',serif;font-size:2rem;font-weight:900;color:var(--rust)">$0</div>
+<div style="font-size:13px;color:var(--slate)">Reserve for Economic Uncertainties: <strong>zero</strong></div>
+<div style="margin:12px auto;width:80%;height:24px;background:#f5f0e8;border:2px dashed var(--rust);border-radius:6px;position:relative">
+<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--rust);font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600">EMPTY</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Year-by-year detail -->
+<div style="background:#fff;border:1px solid var(--border);border-radius:8px;overflow:hidden">
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:1px;text-transform:uppercase;background:#f5f0e8;border-bottom:1px solid var(--border)">
+<div style="padding:10px 14px;font-weight:600">Metric</div>
+<div style="padding:10px 14px;font-weight:600;text-align:center">2022–23</div>
+<div style="padding:10px 14px;font-weight:600;text-align:center">2023–24</div>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;font-size:14px;border-bottom:1px solid var(--border)">
+<div style="padding:10px 14px;color:var(--slate)">Reserve for Econ. Uncertainties</div>
+<div style="padding:10px 14px;text-align:center;font-weight:700;color:var(--rust)">$0</div>
+<div style="padding:10px 14px;text-align:center;font-weight:700;color:var(--rust)">$0</div>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;font-size:14px;border-bottom:1px solid var(--border)">
+<div style="padding:10px 14px;color:var(--slate)">Unassigned/Unappropriated</div>
+<div style="padding:10px 14px;text-align:center">$2.7M</div>
+<div style="padding:10px 14px;text-align:center">$1.3M</div>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;font-size:14px;border-bottom:1px solid var(--border)">
+<div style="padding:10px 14px;color:var(--slate)">Total Available Reserves</div>
+<div style="padding:10px 14px;text-align:center;font-weight:600">$2.7M <span style="color:var(--rust)">(0.61%)</span></div>
+<div style="padding:10px 14px;text-align:center;font-weight:600">$1.3M <span style="color:var(--rust)">(0.27%)</span></div>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;font-size:14px;border-bottom:1px solid var(--border);background:#fde8e8">
+<div style="padding:10px 14px;color:var(--rust);font-weight:600">State Minimum Required (2%)</div>
+<div style="padding:10px 14px;text-align:center;font-weight:600">$8.9M</div>
+<div style="padding:10px 14px;text-align:center;font-weight:600">$9.5M</div>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;font-size:14px;background:#fde8e8">
+<div style="padding:10px 14px;color:var(--rust);font-weight:700">SHORTFALL</div>
+<div style="padding:10px 14px;text-align:center;font-weight:700;color:var(--rust)">−$6.2M</div>
+<div style="padding:10px 14px;text-align:center;font-weight:700;color:var(--rust)">−$8.3M</div>
+</div>
+</div>
+</div>
+
+<div class="isrc">Source: CDE SACS Data Viewer — SJUSD Unaudited Actuals, Fund 01, Column BA (<a href="https://viewer.sacs-cde.org/" target="_blank">viewer.sacs-cde.org</a>). Reserve standard: <a href="https://www.cde.ca.gov/fg/fi/ss/distbudgetcsfy2526.asp" target="_blank">CDE Criteria and Standards for Fiscal Solvency, Title 5 CCR §§ 15440-15452</a></div>
+
+<div class="co i">
+<div class="co-h">Wait — the district has $109M in fund balance. Where is it?</div>
+<p>SJUSD's total ending fund balance was $109.4M in 2023–24. But <strong>$104.2M of that is restricted</strong> — legally earmarked for specific programs (special education, federal grants, etc.) and cannot be used for general operations. Only <strong>$5.2M is unrestricted</strong>, and of that, only $1.3M sits in unassigned accounts. The district's designated Reserve for Economic Uncertainties — the actual safety net line item — is <strong>zero</strong>.</p>
+<p style="margin-bottom:0">This means SJUSD has been operating below the state-recommended minimum reserve for at least two consecutive years. The County Office of Education is supposed to flag this. A district running a $30.3M deficit in 2024–25 with essentially no unrestricted reserves is in serious fiscal danger.</p>
+</div>
+
+<!-- MANAGEMENT SALARY ANALYSIS -->
+<h3>Management Salaries: Who Gets Paid What</h3>
+<p>The SACS data lets us break down exactly where every salary dollar goes. In 2023–24, SJUSD's general fund spent <strong>$247.5 million on salaries</strong> and another <strong>$124.4 million on benefits</strong> — totaling $371.8 million, or <strong>78% of all expenditures</strong>, on people costs alone.</p>
+
+<div style="margin:20px 0 24px">
+<div style="background:#fff;border:1px solid var(--border);border-radius:8px;overflow:hidden">
+<div style="background:var(--ink);color:var(--cream);padding:12px 16px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;text-align:center">2023–24 General Fund — Where Salary Dollars Go (SACS Actuals)</div>
+
+<!-- Salary bars -->
+<div style="padding:16px 16px 4px">
+<div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+<div style="font-size:13px;color:var(--slate);width:180px;text-align:right;flex-shrink:0">Teachers (1100s)</div>
+<div style="flex:1;height:24px;background:#e3f2fd;border-radius:4px;overflow:hidden;position:relative">
+<div style="height:100%;width:57.9%;background:#1565c0;border-radius:4px"></div>
+</div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:12px;width:90px;flex-shrink:0">$143.2M</div>
+</div>
+<div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+<div style="font-size:13px;color:var(--slate);width:180px;text-align:right;flex-shrink:0">Cert. Admin & Supervisors</div>
+<div style="flex:1;height:24px;background:#fff3e0;border-radius:4px;overflow:hidden;position:relative">
+<div style="height:100%;width:6.7%;background:#e65100;border-radius:4px"></div>
+</div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:12px;width:90px;flex-shrink:0">$16.5M</div>
+</div>
+<div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+<div style="font-size:13px;color:var(--slate);width:180px;text-align:right;flex-shrink:0">Counselors & Pupil Support</div>
+<div style="flex:1;height:24px;background:#e8f5e9;border-radius:4px;overflow:hidden;position:relative">
+<div style="height:100%;width:5%;background:#2e7d32;border-radius:4px"></div>
+</div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:12px;width:90px;flex-shrink:0">$12.4M</div>
+</div>
+<div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+<div style="font-size:13px;color:var(--slate);width:180px;text-align:right;flex-shrink:0">Classified Support Staff</div>
+<div style="flex:1;height:24px;background:#e3f2fd;border-radius:4px;overflow:hidden;position:relative">
+<div style="height:100%;width:9.9%;background:#42a5f5;border-radius:4px"></div>
+</div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:12px;width:90px;flex-shrink:0">$24.5M</div>
+</div>
+<div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+<div style="font-size:13px;color:var(--slate);width:180px;text-align:right;flex-shrink:0">Clerical & Office</div>
+<div style="flex:1;height:24px;background:#e3f2fd;border-radius:4px;overflow:hidden;position:relative">
+<div style="height:100%;width:5.9%;background:#64b5f6;border-radius:4px"></div>
+</div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:12px;width:90px;flex-shrink:0">$14.7M</div>
+</div>
+<div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+<div style="font-size:13px;color:var(--slate);width:180px;text-align:right;flex-shrink:0">Class. Admin & Supervisors</div>
+<div style="flex:1;height:24px;background:#fff3e0;border-radius:4px;overflow:hidden;position:relative">
+<div style="height:100%;width:2%;background:#ff9800;border-radius:4px"></div>
+</div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:12px;width:90px;flex-shrink:0">$4.9M</div>
+</div>
+<div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+<div style="font-size:13px;color:var(--slate);width:180px;text-align:right;flex-shrink:0">Instructional Aides</div>
+<div style="flex:1;height:24px;background:#e8f5e9;border-radius:4px;overflow:hidden;position:relative">
+<div style="height:100%;width:4.9%;background:#66bb6a;border-radius:4px"></div>
+</div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:12px;width:90px;flex-shrink:0">$12.2M</div>
+</div>
+<div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
+<div style="font-size:13px;color:var(--slate);width:180px;text-align:right;flex-shrink:0">Other Salaries</div>
+<div style="flex:1;height:24px;background:#f3e5f5;border-radius:4px;overflow:hidden;position:relative">
+<div style="height:100%;width:7.7%;background:#8e24aa;border-radius:4px"></div>
+</div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:12px;width:90px;flex-shrink:0">$19.0M</div>
+</div>
+</div>
+
+<div style="border-top:1px solid var(--border);padding:12px 16px;display:flex;justify-content:space-between;font-size:14px;background:#f5f0e8;flex-wrap:wrap;gap:8px">
+<div><strong>Total Salaries:</strong> $247.5M</div>
+<div><strong>Total Benefits:</strong> $124.4M</div>
+<div style="color:var(--rust)"><strong>Total People Costs:</strong> $371.8M (78%)</div>
+</div>
+</div>
+</div>
+
+<div class="isrc">Source: CDE SACS Data Viewer — SJUSD Unaudited Actuals 2023–24, Fund 01, Column BA, Object Codes 1000-3999 (<a href="https://viewer.sacs-cde.org/" target="_blank">viewer.sacs-cde.org</a>)</div>
+
+<!-- Management team specifics -->
+<div style="display:flex;gap:16px;flex-wrap:wrap;margin:20px 0">
+<div style="flex:1;min-width:250px;border:1px solid var(--border);border-radius:8px;padding:20px;background:#fff">
+<div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--ls);margin-bottom:8px">District Leadership Team</div>
+<p style="font-size:14px;color:var(--slate);margin:0">SJUSD lists <strong>13 senior leaders</strong> on its management page, headed by Superintendent Nancy Albarrán (in the role since 2016). The team includes a Chief Business Officer, Associate Superintendent, Assistant Superintendent, and 9 Directors overseeing everything from finance to data strategy to communications.</p>
+<div class="isrc" style="margin-top:10px">Source: <a href="https://www.sjusd.org/about/district-information/management-team" target="_blank">SJUSD Management Team page</a></div>
+</div>
+<div style="flex:1;min-width:250px;border:1px solid var(--border);border-radius:8px;padding:20px;background:#fff">
+<div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--ls);margin-bottom:8px">Salary Comparison</div>
+<p style="font-size:14px;color:var(--slate);margin:0">Based on SACS data and NCES headcounts, the average administrator salary (cert + classified, 99.5 positions) is approximately <strong>$215,000/year</strong>. The average teacher salary (1,189 FTE) is approximately <strong>$120,400/year</strong>. Superintendent Albarrán's total compensation was <strong>$367,302 in 2020</strong> (most recent public data) — and has likely increased since.</p>
+<div class="isrc" style="margin-top:10px">Sources: SACS data (salary totals) · <a href="https://ballotpedia.org/San_Jose_Unified_School_District,_California" target="_blank">Ballotpedia (headcounts)</a> · <a href="https://calsalaries.com/nancy-albarran-26146089" target="_blank">CalSalaries (superintendent pay)</a></div>
+</div>
+</div>
+
+<div class="co q">
+<div class="co-h">The Question Parents Should Ask</div>
+<p style="margin-bottom:0">SJUSD employs <strong>23 district-level administrators and 76.5 school-level administrators</strong> for 25,000 students. That's one administrator for every 251 students. Combined admin salaries total <strong>$21.4 million/year</strong>. Meanwhile, the district says it must close neighborhood elementary schools to save money. How much would the district save by reducing administrative headcount by 10–15% instead of — or in addition to — closing schools?</p>
+</div>
+
+<div class="cg">
+<div class="cc gn"><h4>Spending 2019–20</h4><div class="bn">$366M</div><p style="margin-top:8px;font-size:14px;color:var(--slate)">~28,800 students</p></div>
+<div class="cc rd"><h4>Spending 2024–25 (Budget)</h4><div class="bn">$492M</div><p style="margin-top:8px;font-size:14px;color:var(--slate)">Revenue: $462M<br><strong style="color:var(--rust)">$30.3M deficit budget</strong></p></div>
+</div>
+<div class="src" style="margin-top:-8px;border:1px solid var(--border)">
+<span class="src-l">Source:</span>
+<a href="https://www.mercurynews.com/2025/03/25/editorial-voters-reject-san-jose-unifieds-tax-measure-a/" target="_blank">Mercury News Editorial Board, March 2025</a>
+</div>
+</section>
+
+<!-- ===== ENROLLMENT ===== -->
+<section class="sec" id="enrollment">
+<div class="sec-l">Section 3</div>
+<h2>Enrollment: The Shrinking Student Body</h2>
+<p class="dc">The district's enrollment has been on a steady downward trajectory. In 2008, SJUSD served approximately 35,000 students. By 2017–18, that had dropped to about 30,500. Today (2024–25), enrollment is approximately <strong>25,409</strong> — a loss of roughly 10,000 students since 2008, or 6,000+ since 2017–18.</p>
+<div class="isrc">Sources: <a href="https://www.ed-data.org/district/Santa-Clara/San-Jose-Unified" target="_blank">Ed-Data.org – 2024–25: 25,409</a> · <a href="https://www.kron4.com/news/bay-area/declining-enrollment-could-force-sjusd-to-close-some-elementary-schools/" target="_blank">KRON4, Dec 2025 – 10,000+ since 2008</a> · <a href="https://www.sjusd.org/about/schools-of-tomorrow" target="_blank">SJUSD Schools of Tomorrow – 6,000+ since 2017–18</a></div>
+<p>The district attributes this to Silicon Valley's high cost of living pushing families out, declining birth rates, and the rise of charter schools and private school alternatives. The San Francisco Chronicle reported that SJUSD had the <strong>largest enrollment decline among the 10 biggest Bay Area school districts</strong> from 2019–20 to 2021–22: an 11% drop.</p>
+<div class="isrc">Source: <a href="https://www.sfchronicle.com/bayarea/article/San-Francisco-lost-about-7-of-its-public-school-17134833.php" target="_blank">SF Chronicle, "Why student enrollment in the 10 largest Bay Area school districts dropped," April 2022</a></div>
+
+<div class="bc">
+<div class="bc-t">Enrollment Trend (Approximate)</div>
+<div class="br"><span class="by">2008</span><div class="bt"><div class="bf en" style="width:100%"></div></div><span class="bv">~35,000</span></div>
+<div class="br"><span class="by">2014–15</span><div class="bt"><div class="bf en" style="width:88%"></div></div><span class="bv">~30,800</span></div>
+<div class="br"><span class="by">2017–18</span><div class="bt"><div class="bf en" style="width:87%"></div></div><span class="bv">~30,500</span></div>
+<div class="br"><span class="by">2019–20</span><div class="bt"><div class="bf en" style="width:82%"></div></div><span class="bv">~28,800</span></div>
+<div class="br"><span class="by">2020–21</span><div class="bt"><div class="bf en" style="width:75%"></div></div><span class="bv">~26,300</span></div>
+<div class="br"><span class="by">2021–22</span><div class="bt"><div class="bf en" style="width:73%"></div></div><span class="bv">~25,700</span></div>
+<div class="br"><span class="by">2022–23</span><div class="bt"><div class="bf en" style="width:73%"></div></div><span class="bv">~25,450</span></div>
+<div class="br"><span class="by">2024–25</span><div class="bt"><div class="bf en" style="width:73%"></div></div><span class="bv">25,409</span></div>
+<div class="src">
+<span class="src-l">Sources:</span>
+<a href="https://www.ed-data.org/district/Santa-Clara/San-Jose-Unified" target="_blank">Ed-Data.org</a><span class="d">·</span>
+<a href="https://www.kron4.com/news/bay-area/declining-enrollment-could-force-sjusd-to-close-some-elementary-schools/" target="_blank">KRON4 – 2008 Baseline</a><span class="d">·</span>
+<a href="https://www.sjusd.org/about/schools-of-tomorrow" target="_blank">SJUSD Schools of Tomorrow</a><span class="d">·</span>
+<a href="https://ballotpedia.org/San_Jose_Unified_School_District,_California,_elections_(2024)" target="_blank">Ballotpedia – 2022–23: 25,451</a>
+</div>
+</div>
+<p>Crucially, while enrollment dropped 20%, the district maintained the <strong>same number of elementary schools</strong> (26) until this year's proposed closures. Half of those 26 elementary schools now serve fewer than 350 students. The smallest has fewer than 200 students.</p>
+<div class="isrc">Source: <a href="https://www.sjusd.org/about/schools-of-tomorrow" target="_blank">SJUSD Schools of Tomorrow Initiative</a></div>
+</section>
+
+<!-- ===== PER PUPIL ===== -->
+<section class="sec" id="per-pupil">
+<div class="sec-l">Section 4</div>
+<h2>Per-Pupil Spending: More Money for Each Student</h2>
+<p class="dc">Here's where the math gets really interesting. Because revenue keeps going up while enrollment keeps going down, the <strong>amount of money available per student has skyrocketed</strong>.</p>
+<div class="bc">
+<div class="bc-t">Estimated Revenue Per Student (General Fund ÷ Enrollment)</div>
+<div class="br"><span class="by">2014–15</span><div class="bt"><div class="bf pp" style="width:50%"></div></div><span class="bv">~$10,420</span></div>
+<div class="br"><span class="by">2016–17</span><div class="bt"><div class="bf pp" style="width:55%"></div></div><span class="bv">~$11,560</span></div>
+<div class="br"><span class="by">2018–19</span><div class="bt"><div class="bf pp" style="width:63%"></div></div><span class="bv">~$13,000</span></div>
+<div class="br"><span class="by">2019–20</span><div class="bt"><div class="bf pp" style="width:66%"></div></div><span class="bv">~$13,790</span></div>
+<div class="br"><span class="by">2020–21</span><div class="bt"><div class="bf pp" style="width:78%"></div></div><span class="bv">~$16,350</span></div>
+<div class="br"><span class="by">2021–22</span><div class="bt"><div class="bf pp" style="width:89%"></div></div><span class="bv">~$18,600</span></div>
+<div class="br"><span class="by">2022–23</span><div class="bt"><div class="bf pp" style="width:94%"></div></div><span class="bv">~$18,720</span></div>
+<div class="br"><span class="by">2023–24</span><div class="bt"><div class="bf pp" style="width:97%"></div></div><span class="bv">~$19,390</span></div>
+<div class="br"><span class="by">2024–25</span><div class="bt"><div class="bf pp" style="width:91%"></div></div><span class="bv">~$18,190</span></div>
+<div class="src">
+<span class="src-l">Calculated from:</span>
+<a href="https://www.ed-data.org/district/Santa-Clara/San-Jose-Unified" target="_blank">Ed-Data.org Revenue</a><span class="d">÷</span>
+<a href="https://www.sjusd.org/about/schools-of-tomorrow" target="_blank">SJUSD Enrollment</a><span class="d">·</span>
+<a href="https://www.svtaxpayers.org/2016-san-jose-unified-school-parcel-tax" target="_blank">SVTA 2014–15: $10,416/student</a><span class="d">·</span>
+<a href="https://www.publicschoolreview.com/california/san-jose-unified-school-district/634590-school-district" target="_blank">PublicSchoolReview: $16,728/student</a>
+</div>
+</div>
+
+<div class="co q">
+<div class="co-h">Think About This</div>
+<p>In 2014–15, the district had about $10,420 per student. By 2023–24, that figure rose to <strong>~$19,390 per student</strong> — nearly double. The statewide average for unified school districts is around $18,400 per student. Even with the 2024–25 budget drop, SJUSD still spends ~$18,190 per student. If the district has more money per student than ever before, why does it need to close schools?</p>
+<div class="src">
+<span class="src-l">Sources:</span>
+<a href="https://www.svtaxpayers.org/2016-san-jose-unified-school-parcel-tax" target="_blank">SVTA – $10,416 in 2014–15</a><span class="d">·</span>
+<a href="https://www.publicschoolreview.com/california/san-jose-unified-school-district/634590-school-district" target="_blank">PublicSchoolReview – $18,399 state median</a>
+</div>
+</div>
+</section>
+
+<!-- ===== ESSER ===== -->
+<section class="sec" id="esser">
+<div class="sec-l">Section 5</div>
+<h2>Federal Relief Funds: ESSER and Other Grants</h2>
+<p class="dc">Between 2020 and 2024, an unprecedented wave of federal money flowed into school districts across America to help them weather the COVID-19 pandemic. This money came in three rounds through the <strong>Elementary and Secondary School Emergency Relief Fund (ESSER)</strong>.</p>
+<div class="tw">
+<table>
+<caption>Federal ESSER Funding — Nationwide Overview</caption>
+<thead><tr><th>Round</th><th>Federal Law</th><th>Date</th><th>Total (National)</th><th>California Total</th><th>Deadline</th></tr></thead>
+<tbody>
+<tr><td>ESSER I</td><td>CARES Act</td><td>Mar 2020</td><td>$13.2B</td><td>~$1.6B</td><td>Sep 2022</td></tr>
+<tr><td>ESSER II</td><td>CRRSA Act</td><td>Dec 2020</td><td>$54.3B</td><td>~$6.7B</td><td>Sep 2023</td></tr>
+<tr><td>ESSER III</td><td>ARP Act</td><td>Mar 2021</td><td>$122.8B</td><td>~$13.5B</td><td>Sep 2024</td></tr>
+<tr class="hl"><td><strong>Total</strong></td><td></td><td></td><td><strong>$190.3B</strong></td><td><strong>~$23.4B</strong></td><td></td></tr>
+</tbody>
+</table>
+<div class="src">
+<span class="src-l">Sources:</span>
+<a href="https://www.ed.gov/grants-and-programs/formula-grants/response-formula-grants/covid-19-emergency-relief-grants/elementary-and-secondary-school-emergency-relief-fund" target="_blank">U.S. Dept. of Education – ESSER Fund</a><span class="d">·</span>
+<a href="https://www.cde.ca.gov/fg/cr/esser.asp" target="_blank">CA Dept. of Education – ESSER I</a><span class="d">·</span>
+<a href="https://pandemicoversight.gov/data-interactive-tools/data-stories/states-received-1895-billion-relief-schools-heres-breakdown" target="_blank">Pandemic Oversight – State Breakdown</a><span class="d">·</span>
+<a href="https://en.wikipedia.org/wiki/Elementary_and_Secondary_School_Emergency_Relief_Fund" target="_blank">Wikipedia – ESSER ($23.4B to CA)</a>
+</div>
+</div>
+
+<p>California received approximately <strong>$23.4 billion</strong> in total ESSER funds — the most of any state. These funds were distributed to districts based on their Title I (low-income student) allocations. SJUSD received its share; the district's federal revenue line items jumped significantly during 2020–2024.</p>
+<div class="isrc">Sources: <a href="https://en.wikipedia.org/wiki/Elementary_and_Secondary_School_Emergency_Relief_Fund" target="_blank">Wikipedia – ESSER Fund</a> · <a href="https://edsource.org/2023/many-california-districts-yet-to-spend-federal-covid-relief-despite-deep-widespread-learning-loss/692344" target="_blank">EdSource – CA ESSER Spending, June 2023</a></div>
+
+<p>ESSER funds were meant to be used for: preventing COVID spread (PPE, ventilation, cleaning), addressing <strong>learning loss</strong> from school closures, mental health services, technology for remote learning, maintaining staffing levels, and summer/after-school programs. ESSER III specifically required at least <strong>20% of funds go toward evidence-based programs to address learning loss</strong>.</p>
+<div class="isrc">Sources: <a href="https://www.cde.ca.gov/fg/cr/esserfaqs.asp" target="_blank">CDE – ESSER I FAQs (Allowable Uses)</a> · <a href="https://www.cde.ca.gov/fg/cr/esseriiifaqs.asp" target="_blank">CDE – ESSER III FAQs (20% Learning Loss Requirement)</a></div>
+
+<div class="co a">
+<div class="co-h">The ESSER Cliff</div>
+<p>All ESSER funds had to be obligated by <strong>September 30, 2024</strong>. This "fiscal cliff" means districts that used ESSER money for ongoing expenses — like hiring new staff — now face a funding gap. As SJUSD Board President George Sanchez noted: "Funding very much drives the curriculum in our schools... schools aren't receiving federal funding like they did during the height of the COVID-19 pandemic."</p>
+<div class="src">
+<span class="src-l">Sources:</span>
+<a href="https://pandemicoversight.gov/data-interactive-tools/data-stories/states-received-1895-billion-relief-schools-heres-breakdown" target="_blank">Pandemic Oversight – ESSER Deadline</a><span class="d">·</span>
+<a href="https://sanjosespotlight.com/silicon-valley-voters-pass-multiple-school-funding-measures/" target="_blank">SJ Spotlight – G. Sanchez quote, Nov 2024</a>
+</div>
+</div>
+
+<h3>Other Notable Funding Sources</h3>
+<div class="ai" id="acc-1">
+<button class="ab" onclick="toggleAcc('acc-1')">Measure Y — $72 Annual Parcel Tax (2016–2025)</button>
+<div class="aby"><div class="aby-in">
+<p>Approved by voters in 2016, this $72/year parcel tax generated about <strong>$5 million annually</strong> for eight years. It was used for teacher retention, academic programs, and staff salaries. It expired June 30, 2025. The district attempted to renew it with Measure A in a May 2025 special election, but <strong>voters rejected it</strong>. The election itself cost the district $2–3 million.</p>
+<div class="isrc">Sources: <a href="https://www.sjusd.org/about/fiscal/parcel-tax" target="_blank">SJUSD – Parcel Tax</a> · <a href="https://www.mercurynews.com/2025/03/25/editorial-voters-reject-san-jose-unifieds-tax-measure-a/" target="_blank">Mercury News – Measure A Rejection</a> · <a href="https://www.eastbaytimes.com/2025/02/24/san-jose-district-asks-voters-for-additional-5-million-in-funding/" target="_blank">East Bay Times – Measure A</a></div>
+</div></div>
+</div>
+<div class="ai" id="acc-2">
+<button class="ab" onclick="toggleAcc('acc-2')">Measure H — $290 Million Bond (2012)</button>
+<div class="aby"><div class="aby-in">
+<p>A general obligation bond approved in 2012 to repair and upgrade school facilities — classrooms, science labs, technology, safety, and energy systems. This money cannot be used for operations or salaries; it's strictly for buildings and infrastructure.</p>
+<div class="isrc">Sources: <a href="https://www.sjusd.org/about/measurer" target="_blank">SJUSD – Measure R Page (references Measure H)</a> · <a href="https://www.svtaxpayers.org/san-jose" target="_blank">SVTA – Measure H 2012</a></div>
+</div></div>
+</div>
+<div class="ai" id="acc-3">
+<button class="ab" onclick="toggleAcc('acc-3')">Measure R — $1.15 Billion Bond (2024)</button>
+<div class="aby"><div class="aby-in">
+<p>Approved by 64.7% of voters in November 2024, this massive bond will cost taxpayers about <strong>$81 million per year for approximately 30 years</strong> ($60 per $100,000 of assessed home value). It funds facility upgrades, employee housing construction (600+ units planned), and classroom modernization. SPUR noted that the district released <em>no expenditure plan</em> before putting it on the ballot.</p>
+<div class="isrc">Sources: <a href="https://www.sjusd.org/about/measurer" target="_blank">SJUSD – Measure R</a> · <a href="https://www.spur.org/voter-guide/2024-11/sj-measure-r-school-bond" target="_blank">SPUR – Measure R Analysis</a> · <a href="https://sanjosespotlight.com/silicon-valley-voters-pass-multiple-school-funding-measures/" target="_blank">SJ Spotlight – Election Results</a></div>
+</div></div>
+</div>
+<div class="ai" id="acc-4">
+<button class="ab" onclick="toggleAcc('acc-4')">California Lottery Funds</button>
+<div class="aby"><div class="aby-in">
+<p>Santa Clara County schools received about <strong>$20.9 million in lottery funds in Q2 of 2023–24</strong> alone, with a cumulative total of nearly $1.9 billion since 1985. Lottery funds are meant to supplement — not replace — regular funding.</p>
+<div class="isrc">Source: <a href="https://sanjosespotlight.com/san-jose-unified-school-district-sjusd-bond-measure-could-fund-teacher-housing-election-2024/" target="_blank">SJ Spotlight – Lottery Data, Aug 2024</a></div>
+</div></div>
+</div>
+<div class="ai" id="acc-5">
+<button class="ab" onclick="toggleAcc('acc-5')">Developer Fees</button>
+<div class="aby"><div class="aby-in">
+<p>SJUSD collects developer fees on new residential and commercial construction within district boundaries. These fees are kept in a separate account and are meant to offset the cost of accommodating new students generated by new development.</p>
+<div class="isrc">Source: <a href="https://www.sjusd.org/about/fiscal/developer-fee" target="_blank">SJUSD – Developer Fee Page</a></div>
+</div></div>
+</div>
+</section>
+
+<!-- ===== BONDS & TAXES ===== -->
+<section class="sec" id="bonds">
+<div class="sec-l">Section 6</div>
+<h2>Bonds &amp; Parcel Taxes: What Voters Have Approved</h2>
+<p>Over the past 25 years, SJUSD voters have approved multiple bond measures and parcel taxes. Here's a summary of the major ones:</p>
+<div class="tl">
+<div class="ti"><div class="ty">2002 — Measure F</div><div class="tt">$429 million bond for school repairs and rehabilitation. Approved by 69%+ of voters.</div><div class="ts"><a href="https://web.sjusd.org/who-we-are/district-information/" target="_blank">Source: SJUSD District Information</a></div></div>
+<div class="ti"><div class="ty">2012 — Measure H</div><div class="tt">$290 million bond for facility upgrades, technology, science labs, safety, and energy systems.</div><div class="ts"><a href="https://www.svtaxpayers.org/san-jose" target="_blank">Source: SVTA</a> · <a href="https://www.sjusd.org/about/district-information/measure-h-financial-performance-reports" target="_blank">SJUSD Measure H Reports</a></div></div>
+<div class="ti"><div class="ty">2016 — Measure Y</div><div class="tt">$72/year parcel tax generating ~$5M/year for teacher retention and academic programs. Expired June 2025.</div><div class="ts"><a href="https://www.sjusd.org/about/fiscal/parcel-tax" target="_blank">Source: SJUSD Parcel Tax Page</a></div></div>
+<div class="ti"><div class="ty">2024 — Measure R</div><div class="tt">$1.15 billion bond for facility upgrades, employee housing, classroom modernization. Approved by 64.7%. Costs $60 per $100K assessed value annually for ~30 years.</div><div class="ts"><a href="https://www.sjusd.org/about/measurer" target="_blank">SJUSD – Measure R</a> · <a href="https://sanjosespotlight.com/silicon-valley-voters-pass-multiple-school-funding-measures/" target="_blank">SJ Spotlight – Results</a></div></div>
+<div class="ti"><div class="ty">2025 — Measure A (FAILED)</div><div class="tt">Attempted renewal of the $72/year parcel tax. Voters rejected it in a costly special election ($2–3M). The Mercury News editorial board recommended "No."</div><div class="ts"><a href="https://www.mercurynews.com/2025/03/25/editorial-voters-reject-san-jose-unifieds-tax-measure-a/" target="_blank">Mercury News Editorial</a> · <a href="https://ballotpedia.org/Santa_Clara_County,_California_ballot_measures" target="_blank">Ballotpedia – Measure A Failed</a></div></div>
+</div>
+
+<div class="co q">
+<div class="co-h">A Pattern Emerges</div>
+<p>Combined, SJUSD voters have authorized nearly <strong>$1.87 billion in bond debt</strong> since 2002 — plus ongoing parcel taxes. The 2024 Measure R alone will cost taxpayers approximately <strong>$2.4 billion with interest</strong> over 30 years. Meanwhile, the district was also receiving hundreds of millions in annual property tax revenue, state funds, and federal pandemic relief. One Measure R opponent noted: "In 2012, we approved $290M for repairs... yet the district's now requesting an additional $1.15B."</p>
+<div class="src">
+<span class="src-l">Sources:</span>
+<a href="https://www.sjusd.org/about/measurer" target="_blank">SJUSD – Measure R</a><span class="d">·</span>
+<a href="https://www.opportunitynowsv.org/blog/-far-from-being-wise-san-jose-unified-board-candidates-disagree-on-measure-r" target="_blank">Opportunity Now – Candidate Reactions</a><span class="d">·</span>
+<a href="https://www.spur.org/voter-guide/2024-11/sj-measure-r-school-bond" target="_blank">SPUR – Measure R Analysis</a>
+</div>
+</div>
+</section>
+
+<!-- ===== SCHOOL CLOSURES ===== -->
+<section class="sec" id="closures">
+<div class="sec-l">Section 7</div>
+<h2>School Closures: The "Schools of Tomorrow" Plan</h2>
+<p class="dc">In September 2025, the SJUSD Board of Education launched the <strong>"Schools of Tomorrow"</strong> initiative — a process to evaluate elementary schools for possible consolidation, closure, or boundary changes. As of February 2026, the district has released three options, each proposing to close or consolidate <strong>up to 9 elementary schools</strong> before the 2026–27 school year.</p>
+<div class="isrc">Sources: <a href="https://www.sjusd.org/about/schools-of-tomorrow" target="_blank">SJUSD – Schools of Tomorrow</a> · <a href="https://www.mercurynews.com/2026/02/05/up-to-9-san-jose-unified-elementary-schools-could-close-here-are-the-options/" target="_blank">Mercury News, Feb 5, 2026</a> · <a href="https://www.kron4.com/news/bay-area/san-jose-elementary-schools-facing-consolidations-relocations-closures/" target="_blank">KRON4, Feb 2026</a></div>
+
+<p>The district's stated reasons: enrollment declined 20% since 2017–18 (~6,000 fewer students); 12 of 26 elementary schools now have fewer than 350 students (doubled from a few years ago); the smallest school has fewer than 200 students; and small schools can't sustain counselors, nurses, art/music programs, or avoid combo-classes.</p>
+<div class="isrc">Source: <a href="https://www.sjusd.org/about/schools-of-tomorrow" target="_blank">SJUSD Schools of Tomorrow</a></div>
+
+<h3>What the District Promises</h3>
+<p>SJUSD says affected schools will receive twice their usual funding during the transition year. Schools receiving new students will also get double funding. Bus service will be offered for students more than 1.5 miles from their new school. Three hours of free after-school activities will be provided. Staff positions will be preserved.</p>
+<div class="isrc">Sources: <a href="https://www.kron4.com/news/bay-area/san-jose-elementary-schools-facing-consolidations-relocations-closures/" target="_blank">KRON4 – District Commitments</a> · <a href="https://hoodline.com/2026/02/san-jose-school-shakeup-looms-with-campus-closures-and-new-boundaries/" target="_blank">Hoodline, Feb 2026</a></div>
+
+<h3>What Parents Are Saying</h3>
+<p>Parents and community members are pushing back hard. Many note that some of the schools targeted for closure are <strong>high-performing, high-demand neighborhood schools</strong>. As one parent wrote to the board about Simonds Elementary: "Closing a school that is appropriately sized, academically strong, and program-rich directly contradicts the framework the district has outlined."</p>
+<div class="isrc">Source: <a href="https://www.mercurynews.com/2026/02/05/up-to-9-san-jose-unified-elementary-schools-could-close-here-are-the-options/" target="_blank">Mercury News – Parent Gabriela Garces quoted, Feb 5, 2026</a></div>
+
+<div class="co a">
+<div class="co-h">The Central Question</div>
+<p>The district says it needs to close schools because enrollment has dropped. But <strong>revenue has increased every single year</strong>, and <strong>per-pupil funding has roughly doubled</strong> in a decade. The district became a Basic Aid district in 2020–21, meaning its revenue is tied to property taxes — not enrollment. It received massive federal ESSER funds. Voters just approved a $1.15 billion bond.</p>
+<p style="margin-top:12px">So the question families and taxpayers are asking is: <strong>If there's more money per student than ever before, why can't smaller schools be sustained? Where exactly is all this money going?</strong></p>
+<div class="src">
+<span class="src-l">Based on data from:</span>
+<a href="https://www.sjusd.org/about/fiscal/california-public-school-funding" target="_blank">SJUSD – Basic Aid Status</a><span class="d">·</span>
+<a href="https://www.mercurynews.com/2025/03/25/editorial-voters-reject-san-jose-unifieds-tax-measure-a/" target="_blank">Mercury News – Spending Data</a><span class="d">·</span>
+<a href="https://www.ed-data.org/district/Santa-Clara/San-Jose-Unified" target="_blank">Ed-Data.org – Revenue</a><span class="d">·</span>
+<a href="https://www.sjusd.org/about/measurer" target="_blank">SJUSD – Measure R</a>
+</div>
+</div>
+</section>
+
+<!-- ===== ANALYSIS: DO CLOSURES MAKE SENSE? ===== -->
+<section class="sec" id="analysis">
+<div class="sec-l">Section 8</div>
+<h2>Analysis: Do the Closures Make Financial Sense — or Reveal Mismanagement?</h2>
+
+<p class="dc">The district frames school closures as an inevitable response to declining enrollment. But when you examine the financial evidence, a different picture emerges — one that suggests the real problem isn't too few students, but how the district manages its growing resources.</p>
+
+<h3>The District's Argument vs. the Data</h3>
+
+<p><strong>District claim:</strong> "We have 6,000 fewer students than we did in 2017–18. We can't sustain 26 elementary schools."</p>
+
+<p><strong>What the data shows:</strong> General fund revenue grew from $370M (2017–18, est.) to $462M (2024–25 LCAP) — a 25% increase — during the same period enrollment fell 20%. Per-pupil general fund revenue rose from roughly $12,100 to approximately $18,200. The district became a Basic Aid district in 2020–21, meaning its funding is tied to property values, <em>not</em> headcount. Even without a single additional student, revenue will continue rising as Silicon Valley property values increase. Yet the district is budgeting a <strong>$30.3M deficit</strong> — spending $492M while projecting only $462M in revenue.</p>
+
+<div class="co a">
+<div class="co-h">The Math Doesn't Add Up</div>
+<p>Consider a school with 250 students. At $18,200 per pupil in general fund revenue (2024–25 LCAP), that school generates approximately <strong>$4.55 million in revenue</strong>. Even if the fully-loaded cost to operate an elementary school is $3–4 million annually (staffing, facilities, utilities), the school is <em>more than paying for itself</em>. The district has not published school-by-school cost data to refute this math.</p>
+<div class="src">
+<span class="src-l">Calculation:</span>
+<a href="https://www.ed-data.org/district/Santa-Clara/San-Jose-Unified" target="_blank">Ed-Data.org Revenue</a><span class="d">÷</span>
+<a href="https://www.sjusd.org/about/schools-of-tomorrow" target="_blank">SJUSD School Size Data</a>
+</div>
+</div>
+
+<h3>Signs of Financial Mismanagement</h3>
+
+<p>Multiple independent sources paint a picture of a district with serious financial governance problems:</p>
+
+<p><strong>1. The Grand Jury called the district "adrift" — and the board rejected the warning.</strong> In June 2024, the Santa Clara County Civil Grand Jury published a 42-page report titled <em>"District Adrift"</em> after conducting 80 interviews and reviewing 500 documents. The report found high leadership turnover (54% of principals lost in two years vs. 22% at comparable districts), lack of student wellness centers, safety gaps, and overall lack of transparency. Crucially, the Grand Jury noted these problems <strong>echoed the district's own 2023 School Climate Survey</strong> — meaning the board already had internal data showing the same issues. In a five-hour board meeting in July 2024, the board <strong>voted unanimously to reject nearly all findings</strong>. The Superintendent dismissed the report as "unrepresentative, misleading and inaccurate." Even the Teachers Association president acknowledged: <em>"There was no finding in this report that I have not already had conversations about with district leaders."</em> In other words: they knew, and they chose not to act.</p>
+<div class="isrc">Sources: <a href="https://santaclara.courts.ca.gov/system/files/civil/district-adrift-leadership-issues-san-jose-unified-school-district-final.pdf" target="_blank">Grand Jury Report (PDF)</a> · <a href="https://www.mercurynews.com/2024/07/25/san-jose-unified-board-slams-civil-grand-jury-rejects-findings-that-its-adrift/" target="_blank">Mercury News, Jul 2024</a> · <a href="https://sanjosespotlight.com/san-jose-parents-want-new-leadership-in-largest-school-district/" target="_blank">SJ Spotlight, Jul 2024</a> · <a href="https://santaclara.courts.ca.gov/system/files/civil/district-adrift-san-jose-unified-school-district.pdf" target="_blank">SJUSD Response to Grand Jury (PDF)</a></div>
+
+<div class="co a" style="margin:16px 0">
+<div class="co-h">Timeline: They Knew</div>
+<p style="margin-bottom:0"><strong>2023:</strong> SJUSD's own School Climate Survey identifies trust, morale, and leadership concerns among staff and parents.<br>
+<strong>June 2024:</strong> Grand Jury publishes "District Adrift" — confirming the same problems with 80 independent interviews.<br>
+<strong>July 2024:</strong> Board unanimously rejects nearly all Grand Jury findings. Superintendent calls report "misleading."<br>
+<strong>2024–25:</strong> District adopts a $30.3M deficit budget with $0 in reserve for economic uncertainties.<br>
+<strong>2025:</strong> Unions reveal $30M+ in health benefit underfunding since 2017–18. Voters reject Measure A parcel tax.<br>
+<strong>Late 2025–2026:</strong> District announces plans to close up to 9 elementary schools.</p>
+</div>
+
+<p><strong>2. $30+ million in alleged health benefit underfunding.</strong> Three employee unions claim the district quietly changed its formula for calculating benefit contributions, shortchanging employees by over $30 million since 2017–18. The district's CBO acknowledged the discrepancy.</p>
+<div class="isrc">Source: <a href="https://lavozdeanza.com/news/2025/05/22/sjusd-funding-mismanaged/" target="_blank">La Voz News, May 2025</a></div>
+
+<p><strong>3. Spending growth that outpaced both enrollment and inflation.</strong> From 2019–20 to 2023–24, expenditures rose 34% ($366M → $492M) while enrollment fell 13% and the employee count actually increased 0.4%. Inflation during that period was approximately 20–22%. Spending growth materially exceeded inflation — even without accounting for the enrollment decline.</p>
+<div class="isrc">Source: <a href="https://www.mercurynews.com/2025/03/25/editorial-voters-reject-san-jose-unifieds-tax-measure-a/" target="_blank">Mercury News Editorial, Mar 2025</a></div>
+
+<p><strong>4. No expenditure plan for $1.15B Measure R bond.</strong> SPUR, the respected Bay Area policy organization, noted that the district put a massive $1.15 billion bond on the ballot in 2024 without publishing a detailed expenditure plan showing taxpayers exactly how the money would be spent.</p>
+<div class="isrc">Source: <a href="https://www.spur.org/voter-guide/2024-11/sj-measure-r-school-bond" target="_blank">SPUR Voter Guide, Nov 2024</a></div>
+
+<p><strong>5. Voters rejected the parcel tax renewal.</strong> In May 2025, voters said "No" to renewing Measure Y's $72/year parcel tax. The Mercury News editorial board recommended rejection, citing the district's failure to demonstrate fiscal responsibility. The election itself cost the district $2–3 million to conduct.</p>
+<div class="isrc">Source: <a href="https://www.mercurynews.com/2025/03/25/editorial-voters-reject-san-jose-unifieds-tax-measure-a/" target="_blank">Mercury News Editorial, Mar 2025</a></div>
+
+<p><strong>6. Zero reserves for economic uncertainties — below state-required minimum.</strong> SACS filings show SJUSD's designated Reserve for Economic Uncertainties has been <strong>$0</strong> for at least two consecutive years (2022–23 and 2023–24). California requires districts of SJUSD's size to maintain at least 2% of expenditures in available reserves (~$9.5M). SJUSD's total unrestricted reserves were just $1.3M (0.27%) in 2023–24 — an $8.3M shortfall below the state minimum.</p>
+<div class="isrc">Source: CDE SACS Data Viewer — SJUSD Unaudited Actuals, Fund 01 (<a href="https://viewer.sacs-cde.org/" target="_blank">viewer.sacs-cde.org</a>) · <a href="https://www.cde.ca.gov/fg/fi/ss/distbudgetcsfy2526.asp" target="_blank">CDE Criteria & Standards, Title 5 CCR §§ 15440-15452</a></div>
+
+<h3>Recommendations for Financial Reform</h3>
+
+<div class="co i">
+<div class="co-h">Financial Recommendations</div>
+<p><strong>1. Independent Financial Audit:</strong> The community should demand an independent, third-party forensic audit of SJUSD's finances — not the standard annual audit performed by auditors the district selects, but a comprehensive review commissioned by the County Office of Education or Board of Supervisors examining where every dollar has gone over the past 5 years.</p>
+<p style="margin-top:10px"><strong>2. School-by-School Cost Transparency:</strong> Before closing any school, the district should publish the actual cost to operate each individual elementary school — including staffing, facilities, utilities, and overhead — alongside the revenue each school generates through per-pupil funding. Without this data, any closure decision is arbitrary.</p>
+<p style="margin-top:10px"><strong>3. Administrative Cost Reduction:</strong> With enrollment down 20% but employee count up 0.4%, the district should demonstrate it has first exhausted administrative efficiency measures before asking communities to sacrifice their neighborhood schools.</p>
+<p style="margin-top:10px"><strong>4. ESSER Accountability Report:</strong> A complete, line-item accounting of all ESSER funds received and spent — including whether any one-time funds were used for ongoing expenses — should be made public.</p>
+<p style="margin-top:10px"><strong>5. Bond Expenditure Plan:</strong> The district should publish a detailed, site-specific expenditure plan for the $1.15B Measure R bond funds before making any expenditures.</p>
+</div>
+
+<h3>Political Recommendations</h3>
+
+<div class="co q">
+<div class="co-h">For Elected Officials and Candidates</div>
+<p><strong>For City Council and Mayor's Office:</strong> While the city government does not directly control the school district, school closures profoundly affect neighborhoods, property values, public safety, and community cohesion. The Mayor and Council should use their bully pulpit to demand fiscal transparency from SJUSD before closures proceed.</p>
+<p style="margin-top:10px"><strong>For State Legislators:</strong> Senator Dave Cortese and Assemblymember Ash Kalra should consider introducing legislation requiring Basic Aid districts to publish annual transparency reports showing how excess property tax revenue above the LCFF guarantee is being used — and mandate school-by-school cost accounting before any closure action.</p>
+<p style="margin-top:10px"><strong>For the County Board of Supervisors:</strong> The Board should consider using its authority to request the County Office of Education conduct an independent review of SJUSD's fiscal management, following up on the Grand Jury's findings.</p>
+<p style="margin-top:10px"><strong>For SJUSD Board Candidates (2026 elections):</strong> Any candidate for the Board of Education should commit to completing a full independent audit and publishing school-by-school cost data before continuing the closure process.</p>
+<div class="src">
+<span class="src-l">Context:</span>
+<a href="https://santaclara.courts.ca.gov/system/files/civil/district-adrift-leadership-issues-san-jose-unified-school-district-final.pdf" target="_blank">Grand Jury Report</a><span class="d">·</span>
+<a href="https://www.mercurynews.com/2025/03/25/editorial-voters-reject-san-jose-unifieds-tax-measure-a/" target="_blank">Mercury News – Fiscal Concerns</a><span class="d">·</span>
+<a href="https://www.spur.org/voter-guide/2024-11/sj-measure-r-school-bond" target="_blank">SPUR – Measure R Analysis</a>
+</div>
+</div>
+</section>
+
+<!-- ===== WHO TO CONTACT ===== -->
+<!-- ===== COMPARISON: OTHER DISTRICTS ===== -->
+<section class="sec" id="comparison">
+<div class="sec-l">Section 10</div>
+<h2>How Neighboring Districts Compare</h2>
+
+<p class="dc">SJUSD isn't the only district in Santa Clara County dealing with enrollment decline. But its response — and its financial trajectory — stand out. Let's look at how nearby districts are handling similar challenges.</p>
+
+<h3>Cupertino Union School District (CUSD)</h3>
+<p>CUSD, which also serves parts of San José, faced severe enrollment decline — losing more than 4,900 students since 2015–16. It closed three elementary schools in 2022 (Regnart, Meyerholz, and consolidated Muir). However, CUSD is now running a <strong>$26 million deficit</strong> in FY 2024–25 with a projected $11 million deficit in 2025–26. Like SJUSD, it's a Basic Aid district. Unlike SJUSD, it has already cut school sites — and is still in fiscal crisis. This raises the question: <em>did closures actually solve anything?</em></p>
+<div class="isrc">Sources: <a href="https://chsprospector.com/10299/news/cupertino-union-school-district-fiscal-stabilization/" target="_blank">The Prospector – CUSD Fiscal Stabilization, 2025</a> · <a href="https://www.kron4.com/news/bay-area/cupertino-union-district-approves-school-consolidation-closures/" target="_blank">KRON4 – CUSD Closures, Oct 2021</a></div>
+
+<h3>Campbell Union School District (CUSD)</h3>
+<p>Campbell Union serves communities adjacent to SJUSD — including Campbell, Los Gatos, portions of San José. It operates 13 schools (9 elementary, 2 middle). While it has also experienced enrollment pressure, <strong>it has not proposed closures</strong>. It received "green" ratings across all categories on the California School Dashboard. The difference? Budget discipline and appropriately-sized operations.</p>
+<div class="isrc">Sources: <a href="https://www.campbellusd.org/" target="_blank">Campbell USD Website</a> · <a href="https://www.niche.com/k12/search/best-school-districts/c/santa-clara-county-ca/" target="_blank">Niche.com – 2026 District Rankings</a></div>
+
+<h3>Campbell Union High School District (CUHSD)</h3>
+<p>The high school district serving much of the SJUSD feeder area operates 6 high school campuses with 8,600+ students. It is <strong>the only district in Santa Clara County to receive "green" ratings across all categories</strong> on the state accountability dashboard. No closures. No fiscal crisis. It demonstrates that well-managed districts can thrive even in the same economic environment.</p>
+<div class="isrc">Source: <a href="https://www.cuhsd.org/" target="_blank">CUHSD Website – Superintendent Message, 2025–26</a></div>
+
+<h3>Santa Clara Unified School District (SCUSD)</h3>
+<p>Serving 15,400+ K-12 students across 56 square miles (overlapping with portions of San José), Santa Clara Unified has not announced mass school closures despite similar regional pressures. The district emphasizes maintaining neighborhood schools as community anchors.</p>
+<div class="isrc">Source: <a href="https://www.santaclarausd.org/" target="_blank">Santa Clara USD</a></div>
+
+<div class="co q">
+<div class="co-h">What the Comparison Tells Us</div>
+<p>Enrollment decline is real and regional. But <strong>not every district is closing schools</strong>. Campbell Union (K-8) and Campbell Union High School District are thriving without closures. Meanwhile, Cupertino Union — which already closed three schools in 2022 — is now running a $26 million deficit. School closures are not a magic solution. The real issue is whether a district manages its growing revenue responsibly. SJUSD's revenue has grown 66% in a decade — far more than most neighboring districts — yet it's the one proposing the most dramatic closures.</p>
+<div class="src">
+<span class="src-l">Sources:</span>
+<a href="https://www.campbellusd.org/" target="_blank">Campbell USD</a><span class="d">·</span>
+<a href="https://www.cuhsd.org/" target="_blank">CUHSD</a><span class="d">·</span>
+<a href="https://chsprospector.com/10299/news/cupertino-union-school-district-fiscal-stabilization/" target="_blank">CUSD Fiscal Crisis</a><span class="d">·</span>
+<a href="https://www.ed-data.org/district/Santa-Clara/San-Jose-Unified" target="_blank">Ed-Data.org – SJUSD</a>
+</div>
+</div>
+</section>
+
+<!-- ===== KEY QUESTIONS ===== -->
+<section class="sec" id="questions">
+<div class="sec-l">Section 11</div>
+<h2>Questions That Deserve Answers</h2>
+<p>Based on the publicly available data, here are the questions the community should be asking SJUSD leadership:</p>
+
+<div class="co q" style="margin-bottom:12px">
+<p><strong>1. Administrative Spending:</strong> What percentage of the budget goes to district administration vs. direct classroom instruction? How has this ratio changed over the past 10 years? How many administrators have been added while enrollment declined?</p>
+<div class="src"><span class="src-l">Context:</span><a href="https://www.ed-data.org/district/Santa-Clara/San-Jose-Unified" target="_blank">Ed-Data.org – Expenditures by Activity</a><span class="d">·</span><a href="https://www.mercurynews.com/2025/03/25/editorial-voters-reject-san-jose-unifieds-tax-measure-a/" target="_blank">Mercury News – Employee count +0.4% despite −13% enrollment</a></div>
+</div>
+<div class="co q" style="margin-bottom:12px">
+<p><strong>2. ESSER Accountability:</strong> Exactly how much ESSER money did SJUSD receive across all three rounds? What was it spent on? Were any ESSER funds used for ongoing expenses (like staff positions) that now need to be replaced? Has the district published a complete accounting?</p>
+<div class="src"><span class="src-l">Context:</span><a href="https://www.cde.ca.gov/fg/cr/esser.asp" target="_blank">CDE – ESSER Allocations</a><span class="d">·</span><a href="https://www.future-ed.org/california-esser-spending/" target="_blank">FutureEd – CA ESSER Analysis</a><span class="d">·</span><a href="https://www.sjusd.org/about/fiscal/financial-budget-reports-archive" target="_blank">SJUSD Budget Archive</a></div>
+</div>
+<div class="co q" style="margin-bottom:12px">
+<p><strong>3. The $30 Million Health Benefits Question:</strong> Three employee unions allege the district has underfunded health and welfare benefits by over $30 million since 2017–18. Has this been resolved? Where did that money go instead?</p>
+<div class="src"><span class="src-l">Source:</span><a href="https://lavozdeanza.com/news/2025/05/22/sjusd-funding-mismanaged/" target="_blank">La Voz News, May 2025</a></div>
+</div>
+<div class="co q" style="margin-bottom:12px">
+<p><strong>4. Property Tax Windfall:</strong> Since becoming a Basic Aid district in 2020–21, how much excess property tax revenue (above the LCFF guarantee) has SJUSD received? How was this additional money used?</p>
+<div class="src"><span class="src-l">Context:</span><a href="https://www.sjusd.org/about/fiscal/california-public-school-funding" target="_blank">SJUSD – Basic Aid</a><span class="d">·</span><a href="https://edsource.org/2025/property-tax-driven-education-disparity/742256" target="_blank">EdSource – Basic Aid: SJUSD $36 extra/student (Oct 2025)</a></div>
+</div>
+<div class="co q" style="margin-bottom:12px">
+<p><strong>5. Bond Spending Transparency:</strong> For the 2012 Measure H bond ($290M) and the 2024 Measure R bond ($1.15B), where is the detailed accounting of how each dollar has been or will be spent?</p>
+<div class="src"><span class="src-l">Context:</span><a href="https://www.spur.org/voter-guide/2024-11/sj-measure-r-school-bond" target="_blank">SPUR – No expenditure plan for Measure R</a><span class="d">·</span><a href="https://www.sjusd.org/about/district-information/measure-h-financial-performance-reports" target="_blank">SJUSD – Measure H Reports</a></div>
+</div>
+<div class="co q" style="margin-bottom:12px">
+<p><strong>6. Cost Per School:</strong> What is the actual annual cost to operate one elementary school? If per-pupil revenue is $21,000+ and a school has 200–350 students, that's $4.2–$7.4 million per school in generated revenue. What is the operating cost of keeping that school open?</p>
+<div class="src"><span class="src-l">Calculation:</span><a href="https://www.ed-data.org/district/Santa-Clara/San-Jose-Unified" target="_blank">Ed-Data.org Revenue</a><span class="d">÷</span><a href="https://www.sjusd.org/about/schools-of-tomorrow" target="_blank">SJUSD – School Size Data</a></div>
+</div>
+<div class="co q" style="margin-bottom:12px">
+<p><strong>7. Grand Jury Recommendations:</strong> The 2024 Santa Clara County Civil Grand Jury found the district "adrift" with leadership failures. The board rejected nearly all findings. Have the recommended reforms been implemented?</p>
+<div class="src"><span class="src-l">Sources:</span><a href="https://santaclara.courts.ca.gov/system/files/civil/district-adrift-leadership-issues-san-jose-unified-school-district-final.pdf" target="_blank">Grand Jury Report (PDF)</a><span class="d">·</span><a href="https://www.eastbaytimes.com/2024/07/25/san-jose-unified-board-slams-civil-grand-jury-rejects-findings-that-its-adrift/" target="_blank">East Bay Times – Board Rejection, Jul 2024</a><span class="d">·</span><a href="https://www.siliconvalleydebug.org/stories/grand-jury-report-confirms-san-jose-unified-school-district-has-failed-leadership" target="_blank">SV Debug – Report Summary</a></div>
+</div>
+<div class="co q" style="margin-bottom:12px">
+<p><strong>8. Closed School Properties:</strong> What happens to school buildings after closure? Will they be sold or leased? If so, who benefits from those proceeds?</p>
+<div class="src"><span class="src-l">Context:</span><a href="https://www.sjusd.org/about/schools-of-tomorrow" target="_blank">SJUSD – Schools of Tomorrow</a></div>
+</div>
+</section>
+
+<!-- ===== DATA METHODOLOGY ===== -->
+
+<section class="sec" id="action">
+<div class="sec-l">Section 9</div>
+<h2>Take Action: Your Voice Matters</h2>
+
+<!-- COUNTDOWN TIMER -->
+<div style="background:linear-gradient(135deg,#b71c1c,#d32f2f);color:#fff;border-radius:12px;padding:30px;text-align:center;margin-bottom:30px;box-shadow:0 4px 20px rgba(183,28,28,0.3);">
+<div style="font-size:0.85em;text-transform:uppercase;letter-spacing:3px;margin-bottom:8px;opacity:0.9;">Board Vote On School Closures</div>
+<div style="font-size:2.4em;font-weight:800;margin-bottom:5px;">March 12, 2026</div>
+<div id="countdown-timer" style="font-size:1.6em;font-weight:700;margin-top:10px;"></div>
+<div style="font-size:0.8em;opacity:0.8;margin-top:8px;">855 Lenzen Ave, San José · 6:00 PM · Public comment permitted</div>
+</div>
+<script>
+function updateCountdown(){var e=new Date("2026-03-12T18:00:00-08:00")-new Date(),t=Math.floor(e/864e5),n=Math.floor(e%864e5/36e5),a=Math.floor(e%36e5/6e4);document.getElementById("countdown-timer").innerHTML=e>0?t+"d "+n+"h "+a+"m remaining":(e>-86400000?"THE VOTE IS HAPPENING NOW":"VOTE HAS PASSED")}updateCountdown();setInterval(updateCountdown,6e4);
+</script>
+
+<!-- SIGN THE PETITION -->
+<div style="background:#fff;border:3px solid #1565c0;border-radius:12px;padding:30px;text-align:center;margin-bottom:25px;">
+<div style="font-size:1.8em;font-weight:800;color:#1565c0;margin-bottom:10px;">✍️ Sign the Petition</div>
+<div style="font-size:1.1em;color:#333;margin-bottom:5px;">Save Simonds Elementary — Already <strong>2,378+ signatures</strong> and growing</div>
+<div style="font-size:0.9em;color:#666;margin-bottom:20px;">Targeted at: SJUSD Board of Education, San José City Council &amp; Mayor Matt Mahan</div>
+<a href="https://www.change.org/p/simonds-elementary-school-cornerstone-of-the-sjusd-needs-to-stay-open" target="_blank" style="display:inline-block;background:#1565c0;color:#fff;padding:16px 40px;border-radius:8px;font-size:1.2em;font-weight:700;text-decoration:none;letter-spacing:0.5px;transition:background 0.2s;">SIGN NOW ON CHANGE.ORG →</a>
+<div style="font-size:0.8em;color:#888;margin-top:12px;">Every signature counts. Share with other SJUSD parents.</div>
+</div>
+
+<!-- EMAIL THE BOARD -->
+<div style="background:#f1f8e9;border:2px solid #558b2f;border-radius:12px;padding:30px;text-align:center;margin-bottom:25px;">
+<div style="font-size:1.5em;font-weight:800;color:#33691e;margin-bottom:10px;">📧 Email the Board Directly</div>
+<p style="color:#333;margin-bottom:15px;">One click opens a pre-written email to all five SJUSD Board members, the Superintendent, and the Schools of Tomorrow committee. Edit it and make it your own.</p>
+<a id="email-board-btn" href="#" onclick="return false;" style="display:inline-block;background:#558b2f;color:#fff;padding:14px 35px;border-radius:8px;font-size:1.1em;font-weight:700;text-decoration:none;transition:background 0.2s;cursor:pointer;">OPEN EMAIL TO BOARD →</a>
+<div style="margin-top:15px;text-align:left;font-size:0.85em;color:#555;">
+<strong>Recipients:</strong> Board President Carla Collins, VP José Magaña, Teresa Castellanos, Brian Wheatley, Nicole Gribstad, Superintendent Nancy Albarrán, Schools of Tomorrow Committee
+</div>
+</div>
+<script>
+document.getElementById('email-board-btn').addEventListener('click',function(){
+var to='ccollins@sjusd.org,jmagana@sjusd.org,tcastellanos@sjusd.org,bwheatley@sjusd.org,ngribstad@sjusd.org,nalbarran@sjusd.org,schoolsoftomorrow@sjusd.org';
+var subject=encodeURIComponent('Demand for Financial Transparency Before School Closures — March 12 Vote');
+var body=encodeURIComponent('Dear SJUSD Board of Education and Superintendent Albarrán,\n\nI am writing as a concerned [parent/community member/teacher] in the San José Unified School District regarding the proposed closure of up to 9 elementary schools.\n\nBefore the Board votes on March 12, I urge you to:\n\n1. CONDUCT AN INDEPENDENT FINANCIAL AUDIT — The district adopted a $30.3 million deficit budget for 2024-25 with $0 in reserves for economic uncertainties, below the state-required 2% minimum. The community deserves to understand how this happened.\n\n2. EXPLAIN THE $49 MILLION SWING — SJUSD went from surpluses of $25.7M and $18.9M to a $30M deficit in just two years. What changed?\n\n3. REVIEW ADMINISTRATIVE COSTS BEFORE CLOSING SCHOOLS — With 99.5 administrators averaging $215K in salary, has the district explored reducing administrative overhead before disrupting children\'s education?\n\n4. ADDRESS THE GRAND JURY FINDINGS — In 2024, the Santa Clara County Civil Grand Jury found serious leadership and transparency issues. The Board rejected nearly all findings. The community has not forgotten.\n\n5. ACCOUNT FOR BENEFITS UNDERFUNDING — Unions have revealed $30M+ in underfunded employee benefits. How does this impact the true financial picture?\n\nClosing schools is irreversible. Our children deserve better than rushed decisions based on incomplete financial data.\n\nI will be watching the March 12 vote closely.\n\nSincerely,\n[Your Name]\n[Your School/Neighborhood]');
+window.location.href='mailto:'+to+'?subject='+subject+'&body='+body;
+});
+</script>
+
+<!-- SCHOOLS OF TOMORROW EMAIL -->
+<div style="background:#fff3e0;border:2px solid #e65100;border-radius:12px;padding:25px;text-align:center;margin-bottom:25px;">
+<div style="font-size:1.3em;font-weight:700;color:#bf360c;margin-bottom:8px;">💬 Submit Public Comment to Schools of Tomorrow</div>
+<p style="color:#333;margin-bottom:12px;">The committee accepting community input before their recommendation to the Board:</p>
+<a href="mailto:schoolsoftomorrow@sjusd.org?subject=Public%20Comment%20on%20School%20Closures&body=Dear%20Schools%20of%20Tomorrow%20Implementation%20Committee%2C%0A%0AI%20am%20writing%20to%20share%20my%20concerns%20about%20the%20proposed%20elementary%20school%20closures.%0A%0A[Your%20comments%20here]%0A%0ASincerely%2C%0A[Your%20Name]%0A[Your%20School]" style="display:inline-block;background:#e65100;color:#fff;padding:12px 30px;border-radius:8px;font-size:1em;font-weight:700;text-decoration:none;">EMAIL SCHOOLSOFTOMORROW@SJUSD.ORG →</a>
+<div style="font-size:0.8em;color:#888;margin-top:10px;">Next STIC meeting: Tuesdays 6-8 PM at 855 Lenzen Ave, Room 150</div>
+</div>
+
+<!-- SHARE THE DATA -->
+<div style="background:#e8eaf6;border:2px solid #283593;border-radius:12px;padding:25px;text-align:center;margin-bottom:30px;">
+<div style="font-size:1.3em;font-weight:700;color:#1a237e;margin-bottom:8px;">📢 Share This Investigation</div>
+<p style="color:#333;margin-bottom:15px;">The more people who see the financial data, the harder it is for the district to ignore. Share with every SJUSD parent you know.</p>
+<div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;">
+<a href="https://www.facebook.com/sharer/sharer.php?u=https://behindsiliconvalley.com" target="_blank" style="display:inline-block;background:#1877f2;color:#fff;padding:10px 20px;border-radius:6px;font-weight:600;text-decoration:none;font-size:0.95em;">Facebook</a>
+<a href="https://twitter.com/intent/tweet?text=How%20SJUSD%20manages%20half%20a%20billion%20dollars%20and%20why%20they%20want%20to%20close%20your%20school.%20Follow%20the%20money%3A&url=https://behindsiliconvalley.com" target="_blank" style="display:inline-block;background:#000;color:#fff;padding:10px 20px;border-radius:6px;font-weight:600;text-decoration:none;font-size:0.95em;">X / Twitter</a>
+<a href="https://www.nextdoor.com/sharekit/?source=behindsiliconvalley.com&body=Important%20financial%20data%20about%20SJUSD%20school%20closures%3A%20https%3A%2F%2Fbehindsiliconvalley.com" target="_blank" style="display:inline-block;background:#8ed500;color:#000;padding:10px 20px;border-radius:6px;font-weight:600;text-decoration:none;font-size:0.95em;">Nextdoor</a>
+<a href="whatsapp://send?text=Important%20financial%20data%20about%20SJUSD%20school%20closures.%20Follow%20the%20money%3A%20https%3A%2F%2Fbehindsiliconvalley.com" style="display:inline-block;background:#25d366;color:#fff;padding:10px 20px;border-radius:6px;font-weight:600;text-decoration:none;font-size:0.95em;">WhatsApp</a>
+</div>
+</div>
+
+<p class="dc">If you're a parent, teacher, or community member affected by the proposed school closures, here are the officials who represent you and how to reach them.</p>
+
+<h3>SJUSD Board of Education (Direct Authority)</h3>
+<p>The Board will vote on school closures on <strong>March 12, 2026</strong>. Board meetings are held on the 1st and 3rd Thursday of each month at 6:00 PM at 855 Lenzen Ave, San José. Public comment is permitted — submit a "Request to Speak" card before the meeting.</p>
+<div style="background:#fafafa;border:1px solid #ddd;border-radius:8px;padding:15px;margin:15px 0;">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:0.9em;">
+<div><strong>Carla Collins</strong> (President, Area 3)</div><div>ccollins@sjusd.org</div>
+<div><strong>José Magaña</strong> (VP, Area 2)</div><div>jmagana@sjusd.org</div>
+<div><strong>Teresa Castellanos</strong> (Area 1)</div><div>tcastellanos@sjusd.org</div>
+<div><strong>Brian Wheatley</strong> (Area 4)</div><div>bwheatley@sjusd.org</div>
+<div><strong>Nicole Gribstad</strong> (Area 5)</div><div>ngribstad@sjusd.org</div>
+</div>
+<div style="margin-top:10px;font-size:0.85em;color:#666;">Superintendent Nancy Albarrán: nalbarran@sjusd.org · District Office: (408) 535-6000</div>
+</div>
+<div class="isrc">Source: <a href="https://www.sjusd.org/about/board-of-education" target="_blank">SJUSD Board of Education</a></div>
+
+<h3>City of San José — Mayor Matt Mahan</h3>
+<p>While the mayor does not control SJUSD, school closures directly impact city neighborhoods, walkability, property values, and community safety. Contact: <strong>mayoremail@sanjoseca.gov</strong></p>
+<div class="isrc">Sources: <a href="https://www.sjmayormatt.com/" target="_blank">Office of Mayor Matt Mahan</a> · Note: Mahan announced his candidacy for Governor in January 2026.</div>
+
+<h3>California State Legislature</h3>
+<p><strong>State Senator Dave Cortese (D) — Senate District 15</strong><br>
+Covers most of San José. Cortese previously served on the SJUSD-area school board (East Side Union HSD).<br>
+Capitol: (916) 651-4015 · District: (408) 558-1295 · <a href="https://sd15.senate.ca.gov/" target="_blank">sd15.senate.ca.gov</a></p>
+
+<p><strong>Assemblymember Ash Kalra (D) — Assembly District 25</strong><br>
+Covers the majority of San José including downtown.<br>
+Capitol: (916) 319-2025 · District: (408) 277-2525 · <a href="https://a25.asmdc.org/" target="_blank">a25.asmdc.org</a></p>
+
+<h3>U.S. Congress</h3>
+<p>SJUSD spans two congressional districts. Your representative depends on your specific address:</p>
+<p><strong>CA-16 (southern/western SJUSD areas — 95124, 95118, 95120, etc.):</strong> Use <a href="https://www.house.gov/representatives/find-your-representative" target="_blank">house.gov/representatives</a> to find your specific representative.</p>
+<p><strong>CA-18 — Rep. Zoe Lofgren (D)</strong> (downtown/east SJUSD areas — 95110, 95112, 95113, 95116, etc.):</p>
+<p>Washington: (202) 225-1904 · San José office: (408) 271-8700 · <a href="https://lofgren.house.gov/" target="_blank">lofgren.house.gov</a></p>
+
+<h3>U.S. Senators</h3>
+<p><strong>Sen. Alex Padilla (D):</strong> (202) 224-3553 · <a href="https://www.padilla.senate.gov/" target="_blank">padilla.senate.gov</a></p>
+<p><strong>Sen. Adam Schiff (D):</strong> (202) 224-3841 · <a href="https://www.schiff.senate.gov/" target="_blank">schiff.senate.gov</a></p>
+
+<h3>Santa Clara County</h3>
+<p><strong>County Superintendent of Schools — Dr. Mary Ann Dewan</strong><br>
+The County Office of Education has oversight responsibilities and can conduct reviews of district finances.<br>
+<a href="https://www.sccoe.org/" target="_blank">sccoe.org</a> · (408) 453-6500</p>
+
+<p><strong>Santa Clara County Board of Supervisors</strong><br>
+Can request investigations and apply political pressure. Find your supervisor at: <a href="https://www.sccgov.org/sites/bos/" target="_blank">sccgov.org/sites/bos</a></p>
+
+<div class="co i">
+<div class="co-h">How to Make Your Voice Heard</div>
+<p><strong>1. Sign the petition</strong> — <a href="https://www.change.org/p/simonds-elementary-school-cornerstone-of-the-sjusd-needs-to-stay-open" target="_blank" style="color:#1565c0;font-weight:600;">Join 2,378+ people who have already signed →</a></p>
+<p><strong>2. Email the Board</strong> — Use the one-click email button above. Personalize it with your family's story.</p>
+<p><strong>3. Attend the March 12 Board meeting</strong> — 855 Lenzen Ave, 6:00 PM. Submit a "Request to Speak" card. Bring neighbors.</p>
+<p><strong>4. Attend STIC meetings</strong> — Every Tuesday 6-8 PM at 855 Lenzen Ave, Room 150. Public comment accepted.</p>
+<p><strong>5. Request a formal investigation</strong> — Ask Senator Cortese and the County Board of Supervisors to request an independent audit of SJUSD finances.</p>
+<p><strong>6. Share this page</strong> — Forward behindsiliconvalley.com to every SJUSD parent, teacher, and neighbor you know.</p>
+<p><strong>7. Write a physical letter</strong> — Mailed letters carry more weight than emails. Send to: SJUSD Board of Education, 855 Lenzen Ave, San José, CA 95126.</p>
+<div class="src">
+<span class="src-l">Resources:</span>
+<a href="https://www.sjusd.org/about/board-of-education" target="_blank">SJUSD Board Info</a><span class="d">·</span>
+<a href="https://www.sjusd.org/about/schools-of-tomorrow" target="_blank">Schools of Tomorrow</a><span class="d">·</span>
+<a href="https://findyourrep.legislature.ca.gov/" target="_blank">CA Find Your Rep</a><span class="d">·</span>
+<a href="https://www.house.gov/representatives/find-your-representative" target="_blank">Find Your US Rep</a><span class="d">·</span>
+<a href="https://www.sanjoseca.gov/your-government/departments-offices/mayor-and-city-council" target="_blank">SJ City Council</a>
+</div>
+</div>
+</section>
+<section class="sec" id="methodology">
+<div class="sec-l">Data Methodology</div>
+<h2>A Note on Data Sources and Accuracy</h2>
+
+<div class="co a">
+<div class="co-h">Important: Read This Before Citing Any Figures</div>
+<p>This analysis relies on a mix of <strong>primary official sources</strong> and <strong>secondary reporting</strong>. We want to be fully transparent about which is which, and where figures should be verified independently before being used in formal advocacy.</p>
+</div>
+
+<h3>What Comes Directly from Official Sources</h3>
+
+<p>The following data points are confirmed from <strong>SJUSD's own website</strong>, the <strong>California Department of Education (CDE)</strong>, or the <strong>National Center for Education Statistics (NCES)</strong>:</p>
+
+<div class="tw">
+<table>
+<caption>Data Verified Against Primary Official Sources</caption>
+<thead><tr><th style="text-align:left">Data Point</th><th style="text-align:left">Value</th><th style="text-align:left">Primary Source</th><th style="text-align:left">Notes</th></tr></thead>
+<tbody>
+<tr><td style="text-align:left">Total Revenue</td><td style="text-align:left">$532,224,000</td><td style="text-align:left">NCES CCD (FY 2021–22)</td><td style="text-align:left;color:var(--rust)"><strong>⚠ This is FY 2021–22 all-funds, not 2023–24</strong></td></tr>
+<tr style="background:#e8f5e9"><td style="text-align:left"><strong>GF Revenue 2024–25</strong></td><td style="text-align:left"><strong>$462,171,756</strong></td><td style="text-align:left"><strong>SJUSD LCAP Budget Overview (CDE)</strong></td><td style="text-align:left"><strong>General fund projected revenue</strong></td></tr>
+<tr style="background:#e8f5e9"><td style="text-align:left"><strong>GF Revenue: LCFF</strong></td><td style="text-align:left"><strong>$390,906,437 (85%)</strong></td><td style="text-align:left"><strong>SJUSD LCAP Budget Overview (CDE)</strong></td><td style="text-align:left"><strong>Incl. $23.3M supplemental/concentration</strong></td></tr>
+<tr style="background:#e8f5e9"><td style="text-align:left"><strong>GF Revenue: Other State</strong></td><td style="text-align:left"><strong>$46,595,948 (10%)</strong></td><td style="text-align:left"><strong>SJUSD LCAP Budget Overview (CDE)</strong></td><td style="text-align:left"></td></tr>
+<tr style="background:#e8f5e9"><td style="text-align:left"><strong>GF Revenue: Local</strong></td><td style="text-align:left"><strong>$10,543,905 (2%)</strong></td><td style="text-align:left"><strong>SJUSD LCAP Budget Overview (CDE)</strong></td><td style="text-align:left"></td></tr>
+<tr style="background:#e8f5e9"><td style="text-align:left"><strong>GF Revenue: Federal</strong></td><td style="text-align:left"><strong>$14,125,467 (3%)</strong></td><td style="text-align:left"><strong>SJUSD LCAP Budget Overview (CDE)</strong></td><td style="text-align:left"></td></tr>
+<tr style="background:#fde8e8"><td style="text-align:left"><strong>GF Expenditures 2024–25</strong></td><td style="text-align:left"><strong>$492,473,846</strong></td><td style="text-align:left"><strong>SJUSD LCAP Budget Overview (CDE)</strong></td><td style="text-align:left;color:var(--rust)"><strong>⚠ $30.3M DEFICIT BUDGET</strong></td></tr>
+<tr><td style="text-align:left">Revenue: Federal</td><td style="text-align:left">$46.2M (9%)</td><td style="text-align:left">NCES CCD (FY 2021–22)</td><td style="text-align:left">Elevated due to ESSER funds</td></tr>
+<tr><td style="text-align:left">Revenue: Local</td><td style="text-align:left">$360.4M (68%)</td><td style="text-align:left">NCES CCD (FY 2021–22)</td><td style="text-align:left">Property tax dominant (Basic Aid)</td></tr>
+<tr><td style="text-align:left">Revenue: State</td><td style="text-align:left">$125.6M (24%)</td><td style="text-align:left">NCES CCD (FY 2021–22)</td><td style="text-align:left"></td></tr>
+<tr><td style="text-align:left">Total Expenditures</td><td style="text-align:left">$450,328,000</td><td style="text-align:left">NCES CCD (FY 2021–22)</td><td style="text-align:left"></td></tr>
+<tr><td style="text-align:left">Per-Pupil Revenue</td><td style="text-align:left">$20,728</td><td style="text-align:left">NCES CCD (FY 2021–22)</td><td style="text-align:left">Based on 25,676 ADA</td></tr>
+<tr><td style="text-align:left">Instruction %</td><td style="text-align:left">59%</td><td style="text-align:left">NCES CCD (FY 2021–22)</td><td style="text-align:left">$244.9M of current expenditures</td></tr>
+<tr><td style="text-align:left">Staff Count</td><td style="text-align:left">2,568.76 FTE</td><td style="text-align:left">NCES CCD (2024–25)</td><td style="text-align:left"></td></tr>
+<tr><td style="text-align:left">Enrollment 2024–25</td><td style="text-align:left">25,409</td><td style="text-align:left">Ed-Data (CDE partnership)</td><td style="text-align:left">Most current available</td></tr>
+<tr><td style="text-align:left">Enrollment 2023–24</td><td style="text-align:left">25,976</td><td style="text-align:left">NCES CCD / Ed-Data</td><td style="text-align:left"></td></tr>
+<tr><td style="text-align:left">Basic Aid Status</td><td style="text-align:left">Since 2020–21</td><td style="text-align:left">SJUSD Fiscal Services</td><td style="text-align:left">sjusd.org/about/fiscal</td></tr>
+<tr><td style="text-align:left">Enrollment decline ~6,000</td><td style="text-align:left">Since 2017–18</td><td style="text-align:left">SJUSD Schools of Tomorrow</td><td style="text-align:left">District's own claim</td></tr>
+<tr><td style="text-align:left">Revenue 2014–15</td><td style="text-align:left">$320.9M</td><td style="text-align:left">SVTA (citing CDE data)</td><td style="text-align:left">Per-pupil: $10,416</td></tr>
+</tbody>
+</table>
+<div class="src">
+<span class="src-l">Sources:</span>
+<a href="https://cdeunifiedstoragewest.blob.core.windows.net/lcaps/16dd9f84-5df8-498b-9509-9d5840b9838f.pdf" target="_blank">SJUSD LCAP Budget Overview 2024–25 (CDE PDF)</a><span class="d">·</span>
+<a href="https://nces.ed.gov/ccd/districtsearch/district_detail.asp?start=0&ID2=0634590" target="_blank">NCES CCD – SJUSD District Detail</a><span class="d">·</span>
+<a href="https://www.ed-data.org/district/Santa-Clara/San-Jose-Unified" target="_blank">Ed-Data.org (CDE/EdSource/FCMAT)</a><span class="d">·</span>
+<a href="https://www.sjusd.org/about/fiscal/california-public-school-funding" target="_blank">SJUSD – CA Public School Funding</a><span class="d">·</span>
+<a href="https://www.sjusd.org/about/schools-of-tomorrow" target="_blank">SJUSD – Schools of Tomorrow</a>
+</div>
+</div>
+
+<h3>What Comes from Secondary/News Sources</h3>
+
+<p>The following data points are drawn from news reporting and editorial analysis. While we believe them to be reliable (the Mercury News editorial board and SVTA have strong credibility), they have not been independently verified against SJUSD's unaudited actuals or CDE SACS filings:</p>
+
+<div class="tw">
+<table>
+<caption>Data from Secondary Sources — Should Be Verified</caption>
+<thead><tr><th style="text-align:left">Data Point</th><th style="text-align:left">Claim</th><th style="text-align:left">Source</th></tr></thead>
+<tbody>
+<tr><td style="text-align:left">Spending 2019–20</td><td style="text-align:left">$366M</td><td style="text-align:left">Mercury News Editorial, Mar 2025</td></tr>
+<tr><td style="text-align:left">Spending 2023–24</td><td style="text-align:left">$492M</td><td style="text-align:left">Mercury News Editorial, Mar 2025</td></tr>
+<tr><td style="text-align:left">Spending increase</td><td style="text-align:left">34% in 5 years</td><td style="text-align:left">Mercury News Editorial, Mar 2025</td></tr>
+<tr><td style="text-align:left">Employee count change</td><td style="text-align:left">+0.4% despite −13% enrollment</td><td style="text-align:left">Mercury News Editorial, Mar 2025</td></tr>
+<tr><td style="text-align:left">$30M+ benefits underfunding</td><td style="text-align:left">Alleged since 2017–18</td><td style="text-align:left">La Voz News, May 2025 (union claim)</td></tr>
+<tr><td style="text-align:left">Year-by-year revenue (table)</td><td style="text-align:left">$321M–$532M (2014–2024)</td><td style="text-align:left">Interpolated from SVTA, NCES, Ed-Data</td></tr>
+<tr><td style="text-align:left">Enrollment 2008 baseline</td><td style="text-align:left">~35,000</td><td style="text-align:left">KRON4, Dec 2025</td></tr>
+<tr><td style="text-align:left">Per-pupil spending</td><td style="text-align:left">$16,520/student</td><td style="text-align:left">U.S. News (citing NCES FY 2021–22)</td></tr>
+</tbody>
+</table>
+<div class="src">
+<span class="src-l">Sources:</span>
+<a href="https://www.mercurynews.com/2025/03/25/editorial-voters-reject-san-jose-unifieds-tax-measure-a/" target="_blank">Mercury News Editorial</a><span class="d">·</span>
+<a href="https://lavozdeanza.com/news/2025/05/22/sjusd-funding-mismanaged/" target="_blank">La Voz News</a><span class="d">·</span>
+<a href="https://www.kron4.com/news/bay-area/declining-enrollment-could-force-sjusd-to-close-some-elementary-schools/" target="_blank">KRON4</a>
+</div>
+</div>
+
+<div class="co q">
+<div class="co-h">Key Correction: The $532M vs. $462M Figures</div>
+<p>Several sources (including U.S. News Education) cite SJUSD's total revenue as "$532 million." Investigation reveals this figure comes from the <strong>NCES Common Core of Data for fiscal year 2021–22</strong> and represents <em>all-funds</em> revenue (general fund + capital + special funds). FY 2021–22 also had elevated federal revenue due to ESSER pandemic relief funds ($46.2M vs. the normal ~$14M). The district's own LCAP Budget Overview for 2024–25 shows <strong>general fund revenue of $462M</strong> — lower than $532M because it excludes non-general funds. The true comparison is: general fund revenue of $462M vs. general fund expenditures of $492M = <strong>$30.3M deficit</strong>.</p>
+</div>
+
+<h3>What We Recommend</h3>
+<p>Community members using this analysis for advocacy, board testimony, or media engagement should:</p>
+<p><strong>1.</strong> Download SJUSD's official <strong>Unaudited Actuals</strong> for 2022–23 and 2023–24 from <a href="https://www.sjusd.org/about/fiscal/financial-budget-reports-archive" target="_blank">the district's budget archive</a> and verify revenue/expenditure figures directly.</p>
+<p><strong>2.</strong> Use <a href="https://www.ed-data.org/district/Santa-Clara/San-Jose-Unified" target="_blank">Ed-Data.org</a> (the CDE/EdSource/FCMAT partnership) for the most current general fund data — though note that Ed-Data's financial tables require JavaScript and the most recent year may lag by 1–2 years.</p>
+<p><strong>3.</strong> Reference the <a href="https://nces.ed.gov/ccd/districtsearch/district_detail.asp?start=0&ID2=0634590" target="_blank">NCES Common Core of Data</a> for federally-reported figures, and always note the fiscal year (currently FY 2021–22).</p>
+<p><strong>4.</strong> File a <strong>Public Records Act (PRA) request</strong> with SJUSD for specific data not available online, such as school-by-school operating costs or detailed ESSER expenditure reports. Instructions: <a href="https://www.sjusd.org/about/district-information/pra" target="_blank">sjusd.org/about/district-information/pra</a></p>
+<div class="src">
+<span class="src-l">Tools:</span>
+<a href="https://www.sjusd.org/about/fiscal/financial-budget-reports-archive" target="_blank">SJUSD Budget Archive</a><span class="d">·</span>
+<a href="https://www.ed-data.org/district/Santa-Clara/San-Jose-Unified" target="_blank">Ed-Data.org</a><span class="d">·</span>
+<a href="https://nces.ed.gov/ccd/districtsearch/district_detail.asp?start=0&ID2=0634590" target="_blank">NCES CCD</a><span class="d">·</span>
+<a href="https://www.sjusd.org/about/district-information/pra" target="_blank">SJUSD PRA Requests</a><span class="d">·</span>
+<a href="https://dq.cde.ca.gov/dataquest/" target="_blank">CDE DataQuest</a>
+</div>
+</section>
+
+<!-- ===== FULL SOURCE INDEX ===== -->
+<section class="sources sec" id="sources">
+<div class="sec-l">Complete Source Index</div>
+<h2>Where This Data Comes From</h2>
+<p style="font-size:14px;color:var(--ls);margin-bottom:20px">This analysis is based entirely on publicly available official data. All figures are approximate and drawn from the following sources. Community members are encouraged to verify independently.</p>
+<ul>
+<li><strong>SJUSD Fiscal Services</strong> — Budget documents and financial reports<br><a href="https://www.sjusd.org/about/fiscal" target="_blank">sjusd.org/about/fiscal</a></li>
+<li><strong>SJUSD Past Budget Reports Archive</strong> — Annual budgets, interim reports, unaudited actuals<br><a href="https://www.sjusd.org/about/fiscal/financial-budget-reports-archive" target="_blank">sjusd.org/about/fiscal/financial-budget-reports-archive</a></li>
+<li><strong>SJUSD LCAP Budget Overview 2024–25 (CDE-hosted PDF)</strong> — GF Revenue $462M, Expenditures $492M, revenue breakdown<br><a href="https://cdeunifiedstoragewest.blob.core.windows.net/lcaps/16dd9f84-5df8-498b-9509-9d5840b9838f.pdf" target="_blank">cdeunifiedstoragewest.blob.core.windows.net/lcaps/...pdf</a></li>
+<li><strong>SJUSD – California Public School Funding</strong> — Basic Aid district explanation<br><a href="https://www.sjusd.org/about/fiscal/california-public-school-funding" target="_blank">sjusd.org/about/fiscal/california-public-school-funding</a></li>
+<li><strong>SJUSD – Schools of Tomorrow</strong> — Closure initiative, enrollment data<br><a href="https://www.sjusd.org/about/schools-of-tomorrow" target="_blank">sjusd.org/about/schools-of-tomorrow</a></li>
+<li><strong>SJUSD – Measure R</strong> — $1.15B bond details<br><a href="https://www.sjusd.org/about/measurer" target="_blank">sjusd.org/about/measurer</a></li>
+<li><strong>SJUSD – Parcel Tax</strong> — Measure Y details<br><a href="https://www.sjusd.org/about/fiscal/parcel-tax" target="_blank">sjusd.org/about/fiscal/parcel-tax</a></li>
+<li><strong>SJUSD – Developer Fee</strong><br><a href="https://www.sjusd.org/about/fiscal/developer-fee" target="_blank">sjusd.org/about/fiscal/developer-fee</a></li>
+<li><strong>SJUSD – District Information</strong> — Revenue breakdown, bond history<br><a href="https://web.sjusd.org/who-we-are/district-information/" target="_blank">web.sjusd.org/who-we-are/district-information</a></li>
+<li><strong>SJUSD – Measure H Reports</strong><br><a href="https://www.sjusd.org/about/district-information/measure-h-financial-performance-reports" target="_blank">sjusd.org/.../measure-h-financial-performance-reports</a></li>
+<li><strong>Ed-Data.org (CDE Partnership)</strong> — Revenue, expenditure, enrollment from CA Dept. of Education<br><a href="https://www.ed-data.org/district/Santa-Clara/San-Jose-Unified" target="_blank">ed-data.org/district/Santa-Clara/San-Jose-Unified</a></li>
+<li><strong>California Dept. of Education – District Profile</strong><br><a href="https://www.cde.ca.gov/sdprofile/details.aspx?cds=43696660000000" target="_blank">cde.ca.gov/sdprofile/details.aspx?cds=43696660000000</a></li>
+<li><strong>CA Dept. of Education – ESSER I Funding</strong><br><a href="https://www.cde.ca.gov/fg/cr/esser.asp" target="_blank">cde.ca.gov/fg/cr/esser.asp</a></li>
+<li><strong>CA Dept. of Education – ESSER III FAQs</strong><br><a href="https://www.cde.ca.gov/fg/cr/esseriiifaqs.asp" target="_blank">cde.ca.gov/fg/cr/esseriiifaqs.asp</a></li>
+<li><strong>U.S. Dept. of Education – ESSER Fund</strong><br><a href="https://www.ed.gov/grants-and-programs/formula-grants/response-formula-grants/covid-19-emergency-relief-grants/elementary-and-secondary-school-emergency-relief-fund" target="_blank">ed.gov/...elementary-and-secondary-school-emergency-relief-fund</a></li>
+<li><strong>U.S. News Education – SJUSD Profile</strong> — $532M revenue, $16,520/student<br><a href="https://www.usnews.com/education/k12/california/districts/san-jose-unified-104657" target="_blank">usnews.com/.../san-jose-unified-104657</a></li>
+<li><strong>Mercury News Editorial, March 25, 2025</strong> — $366M→$492M spending, employee data<br><a href="https://www.mercurynews.com/2025/03/25/editorial-voters-reject-san-jose-unifieds-tax-measure-a/" target="_blank">mercurynews.com/2025/03/25/editorial-voters-reject...</a></li>
+<li><strong>Mercury News, February 5, 2026</strong> — "Up to 9 schools could close"<br><a href="https://www.mercurynews.com/2026/02/05/up-to-9-san-jose-unified-elementary-schools-could-close-here-are-the-options/" target="_blank">mercurynews.com/2026/02/05/up-to-9-san-jose-unified...</a></li>
+<li><strong>San José Spotlight, August 2024</strong> — Bond measure, lottery data<br><a href="https://sanjosespotlight.com/san-jose-unified-school-district-sjusd-bond-measure-could-fund-teacher-housing-election-2024/" target="_blank">sanjosespotlight.com/.../bond-measure-could-fund-teacher-housing...</a></li>
+<li><strong>San José Spotlight, November 2024</strong> — Voter approval of school measures<br><a href="https://sanjosespotlight.com/silicon-valley-voters-pass-multiple-school-funding-measures/" target="_blank">sanjosespotlight.com/.../silicon-valley-voters-pass-multiple...</a></li>
+<li><strong>East Bay Times, Feb 24, 2025</strong> — Measure A parcel tax renewal<br><a href="https://www.eastbaytimes.com/2025/02/24/san-jose-district-asks-voters-for-additional-5-million-in-funding/" target="_blank">eastbaytimes.com/2025/02/24/...additional-5-million...</a></li>
+<li><strong>East Bay Times, Jul 25, 2024</strong> — Board rejects Grand Jury<br><a href="https://www.eastbaytimes.com/2024/07/25/san-jose-unified-board-slams-civil-grand-jury-rejects-findings-that-its-adrift/" target="_blank">eastbaytimes.com/2024/07/25/...rejects-findings...</a></li>
+<li><strong>La Voz News, May 22, 2025</strong> — $30M+ health benefits underfunding<br><a href="https://lavozdeanza.com/news/2025/05/22/sjusd-funding-mismanaged/" target="_blank">lavozdeanza.com/news/2025/05/22/sjusd-funding-mismanaged</a></li>
+<li><strong>KRON4, December 22, 2025</strong> — Enrollment decline and closures<br><a href="https://www.kron4.com/news/bay-area/declining-enrollment-could-force-sjusd-to-close-some-elementary-schools/" target="_blank">kron4.com/.../declining-enrollment-could-force...</a></li>
+<li><strong>KRON4, February 2026</strong> — Three options released<br><a href="https://www.kron4.com/news/bay-area/san-jose-elementary-schools-facing-consolidations-relocations-closures/" target="_blank">kron4.com/.../san-jose-elementary-schools-facing...</a></li>
+<li><strong>Hoodline, February 2026</strong> — School shakeup analysis<br><a href="https://hoodline.com/2026/02/san-jose-school-shakeup-looms-with-campus-closures-and-new-boundaries/" target="_blank">hoodline.com/2026/02/san-jose-school-shakeup-looms...</a></li>
+<li><strong>Santa Clara County Civil Grand Jury, 2024</strong> — "District Adrift" report<br><a href="https://santaclara.courts.ca.gov/system/files/civil/district-adrift-leadership-issues-san-jose-unified-school-district-final.pdf" target="_blank">Grand Jury Report (PDF)</a></li>
+<li><strong>Silicon Valley Debug</strong> — Grand Jury summary<br><a href="https://www.siliconvalleydebug.org/stories/grand-jury-report-confirms-san-jose-unified-school-district-has-failed-leadership" target="_blank">siliconvalleydebug.org/.../grand-jury-report-confirms...</a></li>
+<li><strong>SF Chronicle, April 2022</strong> — Bay Area enrollment comparison<br><a href="https://www.sfchronicle.com/bayarea/article/San-Francisco-lost-about-7-of-its-public-school-17134833.php" target="_blank">sfchronicle.com/.../San-Francisco-lost-about-7-of-its...</a></li>
+<li><strong>EdSource – LCFF Database</strong> — SJUSD Basic Aid status<br><a href="https://edsource.org/local-control-funding-formula-database/san-jose-unified.html" target="_blank">edsource.org/local-control-funding-formula-database/san-jose-unified.html</a></li>
+<li><strong>EdSource, October 2025</strong> — Property tax inequality<br><a href="https://edsource.org/2025/property-tax-driven-education-disparity/742256" target="_blank">edsource.org/2025/property-tax-driven-education-disparity/742256</a></li>
+<li><strong>EdSource, June 2023</strong> — CA ESSER spending rates<br><a href="https://edsource.org/2023/many-california-districts-yet-to-spend-federal-covid-relief-despite-deep-widespread-learning-loss/692344" target="_blank">edsource.org/2023/.../692344</a></li>
+<li><strong>FutureEd, April 2024</strong> — California ESSER analysis<br><a href="https://www.future-ed.org/california-esser-spending/" target="_blank">future-ed.org/california-esser-spending</a></li>
+<li><strong>SPUR Voter Guide, 2024</strong> — Measure R analysis<br><a href="https://www.spur.org/voter-guide/2024-11/sj-measure-r-school-bond" target="_blank">spur.org/voter-guide/2024-11/sj-measure-r-school-bond</a></li>
+<li><strong>Opportunity Now SV, Oct 2024</strong> — Candidate reactions<br><a href="https://www.opportunitynowsv.org/blog/-far-from-being-wise-san-jose-unified-board-candidates-disagree-on-measure-r" target="_blank">opportunitynowsv.org/.../measure-r</a></li>
+<li><strong>Silicon Valley Taxpayers Association</strong> — Revenue data, Measure Y<br><a href="https://www.svtaxpayers.org/2016-san-jose-unified-school-parcel-tax" target="_blank">svtaxpayers.org/2016-san-jose-unified-school-parcel-tax</a></li>
+<li><strong>PublicSchoolReview – SJUSD</strong> — Per-pupil spending, state median<br><a href="https://www.publicschoolreview.com/california/san-jose-unified-school-district/634590-school-district" target="_blank">publicschoolreview.com/.../san-jose-unified-school-district/...</a></li>
+<li><strong>Fox &amp; Hounds Daily / David Crane, 2017</strong> — Benefits analysis<br><a href="http://www.foxandhoundsdaily.com/2017/04/dissecting-san-jose-unified/" target="_blank">foxandhoundsdaily.com/2017/04/dissecting-san-jose-unified</a></li>
+<li><strong>Pandemic Oversight (PRAC)</strong> — ESSER state breakdown<br><a href="https://pandemicoversight.gov/data-interactive-tools/data-stories/states-received-1895-billion-relief-schools-heres-breakdown" target="_blank">pandemicoversight.gov/.../states-received-1895-billion...</a></li>
+<li><strong>Ballotpedia</strong> — Santa Clara County ballot measures<br><a href="https://ballotpedia.org/Santa_Clara_County,_California_ballot_measures" target="_blank">ballotpedia.org/Santa_Clara_County,_California_ballot_measures</a></li>
+</ul>
+</section>
+</main>
+
+<footer>
+<p><strong>BehindSiliconValley.com</strong> — What they don't put in the press release</p>
+<p style="margin-top:4px">All data sourced from official public records · Last updated February 7, 2026</p>
+<p style="margin-top:8px">Disclaimer: Financial figures are approximate and based on publicly reported data. For exact audited figures, consult SJUSD's official audited financial statements at <a href="https://www.sjusd.org/about/fiscal/past-audits-and-reports" target="_blank">sjusd.org/about/fiscal/past-audits-and-reports</a> and <a href="https://www.ed-data.org/district/Santa-Clara/San-Jose-Unified" target="_blank">Ed-Data.org</a>.</p>
+</footer>
+
+<script>
+function toggleAcc(id){var i=document.getElementById(id),b=i.querySelector('.aby'),n=i.querySelector('.aby-in');if(i.classList.contains('open')){b.style.maxHeight='0';i.classList.remove('open')}else{i.classList.add('open');b.style.maxHeight=n.scrollHeight+'px'}}
+var obs=new IntersectionObserver(function(e){e.forEach(function(en){if(en.isIntersecting){var bars=en.target.querySelectorAll('.bf');bars.forEach(function(bar,i){var w=bar.style.width;bar.style.width='0';setTimeout(function(){bar.style.width=w},100+i*80)});obs.unobserve(en.target)}})},{threshold:.2});
+document.querySelectorAll('.bc').forEach(function(c){obs.observe(c)});
+</script>
+<!-- STICKY BOTTOM ACTION BAR -->
+<div class="sticky-cta" id="sticky-bar">
+<span class="cta-countdown" id="sticky-countdown"></span>
+<span class="cta-text">Don't let them close your school</span>
+<a href="https://www.change.org/p/simonds-elementary-school-cornerstone-of-the-sjusd-needs-to-stay-open" target="_blank" class="btn-petition">✍️ Sign Petition (2,378+)</a>
+<a href="#" onclick="window.location.href='mailto:ccollins@sjusd.org,jmagana@sjusd.org,tcastellanos@sjusd.org,bwheatley@sjusd.org,ngribstad@sjusd.org,nalbarran@sjusd.org,schoolsoftomorrow@sjusd.org?subject='+encodeURIComponent('Demand for Financial Transparency Before School Closures — March 12 Vote')+'&body='+encodeURIComponent('Dear SJUSD Board of Education and Superintendent Albarrán,\n\nI am writing as a concerned [parent/community member/teacher] regarding the proposed closure of up to 9 elementary schools.\n\nBefore the Board votes on March 12, I urge you to conduct an independent financial audit. The district adopted a $30.3M deficit budget with $0 in reserves — below the state-required 2% minimum. How did we go from surpluses to a $30M deficit in two years?\n\nClosing schools is irreversible. Our children deserve better.\n\nSincerely,\n[Your Name]\n[Your School]');return false;" class="btn-email">📧 Email Board</a>
+<button class="btn-close" onclick="document.getElementById('sticky-bar').style.display='none'" aria-label="Close">&times;</button>
+</div>
+<script>
+// Sticky bar: show after scrolling 600px
+(function(){
+var bar=document.getElementById('sticky-bar');
+var shown=false;
+window.addEventListener('scroll',function(){
+if(window.scrollY>600&&!shown){bar.classList.add('visible');shown=true;}
+});
+// Hero countdown days
+var d=Math.floor((new Date('2026-03-12T18:00:00-08:00')-new Date())/864e5);
+var el=document.getElementById('hero-days');
+if(el)el.textContent=d>0?d:'0';
+var sc=document.getElementById('sticky-countdown');
+if(sc)sc.textContent=d>0?d+'d until vote':'VOTE DAY';
+})();
+</script>
+
+<!-- GoatCounter Analytics (privacy-friendly, no cookies) -->
+<script data-goatcounter="https://behindsiliconvalley.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
