@@ -1,22 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Follow the Money — SJUSD Financial Analysis | Behind Silicon Valley</title>
-<meta name="description" content="How San José Unified manages half a billion dollars and why they want to close your neighborhood school. $30M deficit, $0 reserves, 9 schools at risk. Board votes March 12.">
-<link rel="canonical" href="https://behindsiliconvalley.com">
+<title>Sigue el Dinero — Análisis Financiero de SJUSD | Behind Silicon Valley</title>
+<meta name="description" content="Cómo San José Unified administra medio billón de dólares y por qué quieren cerrar la escuela de tu vecindario. Déficit de $30M, $0 en reservas, 9 escuelas en riesgo. La Junta vota el 12 de marzo.">
+<link rel="canonical" href="https://behindsiliconvalley.com/es.html">
 <!-- Open Graph / Facebook / WhatsApp / iMessage -->
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://behindsiliconvalley.com">
-<meta property="og:title" content="Follow the Money — SJUSD Financial Analysis">
-<meta property="og:description" content="How San José Unified manages half a billion dollars and why they want to close your neighborhood school. $30M deficit, $0 reserves, 9 schools at risk. Board votes March 12.">
+<meta property="og:url" content="https://behindsiliconvalley.com/es.html">
+<meta property="og:title" content="Sigue el Dinero — Análisis Financiero de SJUSD">
+<meta property="og:description" content="Cómo San José Unified administra medio billón de dólares y por qué quieren cerrar la escuela de tu vecindario. Déficit de $30M, $0 en reservas, 9 escuelas en riesgo. La Junta vota el 12 de marzo.">
 <meta property="og:site_name" content="Behind Silicon Valley">
-<meta property="og:locale" content="en_US">
+<meta property="og:locale" content="es_US">
 <!-- Twitter / X Card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Follow the Money — SJUSD Financial Analysis">
-<meta name="twitter:description" content="How San José Unified manages half a billion dollars and why they want to close your neighborhood school. $30M deficit, $0 reserves, 9 schools at risk. Board votes March 12.">
+<meta name="twitter:title" content="Sigue el Dinero — Análisis Financiero de SJUSD">
+<meta name="twitter:description" content="Cómo San José Unified administra medio billón de dólares y por qué quieren cerrar la escuela de tu vecindario. Déficit de $30M, $0 en reservas, 9 escuelas en riesgo. La Junta vota el 12 de marzo.">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Source+Sans+3:wght@300;400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 <!-- Leaflet.js CSS for interactive map -->
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
@@ -226,20 +226,20 @@ footer a{color:var(--ls)}
 </head>
 <body>
 <header class="mast" style="position:relative">
-<div class="lang-toggle"><a href="index.html" class="active">EN</a> | <a href="es.html">ES</a></div>
+<div class="lang-toggle"><a href="index.html">EN</a> | <a href="es.html" class="active">ES</a></div>
 <div class="mast-tag">BehindSiliconValley.com</div>
-<h1>Follow the Money</h1>
-<p class="sub">How San José Unified School District manages half a billion dollars a year — and why they say they need to close your neighborhood school</p>
-<div class="dl">Last updated: February 7, 2026 — Sources: SJUSD Official Reports · CA Dept. of Education · Ed-Data.org · U.S. Dept. of Education</div>
+<h1>Sigue el Dinero</h1>
+<p class="sub">Cómo el Distrito Escolar Unificado de San José administra medio billón de dólares al año — y por qué dicen que necesitan cerrar la escuela de tu vecindario</p>
+<div class="dl">Última actualización: 7 de febrero de 2026 — Fuentes: Informes oficiales de SJUSD · Depto. de Educación de CA · Ed-Data.org · Depto. de Educación de EE.UU.</div>
 </header>
 <nav class="tb">
-<a href="#snapshot">At a Glance</a><a href="#revenue">Revenue</a><a href="#spending">Spending</a><a href="#enrollment">Enrollment</a><a href="#per-pupil">Per-Pupil</a><a href="#esser">ESSER &amp; Grants</a><a href="#bonds">Bonds &amp; Taxes</a><a href="#closures">School Closures</a><a href="#analysis">Analysis</a><a href="#comparison">Other Districts</a><a href="#questions">Key Questions</a><a href="#voices">Community Voices</a><a href="#action">Take Action</a><a href="#sources">Sources</a>
+<a href="#snapshot">De un Vistazo</a><a href="#revenue">Ingresos</a><a href="#spending">Gastos</a><a href="#enrollment">Matrícula</a><a href="#per-pupil">Por Alumno</a><a href="#esser">ESSER y Subvenciones</a><a href="#bonds">Bonos e Impuestos</a><a href="#closures">Cierre de Escuelas</a><a href="#analysis">Análisis</a><a href="#comparison">Otros Distritos</a><a href="#questions">Preguntas Clave</a><a href="#voices">Voces de la Comunidad</a><a href="#action">Actúa</a><a href="#sources">Fuentes</a>
 </nav>
 
 <!-- HERO CTA BANNER -->
 <div class="hero-cta">
-<span class="hero-urgency">⏰ Board vote in <span id="hero-days"></span> days</span>
-<span class="hero-msg">Up to 9 schools closing — Make your voice heard before March 12</span>
+<span class="hero-urgency">⏰ Votación de la Junta en <span id="hero-days"></span> días</span>
+<span class="hero-msg">Hasta 9 escuelas cerrando — Haz oír tu voz antes del 12 de marzo</span>
 <a href="https://www.change.org/p/simonds-elementary-school-cornerstone-of-the-sjusd-needs-to-stay-open" target="_blank">✍️ Sign Petition</a>
 <a href="#" onclick="window.location.href='mailto:ccollins@sjusd.org,jmagana@sjusd.org,tcastellanos@sjusd.org,bwheatley@sjusd.org,ngribstad@sjusd.org,nalbarran@sjusd.org,schoolsoftomorrow@sjusd.org?subject='+encodeURIComponent('Demand for Financial Transparency Before School Closures — March 12 Vote')+'&body='+encodeURIComponent('Dear SJUSD Board of Education and Superintendent Albarrán,\n\nI am writing as a concerned [parent/community member/teacher] in the San José Unified School District regarding the proposed closure of up to 9 elementary schools.\n\nBefore the Board votes on March 12, I urge you to:\n\n1. CONDUCT AN INDEPENDENT FINANCIAL AUDIT — The district adopted a $30.3 million deficit budget for 2024-25 with $0 in reserves for economic uncertainties, below the state-required 2% minimum.\n\n2. EXPLAIN THE $49 MILLION SWING — SJUSD went from surpluses of $25.7M and $18.9M to a $30M deficit in just two years. What changed?\n\n3. REVIEW ADMINISTRATIVE COSTS BEFORE CLOSING SCHOOLS — With 99.5 administrators averaging $215K in salary, has the district explored reducing administrative overhead before disrupting children\'s education?\n\n4. ADDRESS THE GRAND JURY FINDINGS — In 2024, the Santa Clara County Civil Grand Jury found serious leadership and transparency issues. The Board rejected nearly all findings.\n\n5. ACCOUNT FOR BENEFITS UNDERFUNDING — Unions have revealed $30M+ in underfunded employee benefits.\n\nClosing schools is irreversible. Our children deserve better than rushed decisions based on incomplete financial data.\n\nSincerely,\n[Your Name]\n[Your School/Neighborhood]');return false;" style="background:transparent;color:#fff;border:2px solid #fff;">📧 Email the Board</a>
 </div>
@@ -248,8 +248,8 @@ footer a{color:var(--ls)}
 
 <!-- ===== AT A GLANCE ===== -->
 <section class="sec" id="snapshot">
-<div class="sec-l">The Big Picture</div>
-<h2>The Paradox: More Money, Fewer Students, Closing Schools</h2>
+<div class="sec-l">El Panorama General</div>
+<h2>La Paradoja: Más Dinero, Menos Estudiantes, Escuelas Cerrando</h2>
 <p class="lead">San José Unified ran <strong>healthy surpluses</strong> of $25.7M (2022–23) and $18.9M (2023–24) on general fund revenues of $476M and $504M respectively. Then for 2024–25, the district projects just <strong>$462 million in revenue</strong> while budgeting <strong>$492 million in expenditures</strong> — a <strong style="color:var(--rust)">$30 million deficit budget</strong>. That's a <strong>$49 million swing in two years</strong>. Over the past decade, enrollment dropped by more than 6,000 students — a 20% decline. Despite having more money per student than ever before, the district now says it must close up to 9 elementary schools.</p>
 <div class="sg">
 <div class="sc t"><div class="sn">$462M</div><div class="sl">GF Revenue (2024–25)</div><div class="ss"><a href="https://cdeunifiedstoragewest.blob.core.windows.net/lcaps/16dd9f84-5df8-498b-9509-9d5840b9838f.pdf" target="_blank">Source: SJUSD LCAP Budget Overview (CDE)</a></div></div>
@@ -270,8 +270,8 @@ footer a{color:var(--ls)}
 
 <!-- ===== REVENUE ===== -->
 <section class="sec" id="revenue">
-<div class="sec-l">Section 1</div>
-<h2>Revenue: Where Does the Money Come From?</h2>
+<div class="sec-l">Sección 1</div>
+<h2>Ingresos: ¿De Dónde Viene el Dinero?</h2>
 <p class="dc">Before diving into the numbers, it helps to understand <em>how</em> California school districts get their money. It's not as simple as "the government pays for schools." There are multiple streams, complex formulas, and a critical distinction that makes SJUSD different from most districts in the state.</p>
 
 <!-- FUNDING FLOW DIAGRAM -->
@@ -454,8 +454,8 @@ footer a{color:var(--ls)}
 
 <!-- ===== SPENDING ===== -->
 <section class="sec" id="spending">
-<div class="sec-l">Section 2</div>
-<h2>Spending: Where Does the Money Go?</h2>
+<div class="sec-l">Sección 2</div>
+<h2>Gastos: ¿A Dónde Va el Dinero?</h2>
 <p class="dc">According to the Mercury News editorial board (March 2025), SJUSD expenditures increased from <strong>$366 million in 2019–20 to $492 million in 2023–24</strong> — a <strong style="color:var(--rust)">34% increase</strong> in just five years. During that same period, enrollment declined 13%. The number of district employees actually went <em>up</em> slightly, by 0.4%.</p>
 <div class="isrc">Source: <a href="https://www.mercurynews.com/2025/03/25/editorial-voters-reject-san-jose-unifieds-tax-measure-a/" target="_blank">Mercury News Editorial Board, "Voters should reject San Jose Unified's latest tax measure," March 25, 2025</a></div>
 
@@ -728,8 +728,8 @@ footer a{color:var(--ls)}
 
 <!-- ===== ENROLLMENT ===== -->
 <section class="sec" id="enrollment">
-<div class="sec-l">Section 3</div>
-<h2>Enrollment: The Shrinking Student Body</h2>
+<div class="sec-l">Sección 3</div>
+<h2>Matrícula: El Cuerpo Estudiantil que Se Reduce</h2>
 <p class="dc">The district's enrollment has been on a steady downward trajectory. In 2008, SJUSD served approximately 35,000 students. By 2017–18, that had dropped to about 30,500. Today (2024–25), enrollment is approximately <strong>25,409</strong> — a loss of roughly 10,000 students since 2008, or 6,000+ since 2017–18.</p>
 <div class="isrc">Sources: <a href="https://www.ed-data.org/district/Santa-Clara/San-Jose-Unified" target="_blank">Ed-Data.org – 2024–25: 25,409</a> · <a href="https://www.kron4.com/news/bay-area/declining-enrollment-could-force-sjusd-to-close-some-elementary-schools/" target="_blank">KRON4, Dec 2025 – 10,000+ since 2008</a> · <a href="https://www.sjusd.org/about/schools-of-tomorrow" target="_blank">SJUSD Schools of Tomorrow – 6,000+ since 2017–18</a></div>
 <p>The district attributes this to Silicon Valley's high cost of living pushing families out, declining birth rates, and the rise of charter schools and private school alternatives. The San Francisco Chronicle reported that SJUSD had the <strong>largest enrollment decline among the 10 biggest Bay Area school districts</strong> from 2019–20 to 2021–22: an 11% drop.</p>
@@ -759,8 +759,8 @@ footer a{color:var(--ls)}
 
 <!-- ===== PER PUPIL ===== -->
 <section class="sec" id="per-pupil">
-<div class="sec-l">Section 4</div>
-<h2>Per-Pupil Spending: More Money for Each Student</h2>
+<div class="sec-l">Sección 4</div>
+<h2>Gasto Por Alumno: Más Dinero Para Cada Estudiante</h2>
 <p class="dc">Here's where the math gets really interesting. Because revenue keeps going up while enrollment keeps going down, the <strong>amount of money available per student has skyrocketed</strong>.</p>
 <div class="bc">
 <div class="bc-t">Estimated Revenue Per Student (General Fund ÷ Enrollment)</div>
@@ -795,8 +795,8 @@ footer a{color:var(--ls)}
 
 <!-- ===== ESSER ===== -->
 <section class="sec" id="esser">
-<div class="sec-l">Section 5</div>
-<h2>Federal Relief Funds: ESSER and Other Grants</h2>
+<div class="sec-l">Sección 5</div>
+<h2>Fondos Federales de Ayuda: ESSER y Otras Subvenciones</h2>
 <p class="dc">Between 2020 and 2024, an unprecedented wave of federal money flowed into school districts across America to help them weather the COVID-19 pandemic. This money came in three rounds through the <strong>Elementary and Secondary School Emergency Relief Fund (ESSER)</strong>.</p>
 <div class="tw">
 <table>
@@ -874,8 +874,8 @@ footer a{color:var(--ls)}
 
 <!-- ===== BONDS & TAXES ===== -->
 <section class="sec" id="bonds">
-<div class="sec-l">Section 6</div>
-<h2>Bonds &amp; Parcel Taxes: What Voters Have Approved</h2>
+<div class="sec-l">Sección 6</div>
+<h2>Bonos e Impuestos: Lo Que los Votantes Han Aprobado</h2>
 <p>Over the past 25 years, SJUSD voters have approved multiple bond measures and parcel taxes. Here's a summary of the major ones:</p>
 <div class="tl">
 <div class="ti"><div class="ty">2002 — Measure F</div><div class="tt">$429 million bond for school repairs and rehabilitation. Approved by 69%+ of voters.</div><div class="ts"><a href="https://web.sjusd.org/who-we-are/district-information/" target="_blank">Source: SJUSD District Information</a></div></div>
@@ -899,8 +899,8 @@ footer a{color:var(--ls)}
 
 <!-- ===== SCHOOL CLOSURES ===== -->
 <section class="sec" id="closures">
-<div class="sec-l">Section 7</div>
-<h2>School Closures: The "Schools of Tomorrow" Plan</h2>
+<div class="sec-l">Sección 7</div>
+<h2>Cierre de Escuelas: El Plan "Escuelas del Mañana"</h2>
 <p class="dc">In September 2025, the SJUSD Board of Education launched the <strong>"Schools of Tomorrow"</strong> initiative — a process to evaluate elementary schools for possible consolidation, closure, or boundary changes. As of February 2026, the district has released three options, each proposing to close or consolidate <strong>up to 9 elementary schools</strong> before the 2026–27 school year.</p>
 <div class="isrc">Sources: <a href="https://www.sjusd.org/about/schools-of-tomorrow" target="_blank">SJUSD – Schools of Tomorrow</a> · <a href="https://www.mercurynews.com/2026/02/05/up-to-9-san-jose-unified-elementary-schools-could-close-here-are-the-options/" target="_blank">Mercury News, Feb 5, 2026</a> · <a href="https://www.kron4.com/news/bay-area/san-jose-elementary-schools-facing-consolidations-relocations-closures/" target="_blank">KRON4, Feb 2026</a></div>
 
@@ -915,33 +915,33 @@ footer a{color:var(--ls)}
 <p>Parents and community members are pushing back hard. Many note that some of the schools targeted for closure are <strong>high-performing, high-demand neighborhood schools</strong>. As one parent wrote to the board about Simonds Elementary: "Closing a school that is appropriately sized, academically strong, and program-rich directly contradicts the framework the district has outlined."</p>
 <div class="isrc">Source: <a href="https://www.mercurynews.com/2026/02/05/up-to-9-san-jose-unified-elementary-schools-could-close-here-are-the-options/" target="_blank">Mercury News – Parent Gabriela Garces quoted, Feb 5, 2026</a></div>
 
-<h3>Map: Schools at Risk of Closing</h3>
-<p>On February 3, 2026, SJUSD's STIC released three options for school consolidation. Use the tabs below to explore each option and see which schools would close and where students would be redirected.</p>
+<h3>Mapa: Escuelas en Riesgo de Cierre</h3>
+<p>El 3 de febrero de 2026, el STIC de SJUSD publicó tres opciones para la consolidación de escuelas. Use las pestañas a continuación para explorar cada opción y ver qué escuelas cerrarían y a dónde se redirigirían los estudiantes.</p>
 
 <div class="map-tabs">
-<div class="map-tab active" onclick="showMap(0)"><span class="tab-count">9+1</span>Option 1</div>
-<div class="map-tab" onclick="showMap(1)"><span class="tab-count">9</span>Option 2</div>
-<div class="map-tab" onclick="showMap(2)"><span class="tab-count">8</span>Option 3</div>
+<div class="map-tab active" onclick="showMap(0)"><span class="tab-count">9+1</span>Opción 1</div>
+<div class="map-tab" onclick="showMap(1)"><span class="tab-count">9</span>Opción 2</div>
+<div class="map-tab" onclick="showMap(2)"><span class="tab-count">8</span>Opción 3</div>
 </div>
 
 <div class="map-panel active" id="panel-0">
-<div class="map-panel-info">Closes <strong>9 schools</strong> and relocates Hammer Montessori to the Rachel Carson campus.</div>
+<div class="map-panel-info">Cierra <strong>9 escuelas</strong> y reubica Hammer Montessori al campus de Rachel Carson.</div>
 <div class="school-map" id="school-map-0"></div>
 </div>
 <div class="map-panel" id="panel-1">
-<div class="map-panel-info">Closes <strong>9 schools</strong>.</div>
+<div class="map-panel-info">Cierra <strong>9 escuelas</strong>.</div>
 <div class="school-map" id="school-map-1"></div>
 </div>
 <div class="map-panel" id="panel-2">
-<div class="map-panel-info">Closes <strong>8 schools</strong>.</div>
+<div class="map-panel-info">Cierra <strong>8 escuelas</strong>.</div>
 <div class="school-map" id="school-map-2"></div>
 </div>
 
 <div class="map-legend">
-<span><span class="dot" style="background:#c0392b"></span> School closing</span>
-<span><span class="dot" style="background:#2980b9"></span> School relocating</span>
+<span><span class="dot" style="background:#c0392b"></span> Escuela cerrando</span>
+<span><span class="dot" style="background:#2980b9"></span> Escuela reubicándose</span>
 </div>
-<div class="isrc">Source: SJUSD STIC Options released February 3, 2026</div>
+<div class="isrc">Fuente: Opciones del STIC de SJUSD publicadas el 3 de febrero de 2026</div>
 
 <div class="co a">
 <div class="co-h">The Central Question</div>
@@ -959,8 +959,8 @@ footer a{color:var(--ls)}
 
 <!-- ===== ANALYSIS: DO CLOSURES MAKE SENSE? ===== -->
 <section class="sec" id="analysis">
-<div class="sec-l">Section 8</div>
-<h2>Analysis: Do the Closures Make Financial Sense — or Reveal Mismanagement?</h2>
+<div class="sec-l">Sección 8</div>
+<h2>Análisis: ¿Los Cierres Tienen Sentido Financiero — o Revelan Mala Administración?</h2>
 
 <p class="dc">The district frames school closures as an inevitable response to declining enrollment. But when you examine the financial evidence, a different picture emerges — one that suggests the real problem isn't too few students, but how the district manages its growing resources.</p>
 
@@ -1043,8 +1043,8 @@ footer a{color:var(--ls)}
 <!-- ===== WHO TO CONTACT ===== -->
 <!-- ===== COMPARISON: OTHER DISTRICTS ===== -->
 <section class="sec" id="comparison">
-<div class="sec-l">Section 10</div>
-<h2>How Neighboring Districts Compare</h2>
+<div class="sec-l">Sección 10</div>
+<h2>Cómo se Comparan los Distritos Vecinos</h2>
 
 <p class="dc">SJUSD isn't the only district in Santa Clara County dealing with enrollment decline. But its response — and its financial trajectory — stand out. Let's look at how nearby districts are handling similar challenges.</p>
 
@@ -1079,8 +1079,8 @@ footer a{color:var(--ls)}
 
 <!-- ===== KEY QUESTIONS ===== -->
 <section class="sec" id="questions">
-<div class="sec-l">Section 11</div>
-<h2>Questions That Deserve Answers</h2>
+<div class="sec-l">Sección 11</div>
+<h2>Preguntas Que Merecen Respuestas</h2>
 <p>Based on the publicly available data, here are the questions the community should be asking SJUSD leadership:</p>
 
 <div class="co q" style="margin-bottom:12px">
@@ -1119,54 +1119,54 @@ footer a{color:var(--ls)}
 
 <!-- ===== COMMUNITY VOICES ===== -->
 <section class="sec" id="voices">
-<div class="sec-l">Community Voices</div>
-<h2>What Parents, Teachers &amp; Neighbors Are Saying</h2>
-<p class="lead">These are the people whose lives will change if schools close. Their stories matter more than any spreadsheet.</p>
+<div class="sec-l">Voces de la Comunidad</div>
+<h2>Lo Que Dicen los Padres, Maestros y Vecinos</h2>
+<p class="lead">Estas son las personas cuyas vidas cambiarán si cierran las escuelas. Sus historias importan más que cualquier hoja de cálculo.</p>
 
 <div class="voices-grid">
 <div class="voice-card">
-<div class="voice-quote">My daughter walks to Simonds every morning. It's not just a school — it's the heart of our neighborhood. When you close a school, you don't just move kids to another building. You break apart friendships, upend routines, and tell a community it doesn't matter. We chose this neighborhood because of this school.</div>
-<div class="voice-attr"><strong>Gabriela M.</strong> — Parent, Simonds Elementary<br>February 2026</div>
+<div class="voice-quote">Mi hija camina a Simonds cada mañana. No es solo una escuela — es el corazón de nuestro vecindario. Cuando cierras una escuela, no solo mueves niños a otro edificio. Rompes amistades, destruyes rutinas y le dices a una comunidad que no importa. Elegimos este vecindario por esta escuela.</div>
+<div class="voice-attr"><strong>Gabriela M.</strong> — Madre, Simonds Elementary<br>Febrero 2026</div>
 </div>
 
 <div class="voice-card">
-<div class="voice-quote">I've taught in SJUSD for 14 years. Every year they ask us to do more with less, and every year the district office grows. Now they want to close schools while administrators making $200K+ keep their jobs? We have 99 administrators for 25,000 students. Maybe start cutting there before you disrupt children's lives.</div>
-<div class="voice-attr"><strong>Anonymous Teacher</strong> — SJUSD Elementary School<br>January 2026</div>
+<div class="voice-quote">He enseñado en SJUSD durante 14 años. Cada año nos piden hacer más con menos, y cada año la oficina del distrito crece. ¿Ahora quieren cerrar escuelas mientras los administradores que ganan $200K+ mantienen sus trabajos? Tenemos 99 administradores para 25,000 estudiantes. Tal vez empiecen a recortar ahí antes de interrumpir la vida de los niños.</div>
+<div class="voice-attr"><strong>Maestro/a Anónimo/a</strong> — Escuela Primaria de SJUSD<br>Enero 2026</div>
 </div>
 
 <div class="voice-card">
-<div class="voice-quote">I've lived in this neighborhood for 37 years. My kids went to Gardner, and now my grandkids go there. When they closed schools in East San José in the '80s, those neighborhoods never recovered. Property values dropped, businesses left, and the community fabric unraveled. Don't make the same mistake again.</div>
-<div class="voice-attr"><strong>Robert T.</strong> — Longtime Resident, Gardner neighborhood<br>February 2026</div>
+<div class="voice-quote">He vivido en este vecindario por 37 años. Mis hijos fueron a Gardner, y ahora mis nietos van ahí. Cuando cerraron escuelas en el este de San José en los años 80, esos vecindarios nunca se recuperaron. Los valores de las propiedades cayeron, los negocios se fueron y el tejido comunitario se deshizo. No cometan el mismo error otra vez.</div>
+<div class="voice-attr"><strong>Robert T.</strong> — Residente de toda la vida, vecindario de Gardner<br>Febrero 2026</div>
 </div>
 
 <div class="voice-card">
-<div class="voice-quote">The district says small schools can't sustain programs. But Simonds has a thriving garden program, strong test scores, and a waitlist. We're not a failing school — we're a model school. Closing us makes zero sense unless the real goal is selling the property.</div>
-<div class="voice-attr"><strong>Jennifer L.</strong> — Parent, Simonds Elementary<br>February 2026</div>
+<div class="voice-quote">El distrito dice que las escuelas pequeñas no pueden sostener programas. Pero Simonds tiene un próspero programa de jardín, puntajes fuertes en exámenes y lista de espera. No somos una escuela fallida — somos una escuela modelo. Cerrarnos no tiene sentido a menos que el verdadero objetivo sea vender la propiedad.</div>
+<div class="voice-attr"><strong>Jennifer L.</strong> — Madre, Simonds Elementary<br>Febrero 2026</div>
 </div>
 
 <div class="voice-card">
-<div class="voice-quote">As a single mom working two jobs, the fact that my son can walk to school is everything. If they close Washington, the nearest school is 2.5 miles away. They say they'll provide buses — for how long? One year? Two? What happens after the transition funding runs out?</div>
-<div class="voice-attr"><strong>Anonymous Parent</strong> — Washington Elementary<br>February 2026</div>
+<div class="voice-quote">Como madre soltera con dos trabajos, el hecho de que mi hijo pueda caminar a la escuela lo es todo. Si cierran Washington, la escuela más cercana está a 2.5 millas. Dicen que proporcionarán autobuses — ¿por cuánto tiempo? ¿Un año? ¿Dos? ¿Qué pasa cuando se acabe el financiamiento de transición?</div>
+<div class="voice-attr"><strong>Padre/Madre Anónimo/a</strong> — Washington Elementary<br>Febrero 2026</div>
 </div>
 </div>
 
 <div style="text-align:center;margin-top:24px">
-<p style="font-size:15px;color:var(--slate);margin-bottom:12px"><strong>Your story matters.</strong> Share what these closures mean for your family.</p>
-<a href="mailto:behindsiliconvalley@proton.me?subject=My%20Story%20%E2%80%94%20%5BSchool%20Name%5D&body=Tell%20us%20how%20the%20proposed%20school%20closures%20affect%20your%20family%20and%20community.%20We%20may%20share%20your%20story%20(with%20your%20permission)%20to%20help%20others%20understand%20the%20human%20impact.%0A%0AYour%20name%20(or%20%22Anonymous%22)%3A%0AYour%20school%3A%0AYour%20story%3A" style="display:inline-block;background:var(--rust);color:#fff;padding:14px 30px;border-radius:8px;font-weight:700;text-decoration:none;font-size:15px;transition:background .2s">Share Your Story</a>
-<p style="font-size:12px;color:var(--ls);margin-top:8px">Stories may be published with your permission. Email: behindsiliconvalley@proton.me</p>
+<p style="font-size:15px;color:var(--slate);margin-bottom:12px"><strong>Tu historia importa.</strong> Comparte lo que estos cierres significan para tu familia.</p>
+<a href="mailto:behindsiliconvalley@proton.me?subject=My%20Story%20%E2%80%94%20%5BSchool%20Name%5D&body=Tell%20us%20how%20the%20proposed%20school%20closures%20affect%20your%20family%20and%20community.%20We%20may%20share%20your%20story%20(with%20your%20permission)%20to%20help%20others%20understand%20the%20human%20impact.%0A%0AYour%20name%20(or%20%22Anonymous%22)%3A%0AYour%20school%3A%0AYour%20story%3A" style="display:inline-block;background:var(--rust);color:#fff;padding:14px 30px;border-radius:8px;font-weight:700;text-decoration:none;font-size:15px;transition:background .2s">Comparte Tu Historia</a>
+<p style="font-size:12px;color:var(--ls);margin-top:8px">Las historias pueden ser publicadas con tu permiso. Email: behindsiliconvalley@proton.me</p>
 </div>
 </section>
 
 <!-- ===== DATA METHODOLOGY ===== -->
 
 <section class="sec" id="action">
-<div class="sec-l">Section 9</div>
-<h2>Take Action: Your Voice Matters</h2>
+<div class="sec-l">Sección 9</div>
+<h2>Actúa: Tu Voz Importa</h2>
 
 <!-- COUNTDOWN TIMER -->
 <div style="background:linear-gradient(135deg,#b71c1c,#d32f2f);color:#fff;border-radius:12px;padding:30px;text-align:center;margin-bottom:30px;box-shadow:0 4px 20px rgba(183,28,28,0.3);">
-<div style="font-size:0.85em;text-transform:uppercase;letter-spacing:3px;margin-bottom:8px;opacity:0.9;">Board Vote On School Closures</div>
-<div style="font-size:2.4em;font-weight:800;margin-bottom:5px;">March 12, 2026</div>
+<div style="font-size:0.85em;text-transform:uppercase;letter-spacing:3px;margin-bottom:8px;opacity:0.9;">Votación de la Junta sobre el Cierre de Escuelas</div>
+<div style="font-size:2.4em;font-weight:800;margin-bottom:5px;">12 de Marzo, 2026</div>
 <div id="countdown-timer" style="font-size:1.6em;font-weight:700;margin-top:10px;"></div>
 <div style="font-size:0.8em;opacity:0.8;margin-top:8px;">855 Lenzen Ave, San José · 6:00 PM · Public comment permitted</div>
 </div>
@@ -1177,7 +1177,7 @@ function updateCountdown(){var e=new Date("2026-03-12T18:00:00-08:00")-new Date(
 <!-- SIGN THE PETITION -->
 <!-- UPDATE PETITION COUNT HERE — Change the number below and the petition-fill width percentage (count/5000*100) -->
 <div style="background:#fff;border:3px solid #1565c0;border-radius:12px;padding:30px;text-align:center;margin-bottom:25px;">
-<div style="font-size:1.8em;font-weight:800;color:#1565c0;margin-bottom:10px;">✍️ Sign the Petition</div>
+<div style="font-size:1.8em;font-weight:800;color:#1565c0;margin-bottom:10px;">✍️ Firma la Petición</div>
 <div class="petition-counter">
 <div class="petition-number" id="petition-count">2,378+</div>
 <div class="petition-goal">signatures — goal: 5,000</div>
@@ -1186,16 +1186,16 @@ function updateCountdown(){var e=new Date("2026-03-12T18:00:00-08:00")-new Date(
 <div class="petition-bar-label">2,378 / 5,000</div>
 </div>
 </div>
-<div style="font-size:1.1em;color:#333;margin-bottom:5px;">Save Simonds Elementary &amp; Stop the Closures</div>
+<div style="font-size:1.1em;color:#333;margin-bottom:5px;">Salva Simonds Elementary y Detén los Cierres</div>
 <div style="font-size:0.9em;color:#666;margin-bottom:20px;">Targeted at: SJUSD Board of Education, San José City Council &amp; Mayor Matt Mahan</div>
 <a href="https://www.change.org/p/simonds-elementary-school-cornerstone-of-the-sjusd-needs-to-stay-open" target="_blank" style="display:inline-block;background:#1565c0;color:#fff;padding:16px 40px;border-radius:8px;font-size:1.2em;font-weight:700;text-decoration:none;letter-spacing:0.5px;transition:background 0.2s;">SIGN NOW ON CHANGE.ORG →</a>
-<div style="font-size:0.8em;color:#888;margin-top:12px;">Every signature counts. Share with other SJUSD parents.</div>
+<div style="font-size:0.8em;color:#888;margin-top:12px;">Cada firma cuenta. Comparte con otros padres de SJUSD.</div>
 </div>
 
 <!-- EMAIL THE BOARD -->
 <div style="background:#f1f8e9;border:2px solid #558b2f;border-radius:12px;padding:30px;text-align:center;margin-bottom:25px;">
-<div style="font-size:1.5em;font-weight:800;color:#33691e;margin-bottom:10px;">📧 Email the Board Directly</div>
-<p style="color:#333;margin-bottom:15px;">One click opens a pre-written email to all five SJUSD Board members, the Superintendent, and the Schools of Tomorrow committee. Edit it and make it your own.</p>
+<div style="font-size:1.5em;font-weight:800;color:#33691e;margin-bottom:10px;">📧 Escribe a la Junta Directamente</div>
+<p style="color:#333;margin-bottom:15px;">Un clic abre un email pre-escrito a los cinco miembros de la Junta de SJUSD, la Superintendente y el comité de Escuelas del Mañana. Edítalo y hazlo tuyo.</p>
 <a id="email-board-btn" href="#" onclick="return false;" style="display:inline-block;background:#558b2f;color:#fff;padding:14px 35px;border-radius:8px;font-size:1.1em;font-weight:700;text-decoration:none;transition:background 0.2s;cursor:pointer;">OPEN EMAIL TO BOARD →</a>
 <div style="margin-top:15px;text-align:left;font-size:0.85em;color:#555;">
 <strong>Recipients:</strong> Board President Carla Collins, VP José Magaña, Teresa Castellanos, Brian Wheatley, Nicole Gribstad, Superintendent Nancy Albarrán, Schools of Tomorrow Committee
@@ -1212,16 +1212,16 @@ window.location.href='mailto:'+to+'?subject='+subject+'&body='+body;
 
 <!-- SCHOOLS OF TOMORROW EMAIL -->
 <div style="background:#fff3e0;border:2px solid #e65100;border-radius:12px;padding:25px;text-align:center;margin-bottom:25px;">
-<div style="font-size:1.3em;font-weight:700;color:#bf360c;margin-bottom:8px;">💬 Submit Public Comment to Schools of Tomorrow</div>
-<p style="color:#333;margin-bottom:12px;">The committee accepting community input before their recommendation to the Board:</p>
+<div style="font-size:1.3em;font-weight:700;color:#bf360c;margin-bottom:8px;">💬 Envía Comentario Público a Escuelas del Mañana</div>
+<p style="color:#333;margin-bottom:12px;">El comité acepta comentarios de la comunidad antes de su recomendación a la Junta:</p>
 <a href="mailto:schoolsoftomorrow@sjusd.org?subject=Public%20Comment%20on%20School%20Closures&body=Dear%20Schools%20of%20Tomorrow%20Implementation%20Committee%2C%0A%0AI%20am%20writing%20to%20share%20my%20concerns%20about%20the%20proposed%20elementary%20school%20closures.%0A%0A[Your%20comments%20here]%0A%0ASincerely%2C%0A[Your%20Name]%0A[Your%20School]" style="display:inline-block;background:#e65100;color:#fff;padding:12px 30px;border-radius:8px;font-size:1em;font-weight:700;text-decoration:none;">EMAIL SCHOOLSOFTOMORROW@SJUSD.ORG →</a>
 <div style="font-size:0.8em;color:#888;margin-top:10px;">Next STIC meeting: Tuesdays 6-8 PM at 855 Lenzen Ave, Room 150</div>
 </div>
 
 <!-- SHARE THE DATA -->
 <div style="background:#e8eaf6;border:2px solid #283593;border-radius:12px;padding:25px;text-align:center;margin-bottom:30px;">
-<div style="font-size:1.3em;font-weight:700;color:#1a237e;margin-bottom:8px;">📢 Share This Investigation</div>
-<p style="color:#333;margin-bottom:15px;">The more people who see the financial data, the harder it is for the district to ignore. Share with every SJUSD parent you know.</p>
+<div style="font-size:1.3em;font-weight:700;color:#1a237e;margin-bottom:8px;">📢 Comparte Esta Investigación</div>
+<p style="color:#333;margin-bottom:15px;">Cuantas más personas vean los datos financieros, más difícil será para el distrito ignorarlos. Comparte con todos los padres de SJUSD que conozcas.</p>
 <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;">
 <a href="https://www.facebook.com/sharer/sharer.php?u=https://behindsiliconvalley.com" target="_blank" style="display:inline-block;background:#1877f2;color:#fff;padding:10px 20px;border-radius:6px;font-weight:600;text-decoration:none;font-size:0.95em;">Facebook</a>
 <a href="https://twitter.com/intent/tweet?text=How%20SJUSD%20manages%20half%20a%20billion%20dollars%20and%20why%20they%20want%20to%20close%20your%20school.%20Follow%20the%20money%3A&url=https://behindsiliconvalley.com" target="_blank" style="display:inline-block;background:#000;color:#fff;padding:10px 20px;border-radius:6px;font-weight:600;text-decoration:none;font-size:0.95em;">X / Twitter</a>
@@ -1232,18 +1232,18 @@ window.location.href='mailto:'+to+'?subject='+subject+'&body='+body;
 
 <!-- NEWSLETTER SIGNUP -->
 <div class="newsletter-box">
-<h3>Stay Informed — Get Updates Before the March 12 Vote</h3>
-<p>We'll send important updates about the school closure process, board meetings, and ways to take action. No spam, ever.</p>
+<h3>Mantente Informado — Recibe Actualizaciones Antes de la Votación del 12 de Marzo</h3>
+<p>Te enviaremos actualizaciones importantes sobre el proceso de cierre de escuelas, reuniones de la junta y formas de actuar. Sin spam, nunca.</p>
 <div class="newsletter-form">
 <input type="email" id="newsletter-email" placeholder="your@email.com" aria-label="Email address">
 <button onclick="var e=document.getElementById('newsletter-email').value;if(e&&e.includes('@')){window.location.href='mailto:behindsiliconvalley@proton.me?subject='+encodeURIComponent('Subscribe to Updates')+'&body='+encodeURIComponent('Please add me to your email updates list.\n\nEmail: '+e+'\n\nI want to stay informed about:\n- Board meeting dates and outcomes\n- School closure updates\n- Ways to take action\n\nThank you!');}else{alert('Please enter a valid email address.');}">Subscribe</button>
 </div>
-<p style="font-size:11px;opacity:.6;margin-top:12px;margin-bottom:0">We'll upgrade to a proper newsletter service soon. For now, this sends an email to our team to add you manually.</p>
+<p style="font-size:11px;opacity:.6;margin-top:12px;margin-bottom:0">Pronto actualizaremos a un servicio de boletín informativo. Por ahora, esto envía un email a nuestro equipo para agregarte manualmente.</p>
 </div>
 
 <!-- KNOW YOUR BOARD — VOTING RECORD TRACKER -->
-<h3 style="margin-top:40px">Know Your Board: Voting Record Tracker</h3>
-<p>The five elected board members will vote on school closures March 12. Here is their <strong>public voting record</strong> on key financial accountability issues.</p>
+<h3 style="margin-top:40px">Conoce a Tu Junta: Registro de Votaciones</h3>
+<p>Los cinco miembros electos de la junta votarán sobre el cierre de escuelas el 12 de marzo. Aquí está su <strong>registro público de votaciones</strong> sobre temas clave de responsabilidad financiera.</p>
 
 <div class="board-grid">
 <div class="board-member" id="bm-collins">
@@ -1251,9 +1251,9 @@ window.location.href='mailto:'+to+'?subject='+subject+'&body='+body;
 <div><span class="board-name">Carla Collins</span> <span class="board-area">President · Area 3</span></div>
 </div>
 <div class="board-votes">
-<div class="vote-row"><span class="vote-icon against">&#10007;</span><span class="vote-date">Jul 2024</span><span>Voted to <strong>reject</strong> Grand Jury "District Adrift" findings</span></div>
-<div class="vote-row"><span class="vote-icon against">&#10007;</span><span class="vote-date">2024-25</span><span>Voted to <strong>approve</strong> $30.3M deficit budget with $0 reserves</span></div>
-<div class="vote-row"><span class="vote-icon pending">?</span><span class="vote-date">Mar 2026</span><span>School closure vote — <strong>PENDING</strong></span></div>
+<div class="vote-row"><span class="vote-icon against">&#10007;</span><span class="vote-date">Jul 2024</span><span>Votó para <strong>rechazar</strong> los hallazgos del Gran Jurado "Distrito a la Deriva"</span></div>
+<div class="vote-row"><span class="vote-icon against">&#10007;</span><span class="vote-date">2024-25</span><span>Votó para <strong>aprobar</strong> presupuesto con déficit de $30.3M y $0 en reservas</span></div>
+<div class="vote-row"><span class="vote-icon pending">?</span><span class="vote-date">Mar 2026</span><span>Votación sobre cierre de escuelas — <strong>PENDIENTE</strong></span></div>
 </div>
 </div>
 
@@ -1262,9 +1262,9 @@ window.location.href='mailto:'+to+'?subject='+subject+'&body='+body;
 <div><span class="board-name">José Magaña</span> <span class="board-area">Vice President · Area 2</span></div>
 </div>
 <div class="board-votes">
-<div class="vote-row"><span class="vote-icon against">&#10007;</span><span class="vote-date">Jul 2024</span><span>Voted to <strong>reject</strong> Grand Jury "District Adrift" findings</span></div>
-<div class="vote-row"><span class="vote-icon against">&#10007;</span><span class="vote-date">2024-25</span><span>Voted to <strong>approve</strong> $30.3M deficit budget with $0 reserves</span></div>
-<div class="vote-row"><span class="vote-icon pending">?</span><span class="vote-date">Mar 2026</span><span>School closure vote — <strong>PENDING</strong></span></div>
+<div class="vote-row"><span class="vote-icon against">&#10007;</span><span class="vote-date">Jul 2024</span><span>Votó para <strong>rechazar</strong> los hallazgos del Gran Jurado "Distrito a la Deriva"</span></div>
+<div class="vote-row"><span class="vote-icon against">&#10007;</span><span class="vote-date">2024-25</span><span>Votó para <strong>aprobar</strong> presupuesto con déficit de $30.3M y $0 en reservas</span></div>
+<div class="vote-row"><span class="vote-icon pending">?</span><span class="vote-date">Mar 2026</span><span>Votación sobre cierre de escuelas — <strong>PENDIENTE</strong></span></div>
 </div>
 </div>
 
@@ -1273,9 +1273,9 @@ window.location.href='mailto:'+to+'?subject='+subject+'&body='+body;
 <div><span class="board-name">Teresa Castellanos</span> <span class="board-area">Area 1</span></div>
 </div>
 <div class="board-votes">
-<div class="vote-row"><span class="vote-icon against">&#10007;</span><span class="vote-date">Jul 2024</span><span>Voted to <strong>reject</strong> Grand Jury "District Adrift" findings</span></div>
-<div class="vote-row"><span class="vote-icon against">&#10007;</span><span class="vote-date">2024-25</span><span>Voted to <strong>approve</strong> $30.3M deficit budget with $0 reserves</span></div>
-<div class="vote-row"><span class="vote-icon pending">?</span><span class="vote-date">Mar 2026</span><span>School closure vote — <strong>PENDING</strong></span></div>
+<div class="vote-row"><span class="vote-icon against">&#10007;</span><span class="vote-date">Jul 2024</span><span>Votó para <strong>rechazar</strong> los hallazgos del Gran Jurado "Distrito a la Deriva"</span></div>
+<div class="vote-row"><span class="vote-icon against">&#10007;</span><span class="vote-date">2024-25</span><span>Votó para <strong>aprobar</strong> presupuesto con déficit de $30.3M y $0 en reservas</span></div>
+<div class="vote-row"><span class="vote-icon pending">?</span><span class="vote-date">Mar 2026</span><span>Votación sobre cierre de escuelas — <strong>PENDIENTE</strong></span></div>
 </div>
 </div>
 
@@ -1284,9 +1284,9 @@ window.location.href='mailto:'+to+'?subject='+subject+'&body='+body;
 <div><span class="board-name">Brian Wheatley</span> <span class="board-area">Area 4</span></div>
 </div>
 <div class="board-votes">
-<div class="vote-row"><span class="vote-icon against">&#10007;</span><span class="vote-date">Jul 2024</span><span>Voted to <strong>reject</strong> Grand Jury "District Adrift" findings</span></div>
-<div class="vote-row"><span class="vote-icon against">&#10007;</span><span class="vote-date">2024-25</span><span>Voted to <strong>approve</strong> $30.3M deficit budget with $0 reserves</span></div>
-<div class="vote-row"><span class="vote-icon pending">?</span><span class="vote-date">Mar 2026</span><span>School closure vote — <strong>PENDING</strong></span></div>
+<div class="vote-row"><span class="vote-icon against">&#10007;</span><span class="vote-date">Jul 2024</span><span>Votó para <strong>rechazar</strong> los hallazgos del Gran Jurado "Distrito a la Deriva"</span></div>
+<div class="vote-row"><span class="vote-icon against">&#10007;</span><span class="vote-date">2024-25</span><span>Votó para <strong>aprobar</strong> presupuesto con déficit de $30.3M y $0 en reservas</span></div>
+<div class="vote-row"><span class="vote-icon pending">?</span><span class="vote-date">Mar 2026</span><span>Votación sobre cierre de escuelas — <strong>PENDIENTE</strong></span></div>
 </div>
 </div>
 
@@ -1295,9 +1295,9 @@ window.location.href='mailto:'+to+'?subject='+subject+'&body='+body;
 <div><span class="board-name">Nicole Gribstad</span> <span class="board-area">Area 5</span></div>
 </div>
 <div class="board-votes">
-<div class="vote-row"><span class="vote-icon against">&#10007;</span><span class="vote-date">Jul 2024</span><span>Voted to <strong>reject</strong> Grand Jury "District Adrift" findings</span></div>
-<div class="vote-row"><span class="vote-icon against">&#10007;</span><span class="vote-date">2024-25</span><span>Voted to <strong>approve</strong> $30.3M deficit budget with $0 reserves</span></div>
-<div class="vote-row"><span class="vote-icon pending">?</span><span class="vote-date">Mar 2026</span><span>School closure vote — <strong>PENDING</strong></span></div>
+<div class="vote-row"><span class="vote-icon against">&#10007;</span><span class="vote-date">Jul 2024</span><span>Votó para <strong>rechazar</strong> los hallazgos del Gran Jurado "Distrito a la Deriva"</span></div>
+<div class="vote-row"><span class="vote-icon against">&#10007;</span><span class="vote-date">2024-25</span><span>Votó para <strong>aprobar</strong> presupuesto con déficit de $30.3M y $0 en reservas</span></div>
+<div class="vote-row"><span class="vote-icon pending">?</span><span class="vote-date">Mar 2026</span><span>Votación sobre cierre de escuelas — <strong>PENDIENTE</strong></span></div>
 </div>
 </div>
 </div>
@@ -1351,7 +1351,7 @@ The County Office of Education has oversight responsibilities and can conduct re
 Can request investigations and apply political pressure. Find your supervisor at: <a href="https://www.sccgov.org/sites/bos/" target="_blank">sccgov.org/sites/bos</a></p>
 
 <div class="co i">
-<div class="co-h">How to Make Your Voice Heard</div>
+<div class="co-h">Cómo Hacer Oír Tu Voz</div>
 <p><strong>1. Sign the petition</strong> — <a href="https://www.change.org/p/simonds-elementary-school-cornerstone-of-the-sjusd-needs-to-stay-open" target="_blank" style="color:#1565c0;font-weight:600;">Join 2,378+ people who have already signed →</a></p>
 <p><strong>2. Email the Board</strong> — Use the one-click email button above. Personalize it with your family's story.</p>
 <p><strong>3. Attend the March 12 Board meeting</strong> — 855 Lenzen Ave, 6:00 PM. Submit a "Request to Speak" card. Bring neighbors.</p>
@@ -1370,8 +1370,8 @@ Can request investigations and apply political pressure. Find your supervisor at
 </div>
 </section>
 <section class="sec" id="methodology">
-<div class="sec-l">Data Methodology</div>
-<h2>A Note on Data Sources and Accuracy</h2>
+<div class="sec-l">Metodología de Datos</div>
+<h2>Nota Sobre Fuentes de Datos y Precisión</h2>
 
 <div class="co a">
 <div class="co-h">Important: Read This Before Citing Any Figures</div>
@@ -1468,8 +1468,8 @@ Can request investigations and apply political pressure. Find your supervisor at
 
 <!-- ===== FULL SOURCE INDEX ===== -->
 <section class="sources sec" id="sources">
-<div class="sec-l">Complete Source Index</div>
-<h2>Where This Data Comes From</h2>
+<div class="sec-l">Índice Completo de Fuentes</div>
+<h2>De Dónde Provienen Estos Datos</h2>
 <p style="font-size:14px;color:var(--ls);margin-bottom:20px">This analysis is based entirely on publicly available official data. All figures are approximate and drawn from the following sources. Community members are encouraged to verify independently.</p>
 <ul>
 <li><strong>SJUSD Fiscal Services</strong> — Budget documents and financial reports<br><a href="https://www.sjusd.org/about/fiscal" target="_blank">sjusd.org/about/fiscal</a></li>
@@ -1517,8 +1517,8 @@ Can request investigations and apply political pressure. Find your supervisor at
 </main>
 
 <footer>
-<p><strong>BehindSiliconValley.com</strong> — What they don't put in the press release</p>
-<p style="margin-top:4px">All data sourced from official public records · Last updated February 7, 2026</p>
+<p><strong>BehindSiliconValley.com</strong> — Lo que no ponen en el comunicado de prensa</p>
+<p style="margin-top:4px">Todos los datos provienen de registros públicos oficiales · Última actualización: 7 de febrero de 2026</p>
 <p style="margin-top:8px">Disclaimer: Financial figures are approximate and based on publicly reported data. For exact audited figures, consult SJUSD's official audited financial statements at <a href="https://www.sjusd.org/about/fiscal/past-audits-and-reports" target="_blank">sjusd.org/about/fiscal/past-audits-and-reports</a> and <a href="https://www.ed-data.org/district/Santa-Clara/San-Jose-Unified" target="_blank">Ed-Data.org</a>.</p>
 </footer>
 
@@ -1530,7 +1530,7 @@ document.querySelectorAll('.bc').forEach(function(c){obs.observe(c)});
 <!-- STICKY BOTTOM ACTION BAR -->
 <div class="sticky-cta" id="sticky-bar">
 <span class="cta-countdown" id="sticky-countdown"></span>
-<span class="cta-text">Don't let them close your school</span>
+<span class="cta-text">No dejes que cierren tu escuela</span>
 <a href="https://www.change.org/p/simonds-elementary-school-cornerstone-of-the-sjusd-needs-to-stay-open" target="_blank" class="btn-petition">✍️ Sign Petition (2,378+)</a>
 <a href="#" onclick="window.location.href='mailto:ccollins@sjusd.org,jmagana@sjusd.org,tcastellanos@sjusd.org,bwheatley@sjusd.org,ngribstad@sjusd.org,nalbarran@sjusd.org,schoolsoftomorrow@sjusd.org?subject='+encodeURIComponent('Demand for Financial Transparency Before School Closures — March 12 Vote')+'&body='+encodeURIComponent('Dear SJUSD Board of Education and Superintendent Albarrán,\n\nI am writing as a concerned [parent/community member/teacher] regarding the proposed closure of up to 9 elementary schools.\n\nBefore the Board votes on March 12, I urge you to conduct an independent financial audit. The district adopted a $30.3M deficit budget with $0 in reserves — below the state-required 2% minimum. How did we go from surpluses to a $30M deficit in two years?\n\nClosing schools is irreversible. Our children deserve better.\n\nSincerely,\n[Your Name]\n[Your School]');return false;" class="btn-email">📧 Email Board</a>
 <button class="btn-close" onclick="document.getElementById('sticky-bar').style.display='none'" aria-label="Close">&times;</button>
@@ -1563,11 +1563,11 @@ var options=[
 {name:'Selma Olinder',lat:37.337688,lng:-121.866180,dest:'Horace Mann',type:'close'},
 {name:'Lowell',lat:37.329536,lng:-121.877426,dest:'Horace Mann / Galarza',type:'close'},
 {name:'Gardner',lat:37.321323,lng:-121.895805,dest:'Galarza',type:'close'},
-{name:'Canoas',lat:37.284065,lng:-121.876045,dest:'Schallenberger & others',type:'close'},
+{name:'Canoas',lat:37.284065,lng:-121.876045,dest:'Schallenberger y otros',type:'close'},
 {name:'Rachel Carson',lat:37.269936,lng:-121.855194,dest:'Reed / Terrell',type:'close'},
-{name:'Almaden',lat:37.251404,lng:-121.885483,dest:'Allen at Steinbeck & others',type:'close'},
-{name:'Simonds',lat:37.220032,lng:-121.869720,dest:'Williams & others',type:'close'},
-{name:'Hammer Montessori',lat:37.303242,lng:-121.885010,dest:'Moves to Rachel Carson campus',type:'move'}
+{name:'Almaden',lat:37.251404,lng:-121.885483,dest:'Allen at Steinbeck y otros',type:'close'},
+{name:'Simonds',lat:37.220032,lng:-121.869720,dest:'Williams y otros',type:'close'},
+{name:'Hammer Montessori',lat:37.303242,lng:-121.885010,dest:'Se muda al campus de Rachel Carson',type:'move'}
 ]},
 {schools:[
 {name:'Bachrodt',lat:37.363098,lng:-121.912796,dest:'Grant',type:'close'},
@@ -1575,7 +1575,7 @@ var options=[
 {name:'Selma Olinder',lat:37.337688,lng:-121.866180,dest:'Horace Mann',type:'close'},
 {name:'Lowell',lat:37.329536,lng:-121.877426,dest:'Horace Mann / Galarza',type:'close'},
 {name:'Gardner',lat:37.321323,lng:-121.895805,dest:'Washington',type:'close'},
-{name:'Terrell',lat:37.271091,lng:-121.869560,dest:'Galarza & others',type:'close'},
+{name:'Terrell',lat:37.271091,lng:-121.869560,dest:'Galarza y otros',type:'close'},
 {name:'Rachel Carson',lat:37.269936,lng:-121.855194,dest:'Almaden / Allen at Steinbeck',type:'close'},
 {name:'Reed',lat:37.263626,lng:-121.894325,dest:'Canoas / Schallenberger',type:'close'},
 {name:'Williams',lat:37.207478,lng:-121.851593,dest:'Simonds',type:'close'}
@@ -1584,7 +1584,7 @@ var options=[
 {name:'Empire Gardens',lat:37.354710,lng:-121.875610,dest:'Anne Darling',type:'close'},
 {name:'Grant',lat:37.350670,lng:-121.887695,dest:'Horace Mann',type:'close'},
 {name:'Gardner',lat:37.321323,lng:-121.895805,dest:'Washington',type:'close'},
-{name:'Ernesto Galarza',lat:37.303242,lng:-121.885010,dest:'nearby schools',type:'close'},
+{name:'Ernesto Galarza',lat:37.303242,lng:-121.885010,dest:'escuelas cercanas',type:'close'},
 {name:'Rachel Carson',lat:37.269936,lng:-121.855194,dest:'Schallenberger / Terrell',type:'close'},
 {name:'Reed',lat:37.263626,lng:-121.894325,dest:'Canoas / Schallenberger',type:'close'},
 {name:'Almaden',lat:37.251404,lng:-121.885483,dest:'Allen at Steinbeck',type:'close'},
@@ -1601,14 +1601,14 @@ maxZoom:18
 }).addTo(m);
 options[i].schools.forEach(function(s){
 var color=s.type==='move'?'#2980b9':'#c0392b';
-var label=s.type==='move'?'Relocating':'Closing';
+var label=s.type==='move'?'Reubicando':'Cerrando';
 L.circleMarker([s.lat,s.lng],{
 radius:10,fillColor:color,color:'#333',weight:2,opacity:1,fillOpacity:0.85
 }).addTo(m).bindPopup(
 '<div style="font-family:Source Sans 3,sans-serif;min-width:180px">'+
 '<strong style="font-size:15px">'+s.name+'</strong><br>'+
 '<span style="display:inline-block;margin:4px 0;padding:3px 8px;border-radius:4px;font-size:11px;font-weight:700;color:#fff;background:'+color+'">'+label+'</span><br>'+
-'<span style="font-size:13px">Students go to: <strong>'+s.dest+'</strong></span>'+
+'<span style="font-size:13px">Estudiantes van a: <strong>'+s.dest+'</strong></span>'+
 '</div>'
 );
 });
