@@ -157,10 +157,11 @@ footer a{color:var(--ls)}
 @media(max-width:600px){.hero-cta{text-align:center;padding:14px 16px;gap:10px}.hero-cta .hero-msg{font-size:0.95em}}
 
 /* LANGUAGE TOGGLE */
-.lang-toggle{position:absolute;top:12px;right:20px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:1px}
-.lang-toggle a{color:var(--slate);text-decoration:none;padding:4px 8px;border-radius:4px;transition:all .2s}
-.lang-toggle a:hover,.lang-toggle a.active{background:var(--rust);color:#fff}
-@media(max-width:600px){.lang-toggle{position:static;text-align:center;margin-top:8px}}
+.lang-toggle{position:absolute;top:12px;right:20px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:1px;display:flex;gap:4px;align-items:center}
+.lang-toggle a{color:var(--slate);text-decoration:none;padding:3px 6px;border-radius:4px;transition:all .2s;border:1px solid transparent}
+.lang-toggle a:hover{border-color:var(--rust);color:var(--rust)}
+.lang-toggle a.active{background:var(--rust);color:#fff}
+@media(max-width:600px){.lang-toggle{position:static;justify-content:center;margin-top:8px}}
 
 /* INTERACTIVE MAP */
 .school-map{height:450px;width:100%;z-index:1}
@@ -226,7 +227,7 @@ footer a{color:var(--ls)}
 </head>
 <body>
 <header class="mast" style="position:relative">
-<div class="lang-toggle"><a href="index.html" class="active">EN</a> | <a href="es.html">ES</a></div>
+<div class="lang-toggle"><a href="index.html" class="active">EN</a><a href="es.html">ES</a><a href="zh.html">中文</a><a href="ko.html">한국어</a><a href="vi.html">VI</a></div>
 <div class="mast-tag">BehindSiliconValley.com</div>
 <h1>Follow the Money</h1>
 <p class="sub">How San José Unified School District manages half a billion dollars a year — and why they say they need to close your neighborhood school</p>
