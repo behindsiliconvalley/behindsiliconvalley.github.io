@@ -54,7 +54,8 @@
           }
 
           var count = Math.round(getLastValue(cells));
-          if (count > 0) schools.push({ name: name, count: count });
+          var url = (cells[0] && cells[0].v) ? cells[0].v : '';
+          if (count > 0) schools.push({ name: name, count: count, url: url });
         }
 
         if (!total && schools.length) {
@@ -107,7 +108,7 @@
         var s = schools[i];
         var w = Math.min((s.count / max) * 100, 100);
         html += '<div style="margin-bottom:6px;display:flex;align-items:center;gap:8px;">'
-          + '<span style="flex:0 0 200px;font-size:0.9em;">' + s.name + '</span>'
+          + '<span style="flex:0 0 200px;font-size:0.9em;">' + (s.url ? '<a href="' + s.url + '" target="_blank" style="color:#1565c0;text-decoration:none;">' + s.name + '</a>' : s.name) + '</span>'
           + '<div style="flex:1;height:10px;background:#e3f2fd;border-radius:5px;overflow:hidden;">'
           + '<div style="height:100%;width:' + w.toFixed(0) + '%;background:#1976d2;border-radius:5px;transition:width 1s ease-out;"></div>'
           + '</div>'
