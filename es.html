@@ -241,6 +241,7 @@ footer a{color:var(--ls)}
 <div class="hero-cta">
 <span class="hero-urgency">⏰ Votación de la Junta en <span id="hero-days"></span> días</span>
 <span class="hero-msg">Hasta 9 escuelas cerrando — Haz oír tu voz antes del 12 de marzo</span>
+<span id="hero-petition-count" style="font-family:'JetBrains Mono',monospace;font-size:0.95em;font-weight:700;opacity:0.95;">12,830+ firmas y contando</span>
 <a href="https://www.change.org/p/simonds-elementary-school-cornerstone-of-the-sjusd-needs-to-stay-open" target="_blank">✍️ Firma la Petición</a>
 <a href="#" onclick="window.location.href='mailto:ccollins@sjusd.org,jmagana@sjusd.org,tcastellanos@sjusd.org,bwheatley@sjusd.org,ngribstad@sjusd.org,nalbarran@sjusd.org,schoolsoftomorrow@sjusd.org?subject='+encodeURIComponent('Demand for Financial Transparency Before School Closures — March 12 Vote')+'&body='+encodeURIComponent('Dear SJUSD Board of Education and Superintendent Albarrán,\n\nI am writing as a concerned [parent/community member/teacher] in the San José Unified School District regarding the proposed closure of up to 9 elementary schools.\n\nBefore the Board votes on March 12, I urge you to:\n\n1. CONDUCT AN INDEPENDENT FINANCIAL AUDIT — The district adopted a $30.3 million deficit budget for 2024-25 with $0 in reserves for economic uncertainties, below the state-required 2% minimum.\n\n2. EXPLAIN THE $49 MILLION SWING — SJUSD went from surpluses of $25.7M and $18.9M to a $30M deficit in just two years. What changed?\n\n3. REVIEW ADMINISTRATIVE COSTS BEFORE CLOSING SCHOOLS — With 99.5 administrators averaging $215K in salary, has the district explored reducing administrative overhead before disrupting children\'s education?\n\n4. ADDRESS THE GRAND JURY FINDINGS — In 2024, the Santa Clara County Civil Grand Jury found serious leadership and transparency issues. The Board rejected nearly all findings.\n\n5. ACCOUNT FOR BENEFITS UNDERFUNDING — Unions have revealed $30M+ in underfunded employee benefits.\n\nClosing schools is irreversible. Our children deserve better than rushed decisions based on incomplete financial data.\n\nSincerely,\n[Your Name]\n[Your School/Neighborhood]');return false;" style="background:transparent;color:#fff;border:2px solid #fff;">📧 Correo a la Junta</a>
 </div>
@@ -1175,19 +1176,21 @@ footer a{color:var(--ls)}
 function updateCountdown(){var e=new Date("2026-03-12T18:00:00-08:00")-new Date(),t=Math.floor(e/864e5),n=Math.floor(e%864e5/36e5),a=Math.floor(e%36e5/6e4);document.getElementById("countdown-timer").innerHTML=e>0?t+"d "+n+"h "+a+"m restantes":(e>-86400000?"LA VOTACIÓN ESTÁ EN CURSO":"LA VOTACIÓN HA PASADO")}updateCountdown();setInterval(updateCountdown,6e4);
 </script>
 
-<!-- SIGN THE PETITION -->
+<!-- SIGN THE PETITION — Live counter updates from Google Sheets -->
 <!-- UPDATE PETITION COUNT HERE — Change the number below and the petition-fill width percentage (count/5000*100) -->
 <div style="background:#fff;border:3px solid #1565c0;border-radius:12px;padding:30px;text-align:center;margin-bottom:25px;">
 <div style="font-size:1.8em;font-weight:800;color:#1565c0;margin-bottom:10px;">✍️ Firma la Petición</div>
 <div class="petition-counter">
-<div class="petition-number" id="petition-count">2,378+</div>
-<div class="petition-goal">firmas — meta: 5.000</div>
+<div class="petition-number" id="petition-count">12,830+</div>
+<div class="petition-goal">firmas en todas las peticiones — meta: 15.000</div>
 <div class="petition-bar">
-<div class="petition-fill" style="width:47.6%"></div>
-<div class="petition-bar-label">2,378 / 5,000</div>
+<div class="petition-fill" id="petition-fill" style="width:85.5%"></div>
+<div class="petition-bar-label" id="petition-bar-label">12,830 / 15,000</div>
 </div>
 </div>
-<div style="font-size:1.1em;color:#333;margin-bottom:5px;">Salva Simonds Elementary y Detén los Cierres</div>
+<div id="petition-breakdown" data-breakdown-label="Firmas por petición:" style="margin-top:15px;text-align:left;font-size:0.85em;color:#555;max-width:400px;margin-left:auto;margin-right:auto;display:none;"></div>
+<div id="petition-source" style="margin-top:10px;font-size:0.75em;color:#999;display:none;">Datos: peticiones de Change.org, actualizados diariamente (<a href="https://docs.google.com/spreadsheets/d/1zgCs5E3Qj5zNDw-G6z0A78Kk5-keVuZGEspbXFtxrHE" target="_blank" style="color:#999;text-decoration:underline;">fuente</a>)</div>
+<div style="font-size:1.1em;color:#333;margin-bottom:5px;">Salvemos Nuestras Escuelas y Detengamos los Cierres</div>
 <div style="font-size:0.9em;color:#666;margin-bottom:20px;">Dirigido a: Junta de Educación SJUSD, Concejo Municipal de San José y Alcalde Matt Mahan</div>
 <a href="https://www.change.org/p/simonds-elementary-school-cornerstone-of-the-sjusd-needs-to-stay-open" target="_blank" style="display:inline-block;background:#1565c0;color:#fff;padding:16px 40px;border-radius:8px;font-size:1.2em;font-weight:700;text-decoration:none;letter-spacing:0.5px;transition:background 0.2s;">FIRMA AHORA EN CHANGE.ORG →</a>
 <div style="font-size:0.8em;color:#888;margin-top:12px;">Cada firma cuenta. Comparte con otros padres de SJUSD.</div>
@@ -1353,7 +1356,7 @@ Puede solicitar investigaciones y aplicar presión política. Encuentra a tu sup
 
 <div class="co i">
 <div class="co-h">Cómo Hacer Oír Tu Voz</div>
-<p><strong>1. Firma la petición</strong> — <a href="https://www.change.org/p/simonds-elementary-school-cornerstone-of-the-sjusd-needs-to-stay-open" target="_blank" style="color:#1565c0;font-weight:600;">Únete a más de 2.378 personas que ya han firmado →</a></p>
+<p><strong>1. Firma la petición</strong> — <a href="https://www.change.org/p/simonds-elementary-school-cornerstone-of-the-sjusd-needs-to-stay-open" target="_blank" style="color:#1565c0;font-weight:600;" id="petition-join-text" data-prefix="Únete a más de " data-suffix=" personas que ya han firmado →">Únete a más de 12,830 personas que ya han firmado →</a></p>
 <p><strong>2. Envía correo a la Junta</strong> — Usa el botón de correo con un clic arriba. Personalízalo con la historia de tu familia.</p>
 <p><strong>3. Asiste a la reunión de la Junta del 12 de marzo</strong> — 855 Lenzen Ave, 6:00 PM. Presenta una tarjeta de "Solicitud para Hablar". Trae vecinos.</p>
 <p><strong>4. Asiste a las reuniones STIC</strong> — Todos los martes 6-8 PM en 855 Lenzen Ave, Sala 150. Se acepta comentario público.</p>
@@ -1532,7 +1535,7 @@ document.querySelectorAll('.bc').forEach(function(c){obs.observe(c)});
 <div class="sticky-cta" id="sticky-bar">
 <span class="cta-countdown" id="sticky-countdown"></span>
 <span class="cta-text">No dejes que cierren tu escuela</span>
-<a href="https://www.change.org/p/simonds-elementary-school-cornerstone-of-the-sjusd-needs-to-stay-open" target="_blank" class="btn-petition">✍️ Firma la petición (2.378+)</a>
+<a href="https://www.change.org/p/simonds-elementary-school-cornerstone-of-the-sjusd-needs-to-stay-open" target="_blank" class="btn-petition" id="sticky-petition-btn" data-prefix="✍️ Firma la petición (" data-suffix="+)">✍️ Firma la petición (12,830+)</a>
 <a href="#" onclick="window.location.href='mailto:ccollins@sjusd.org,jmagana@sjusd.org,tcastellanos@sjusd.org,bwheatley@sjusd.org,ngribstad@sjusd.org,nalbarran@sjusd.org,schoolsoftomorrow@sjusd.org?subject='+encodeURIComponent('Demand for Financial Transparency Before School Closures — March 12 Vote')+'&body='+encodeURIComponent('Dear SJUSD Board of Education and Superintendent Albarrán,\n\nI am writing as a concerned [parent/community member/teacher] regarding the proposed closure of up to 9 elementary schools.\n\nBefore the Board votes on March 12, I urge you to conduct an independent financial audit. The district adopted a $30.3M deficit budget with $0 in reserves — below the state-required 2% minimum. How did we go from surpluses to a $30M deficit in two years?\n\nClosing schools is irreversible. Our children deserve better.\n\nSincerely,\n[Your Name]\n[Your School]');return false;" class="btn-email">📧 Correo a la Junta</a>
 <button class="btn-close" onclick="document.getElementById('sticky-bar').style.display='none'" aria-label="Cerrar">&times;</button>
 </div>
@@ -1627,6 +1630,9 @@ setTimeout(function(){maps[idx].invalidateSize()},100);
 };
 })();
 </script>
+
+<!-- Live petition counter from Google Sheets -->
+<script src="petition-counter.js"></script>
 
 <!-- GoatCounter Analytics (privacy-friendly, no cookies) -->
 <script data-goatcounter="https://behindsiliconvalley.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>

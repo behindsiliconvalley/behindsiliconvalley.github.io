@@ -241,6 +241,7 @@ footer a{color:var(--ls)}
 <div class="hero-cta">
 <span class="hero-urgency">⏰ Hội đồng bỏ phiếu trong <span id="hero-days"></span> ngày</span>
 <span class="hero-msg">Lên đến 9 trường bị đóng cửa — Hãy lên tiếng trước ngày 12 tháng 3</span>
+<span id="hero-petition-count" style="font-family:'JetBrains Mono',monospace;font-size:0.95em;font-weight:700;opacity:0.95;">12,830+ chữ ký và đang tăng</span>
 <a href="https://www.change.org/p/simonds-elementary-school-cornerstone-of-the-sjusd-needs-to-stay-open" target="_blank">✍️ Ký Kiến Nghị</a>
 <a href="#" onclick="window.location.href='mailto:ccollins@sjusd.org,jmagana@sjusd.org,tcastellanos@sjusd.org,bwheatley@sjusd.org,ngribstad@sjusd.org,nalbarran@sjusd.org,schoolsoftomorrow@sjusd.org?subject='+encodeURIComponent('Demand for Financial Transparency Before School Closures — March 12 Vote')+'&body='+encodeURIComponent('Dear SJUSD Board of Education and Superintendent Albarrán,\n\nI am writing as a concerned [parent/community member/teacher] in the San José Unified School District regarding the proposed closure of up to 9 elementary schools.\n\nBefore the Board votes on March 12, I urge you to:\n\n1. CONDUCT AN INDEPENDENT FINANCIAL AUDIT — The district adopted a $30.3 million deficit budget for 2024-25 with $0 in reserves for economic uncertainties, below the state-required 2% minimum.\n\n2. EXPLAIN THE $49 MILLION SWING — SJUSD went from surpluses of $25.7M and $18.9M to a $30M deficit in just two years. What changed?\n\n3. REVIEW ADMINISTRATIVE COSTS BEFORE CLOSING SCHOOLS — With 99.5 administrators averaging $215K in salary, has the district explored reducing administrative overhead before disrupting children\'s education?\n\n4. ADDRESS THE GRAND JURY FINDINGS — In 2024, the Santa Clara County Civil Grand Jury found serious leadership and transparency issues. The Board rejected nearly all findings.\n\n5. ACCOUNT FOR BENEFITS UNDERFUNDING — Unions have revealed $30M+ in underfunded employee benefits.\n\nClosing schools is irreversible. Our children deserve better than rushed decisions based on incomplete financial data.\n\nSincerely,\n[Your Name]\n[Your School/Neighborhood]');return false;" style="background:transparent;color:#fff;border:2px solid #fff;">📧 Email Hội Đồng</a>
 </div>
@@ -1175,19 +1176,21 @@ footer a{color:var(--ls)}
 function updateCountdown(){var e=new Date("2026-03-12T18:00:00-08:00")-new Date(),t=Math.floor(e/864e5),n=Math.floor(e%864e5/36e5),a=Math.floor(e%36e5/6e4);document.getElementById("countdown-timer").innerHTML=e>0?t+"d "+n+"h "+a+" phút còn lại":(e>-86400000?"CUỘC BỎ PHIẾU ĐANG DIỄN RA":"CUỘC BỎ PHIẾU ĐÃ QUA")}updateCountdown();setInterval(updateCountdown,6e4);
 </script>
 
-<!-- SIGN THE PETITION -->
+<!-- SIGN THE PETITION — Live counter updates from Google Sheets -->
 <!-- UPDATE PETITION COUNT HERE — Change the number below and the petition-fill width percentage (count/5000*100) -->
 <div style="background:#fff;border:3px solid #1565c0;border-radius:12px;padding:30px;text-align:center;margin-bottom:25px;">
 <div style="font-size:1.8em;font-weight:800;color:#1565c0;margin-bottom:10px;">✍️ Ký Kiến Nghị</div>
 <div class="petition-counter">
-<div class="petition-number" id="petition-count">2,378+</div>
-<div class="petition-goal">chữ ký — mục tiêu: 5.000</div>
+<div class="petition-number" id="petition-count">12,830+</div>
+<div class="petition-goal">chữ ký trên tất cả các kiến nghị — mục tiêu: 15.000</div>
 <div class="petition-bar">
-<div class="petition-fill" style="width:47.6%"></div>
-<div class="petition-bar-label">2,378 / 5,000</div>
+<div class="petition-fill" id="petition-fill" style="width:85.5%"></div>
+<div class="petition-bar-label" id="petition-bar-label">12,830 / 15,000</div>
 </div>
 </div>
-<div style="font-size:1.1em;color:#333;margin-bottom:5px;">Cứu Trường Tiểu học Simonds &amp; Ngăn Đóng Cửa</div>
+<div id="petition-breakdown" data-breakdown-label="Chữ ký theo kiến nghị:" style="margin-top:15px;text-align:left;font-size:0.85em;color:#555;max-width:400px;margin-left:auto;margin-right:auto;display:none;"></div>
+<div id="petition-source" style="margin-top:10px;font-size:0.75em;color:#999;display:none;">Dữ liệu: kiến nghị Change.org, cập nhật hàng ngày (<a href="https://docs.google.com/spreadsheets/d/1zgCs5E3Qj5zNDw-G6z0A78Kk5-keVuZGEspbXFtxrHE" target="_blank" style="color:#999;text-decoration:underline;">nguồn</a>)</div>
+<div style="font-size:1.1em;color:#333;margin-bottom:5px;">Cứu Trường Học Của Chúng Ta &amp; Ngăn Đóng Cửa</div>
 <div style="font-size:0.9em;color:#666;margin-bottom:20px;">Gửi đến: Hội đồng Giáo dục SJUSD, Hội đồng Thành phố San José &amp; Thị trưởng Matt Mahan</div>
 <a href="https://www.change.org/p/simonds-elementary-school-cornerstone-of-the-sjusd-needs-to-stay-open" target="_blank" style="display:inline-block;background:#1565c0;color:#fff;padding:16px 40px;border-radius:8px;font-size:1.2em;font-weight:700;text-decoration:none;letter-spacing:0.5px;transition:background 0.2s;">KÝ NGAY TRÊN CHANGE.ORG →</a>
 <div style="font-size:0.8em;color:#888;margin-top:12px;">Mỗi chữ ký đều quan trọng. Chia sẻ với các phụ huynh SJUSD khác.</div>
@@ -1353,7 +1356,7 @@ Có thể yêu cầu điều tra và áp dụng áp lực chính trị. Tìm gi�
 
 <div class="co i">
 <div class="co-h">Cách lên tiếng</div>
-<p><strong>1. Ký kiến nghị</strong> — <a href="https://www.change.org/p/simonds-elementary-school-cornerstone-of-the-sjusd-needs-to-stay-open" target="_blank" style="color:#1565c0;font-weight:600;">Tham gia cùng hơn 2.378 người đã ký →</a></p>
+<p><strong>1. Ký kiến nghị</strong> — <a href="https://www.change.org/p/simonds-elementary-school-cornerstone-of-the-sjusd-needs-to-stay-open" target="_blank" style="color:#1565c0;font-weight:600;" id="petition-join-text" data-prefix="Tham gia cùng hơn " data-suffix=" người đã ký →">Tham gia cùng hơn 12,830 người đã ký →</a></p>
 <p><strong>2. Gửi email cho Hội đồng</strong> — Sử dụng nút email một cú nhấp ở trên. Cá nhân hóa bằng câu chuyện gia đình bạn.</p>
 <p><strong>3. Tham dự cuộc họp Hội đồng ngày 12 tháng 3</strong> — 855 Lenzen Ave, 6:00 PM. Nộp thẻ "Yêu cầu Phát biểu". Mang theo hàng xóm.</p>
 <p><strong>4. Tham dự cuộc họp STIC</strong> — Mỗi Thứ Ba 6-8 PM tại 855 Lenzen Ave, Phòng 150. Chấp nhận phát biểu công khai.</p>
@@ -1532,7 +1535,7 @@ document.querySelectorAll('.bc').forEach(function(c){obs.observe(c)});
 <div class="sticky-cta" id="sticky-bar">
 <span class="cta-countdown" id="sticky-countdown"></span>
 <span class="cta-text">Đừng để họ đóng cửa trường của bạn</span>
-<a href="https://www.change.org/p/simonds-elementary-school-cornerstone-of-the-sjusd-needs-to-stay-open" target="_blank" class="btn-petition">✍️ Ký kiến nghị (2.378+)</a>
+<a href="https://www.change.org/p/simonds-elementary-school-cornerstone-of-the-sjusd-needs-to-stay-open" target="_blank" class="btn-petition" id="sticky-petition-btn" data-prefix="✍️ Ký kiến nghị (" data-suffix="+)">✍️ Ký kiến nghị (12,830+)</a>
 <a href="#" onclick="window.location.href='mailto:ccollins@sjusd.org,jmagana@sjusd.org,tcastellanos@sjusd.org,bwheatley@sjusd.org,ngribstad@sjusd.org,nalbarran@sjusd.org,schoolsoftomorrow@sjusd.org?subject='+encodeURIComponent('Demand for Financial Transparency Before School Closures — March 12 Vote')+'&body='+encodeURIComponent('Dear SJUSD Board of Education and Superintendent Albarrán,\n\nI am writing as a concerned [parent/community member/teacher] regarding the proposed closure of up to 9 elementary schools.\n\nBefore the Board votes on March 12, I urge you to conduct an independent financial audit. The district adopted a $30.3M deficit budget with $0 in reserves — below the state-required 2% minimum. How did we go from surpluses to a $30M deficit in two years?\n\nClosing schools is irreversible. Our children deserve better.\n\nSincerely,\n[Your Name]\n[Your School]');return false;" class="btn-email">📧 Email Hội đồng</a>
 <button class="btn-close" onclick="document.getElementById('sticky-bar').style.display='none'" aria-label="Đóng">&times;</button>
 </div>
@@ -1627,6 +1630,9 @@ setTimeout(function(){maps[idx].invalidateSize()},100);
 };
 })();
 </script>
+
+<!-- Live petition counter from Google Sheets -->
+<script src="petition-counter.js"></script>
 
 <!-- GoatCounter Analytics (privacy-friendly, no cookies) -->
 <script data-goatcounter="https://behindsiliconvalley.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>

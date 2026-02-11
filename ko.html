@@ -241,6 +241,7 @@ footer a{color:var(--ls)}
 <div class="hero-cta">
 <span class="hero-urgency">⏰ 교육위원회 투표까지 <span id="hero-days"></span>일</span>
 <span class="hero-msg">최대 9개 학교 폐교 — 3월 12일 전에 목소리를 내세요</span>
+<span id="hero-petition-count" style="font-family:'JetBrains Mono',monospace;font-size:0.95em;font-weight:700;opacity:0.95;">12,830+ 서명 진행 중</span>
 <a href="https://www.change.org/p/simonds-elementary-school-cornerstone-of-the-sjusd-needs-to-stay-open" target="_blank">✍️ 청원 서명</a>
 <a href="#" onclick="window.location.href='mailto:ccollins@sjusd.org,jmagana@sjusd.org,tcastellanos@sjusd.org,bwheatley@sjusd.org,ngribstad@sjusd.org,nalbarran@sjusd.org,schoolsoftomorrow@sjusd.org?subject='+encodeURIComponent('Demand for Financial Transparency Before School Closures — March 12 Vote')+'&body='+encodeURIComponent('Dear SJUSD Board of Education and Superintendent Albarrán,\n\nI am writing as a concerned [parent/community member/teacher] in the San José Unified School District regarding the proposed closure of up to 9 elementary schools.\n\nBefore the Board votes on March 12, I urge you to:\n\n1. CONDUCT AN INDEPENDENT FINANCIAL AUDIT — The district adopted a $30.3 million deficit budget for 2024-25 with $0 in reserves for economic uncertainties, below the state-required 2% minimum.\n\n2. EXPLAIN THE $49 MILLION SWING — SJUSD went from surpluses of $25.7M and $18.9M to a $30M deficit in just two years. What changed?\n\n3. REVIEW ADMINISTRATIVE COSTS BEFORE CLOSING SCHOOLS — With 99.5 administrators averaging $215K in salary, has the district explored reducing administrative overhead before disrupting children\'s education?\n\n4. ADDRESS THE GRAND JURY FINDINGS — In 2024, the Santa Clara County Civil Grand Jury found serious leadership and transparency issues. The Board rejected nearly all findings.\n\n5. ACCOUNT FOR BENEFITS UNDERFUNDING — Unions have revealed $30M+ in underfunded employee benefits.\n\nClosing schools is irreversible. Our children deserve better than rushed decisions based on incomplete financial data.\n\nSincerely,\n[Your Name]\n[Your School/Neighborhood]');return false;" style="background:transparent;color:#fff;border:2px solid #fff;">📧 교육위원회에 이메일</a>
 </div>
@@ -1175,19 +1176,21 @@ footer a{color:var(--ls)}
 function updateCountdown(){var e=new Date("2026-03-12T18:00:00-08:00")-new Date(),t=Math.floor(e/864e5),n=Math.floor(e%864e5/36e5),a=Math.floor(e%36e5/6e4);document.getElementById("countdown-timer").innerHTML=e>0?t+"d "+n+"h "+a+"분 남음":(e>-86400000?"투표가 진행 중입니다":"투표가 완료되었습니다")}updateCountdown();setInterval(updateCountdown,6e4);
 </script>
 
-<!-- SIGN THE PETITION -->
+<!-- SIGN THE PETITION — Live counter updates from Google Sheets -->
 <!-- UPDATE PETITION COUNT HERE — Change the number below and the petition-fill width percentage (count/5000*100) -->
 <div style="background:#fff;border:3px solid #1565c0;border-radius:12px;padding:30px;text-align:center;margin-bottom:25px;">
 <div style="font-size:1.8em;font-weight:800;color:#1565c0;margin-bottom:10px;">✍️ 청원 서명</div>
 <div class="petition-counter">
-<div class="petition-number" id="petition-count">2,378+</div>
-<div class="petition-goal">서명 — 목표: 5,000</div>
+<div class="petition-number" id="petition-count">12,830+</div>
+<div class="petition-goal">모든 청원 서명 — 목표: 15,000</div>
 <div class="petition-bar">
-<div class="petition-fill" style="width:47.6%"></div>
-<div class="petition-bar-label">2,378 / 5,000</div>
+<div class="petition-fill" id="petition-fill" style="width:85.5%"></div>
+<div class="petition-bar-label" id="petition-bar-label">12,830 / 15,000</div>
 </div>
 </div>
-<div style="font-size:1.1em;color:#333;margin-bottom:5px;">Simonds 초등학교를 지키고 폐교를 막자</div>
+<div id="petition-breakdown" data-breakdown-label="청원별 서명 수:" style="margin-top:15px;text-align:left;font-size:0.85em;color:#555;max-width:400px;margin-left:auto;margin-right:auto;display:none;"></div>
+<div id="petition-source" style="margin-top:10px;font-size:0.75em;color:#999;display:none;">데이터: Change.org 청원, 매일 업데이트 (<a href="https://docs.google.com/spreadsheets/d/1zgCs5E3Qj5zNDw-G6z0A78Kk5-keVuZGEspbXFtxrHE" target="_blank" style="color:#999;text-decoration:underline;">출처</a>)</div>
+<div style="font-size:1.1em;color:#333;margin-bottom:5px;">우리 학교를 지키고 폐교를 막자</div>
 <div style="font-size:0.9em;color:#666;margin-bottom:20px;">대상: SJUSD 교육위원회, San José 시의회 및 Matt Mahan 시장</div>
 <a href="https://www.change.org/p/simonds-elementary-school-cornerstone-of-the-sjusd-needs-to-stay-open" target="_blank" style="display:inline-block;background:#1565c0;color:#fff;padding:16px 40px;border-radius:8px;font-size:1.2em;font-weight:700;text-decoration:none;letter-spacing:0.5px;transition:background 0.2s;">CHANGE.ORG에서 지금 서명하기 →</a>
 <div style="font-size:0.8em;color:#888;margin-top:12px;">모든 서명이 중요합니다. 다른 SJUSD 학부모와 공유해 주세요.</div>
@@ -1353,7 +1356,7 @@ Capitol: (916) 319-2025 · District: (408) 277-2525 · <a href="https://a25.asmd
 
 <div class="co i">
 <div class="co-h">목소리를 내는 방법</div>
-<p><strong>1. 청원에 서명하세요</strong> — <a href="https://www.change.org/p/simonds-elementary-school-cornerstone-of-the-sjusd-needs-to-stay-open" target="_blank" style="color:#1565c0;font-weight:600;">이미 서명한 2,378명 이상과 함께하세요 →</a></p>
+<p><strong>1. 청원에 서명하세요</strong> — <a href="https://www.change.org/p/simonds-elementary-school-cornerstone-of-the-sjusd-needs-to-stay-open" target="_blank" style="color:#1565c0;font-weight:600;" id="petition-join-text" data-prefix="이미 서명한 " data-suffix="명 이상과 함께하세요 →">이미 서명한 12,830명 이상과 함께하세요 →</a></p>
 <p><strong>2. 교육위원회에 이메일을 보내세요</strong> — 위의 원클릭 이메일 버튼을 사용하세요. 가족의 이야기로 개인화하세요.</p>
 <p><strong>3. 3월 12일 교육위원회 회의에 참석하세요</strong> — 855 Lenzen Ave, 오후 6:00. "발언 요청" 카드를 제출하세요. 이웃을 데려오세요.</p>
 <p><strong>4. STIC 회의에 참석하세요</strong> — 매주 화요일 오후 6-8시, 855 Lenzen Ave, Room 150. 공개 발언 가능.</p>
@@ -1532,7 +1535,7 @@ document.querySelectorAll('.bc').forEach(function(c){obs.observe(c)});
 <div class="sticky-cta" id="sticky-bar">
 <span class="cta-countdown" id="sticky-countdown"></span>
 <span class="cta-text">학교 폐교를 막으세요</span>
-<a href="https://www.change.org/p/simonds-elementary-school-cornerstone-of-the-sjusd-needs-to-stay-open" target="_blank" class="btn-petition">✍️ 청원 서명 (2,378+)</a>
+<a href="https://www.change.org/p/simonds-elementary-school-cornerstone-of-the-sjusd-needs-to-stay-open" target="_blank" class="btn-petition" id="sticky-petition-btn" data-prefix="✍️ 청원 서명 (" data-suffix="+)">✍️ 청원 서명 (12,830+)</a>
 <a href="#" onclick="window.location.href='mailto:ccollins@sjusd.org,jmagana@sjusd.org,tcastellanos@sjusd.org,bwheatley@sjusd.org,ngribstad@sjusd.org,nalbarran@sjusd.org,schoolsoftomorrow@sjusd.org?subject='+encodeURIComponent('Demand for Financial Transparency Before School Closures — March 12 Vote')+'&body='+encodeURIComponent('Dear SJUSD Board of Education and Superintendent Albarrán,\n\nI am writing as a concerned [parent/community member/teacher] regarding the proposed closure of up to 9 elementary schools.\n\nBefore the Board votes on March 12, I urge you to conduct an independent financial audit. The district adopted a $30.3M deficit budget with $0 in reserves — below the state-required 2% minimum. How did we go from surpluses to a $30M deficit in two years?\n\nClosing schools is irreversible. Our children deserve better.\n\nSincerely,\n[Your Name]\n[Your School]');return false;" class="btn-email">📧 교육위원회 이메일</a>
 <button class="btn-close" onclick="document.getElementById('sticky-bar').style.display='none'" aria-label="닫기">&times;</button>
 </div>
@@ -1627,6 +1630,9 @@ setTimeout(function(){maps[idx].invalidateSize()},100);
 };
 })();
 </script>
+
+<!-- Live petition counter from Google Sheets -->
+<script src="petition-counter.js"></script>
 
 <!-- GoatCounter Analytics (privacy-friendly, no cookies) -->
 <script data-goatcounter="https://behindsiliconvalley.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
