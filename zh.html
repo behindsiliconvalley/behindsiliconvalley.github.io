@@ -4,19 +4,19 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>追踪资金去向 — SJUSD 财务分析 | Behind Silicon Valley</title>
-<meta name="description" content="San José联合学区如何管理五亿美元资金，以及他们为何要关闭您社区的学校。$3000万赤字，$0储备金，最多4所学校面临关闭风险。STIC于3月3日废除5个方案——新投票时间待定。">
+<meta name="description" content="San José联合学区如何管理五亿美元资金，以及他们为何要关闭您社区的学校。$3000万赤字，$0储备金，9所学校面临关闭风险。教育委员会3月12日投票。">
 <link rel="canonical" href="https://behindsiliconvalley.com/zh.html">
 <!-- Open Graph / Facebook / WhatsApp / iMessage -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://behindsiliconvalley.com">
 <meta property="og:title" content="追踪资金去向 — SJUSD 财务分析">
-<meta property="og:description" content="San José联合学区如何管理五亿美元资金，以及他们为何要关闭您社区的学校。$3000万赤字，$0储备金，最多4所学校面临关闭风险。STIC于3月3日废除5个方案——新投票时间待定。">
+<meta property="og:description" content="San José联合学区如何管理五亿美元资金，以及他们为何要关闭您社区的学校。$3000万赤字，$0储备金，9所学校面临关闭风险。教育委员会3月12日投票。">
 <meta property="og:site_name" content="Behind Silicon Valley">
 <meta property="og:locale" content="zh_CN">
 <!-- Twitter / X Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="追踪资金去向 — SJUSD 财务分析">
-<meta name="twitter:description" content="San José联合学区如何管理五亿美元资金，以及他们为何要关闭您社区的学校。$3000万赤字，$0储备金，最多4所学校面临关闭风险。STIC于3月3日废除5个方案——新投票时间待定。">
+<meta name="twitter:description" content="San José联合学区如何管理五亿美元资金，以及他们为何要关闭您社区的学校。$3000万赤字，$0储备金，9所学校面临关闭风险。教育委员会3月12日投票。">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Source+Sans+3:wght@300;400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 <!-- Leaflet.js CSS for interactive map -->
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
@@ -239,11 +239,11 @@ footer a{color:var(--ls)}
 
 <!-- HERO CTA BANNER -->
 <div class="hero-cta">
-<span class="hero-urgency">⏰ 教育委员会投票日期待定——STIC已请求延期至3月26日</span>
-<span class="hero-msg">STIC于3月3日废除5个方案——关校上限降至4所 — 发出您的声音</span>
+<span class="hero-urgency">⏰ 距教育委员会投票还有 <span id="hero-days"></span> 天</span>
+<span class="hero-msg">多达9所学校面临关闭 — 在3月12日之前发出您的声音</span>
 <span id="hero-petition-count" style="font-family:'JetBrains Mono',monospace;font-size:0.95em;font-weight:700;opacity:0.95;">12,830+ 签名，持续增长中</span>
 <a href="https://www.change.org/p/simonds-elementary-school-cornerstone-of-the-sjusd-needs-to-stay-open" target="_blank">✍️ 签署请愿书</a>
-<a href="#" onclick="window.location.href='mailto:ccollins@sjusd.org,jmagana@sjusd.org,tcastellanos@sjusd.org,bwheatley@sjusd.org,ngribstad@sjusd.org,nalbarran@sjusd.org,schoolsoftomorrow@sjusd.org?subject='+encodeURIComponent('Demand for Financial Transparency Before School Closures')+'&body='+encodeURIComponent('Dear SJUSD Board of Education and Superintendent Albarrán,\n\nI am writing as a concerned [parent/community member/teacher] in the San José Unified School District regarding the proposed elementary school closures.\n\nBefore the Board votes on school closures, I urge you to:\n\n1. CONDUCT AN INDEPENDENT FINANCIAL AUDIT — The district adopted a $30.3 million deficit budget for 2024-25 with $0 in reserves for economic uncertainties, below the state-required 2% minimum.\n\n2. EXPLAIN THE $49 MILLION SWING — SJUSD went from surpluses of $25.7M and $18.9M to a $30M deficit in just two years. What changed?\n\n3. REVIEW ADMINISTRATIVE COSTS BEFORE CLOSING SCHOOLS — With 99.5 administrators averaging $215K in salary, has the district explored reducing administrative overhead before disrupting children\'s education?\n\n4. ADDRESS THE GRAND JURY FINDINGS — In 2024, the Santa Clara County Civil Grand Jury found serious leadership and transparency issues. The Board rejected nearly all findings.\n\n5. ACCOUNT FOR BENEFITS UNDERFUNDING — Unions have revealed $30M+ in underfunded employee benefits.\n\nClosing schools is irreversible. Our children deserve better than rushed decisions based on incomplete financial data.\n\nSincerely,\n[Your Name]\n[Your School/Neighborhood]');return false;" style="background:transparent;color:#fff;border:2px solid #fff;">📧 给教育委员会发邮件</a>
+<a href="#" onclick="window.location.href='mailto:ccollins@sjusd.org,jmagana@sjusd.org,tcastellanos@sjusd.org,bwheatley@sjusd.org,ngribstad@sjusd.org,nalbarran@sjusd.org,schoolsoftomorrow@sjusd.org?subject='+encodeURIComponent('Demand for Financial Transparency Before School Closures — March 12 Vote')+'&body='+encodeURIComponent('Dear SJUSD Board of Education and Superintendent Albarrán,\n\nI am writing as a concerned [parent/community member/teacher] in the San José Unified School District regarding the proposed closure of up to 9 elementary schools.\n\nBefore the Board votes on March 12, I urge you to:\n\n1. CONDUCT AN INDEPENDENT FINANCIAL AUDIT — The district adopted a $30.3 million deficit budget for 2024-25 with $0 in reserves for economic uncertainties, below the state-required 2% minimum.\n\n2. EXPLAIN THE $49 MILLION SWING — SJUSD went from surpluses of $25.7M and $18.9M to a $30M deficit in just two years. What changed?\n\n3. REVIEW ADMINISTRATIVE COSTS BEFORE CLOSING SCHOOLS — With 99.5 administrators averaging $215K in salary, has the district explored reducing administrative overhead before disrupting children\'s education?\n\n4. ADDRESS THE GRAND JURY FINDINGS — In 2024, the Santa Clara County Civil Grand Jury found serious leadership and transparency issues. The Board rejected nearly all findings.\n\n5. ACCOUNT FOR BENEFITS UNDERFUNDING — Unions have revealed $30M+ in underfunded employee benefits.\n\nClosing schools is irreversible. Our children deserve better than rushed decisions based on incomplete financial data.\n\nSincerely,\n[Your Name]\n[Your School/Neighborhood]');return false;" style="background:transparent;color:#fff;border:2px solid #fff;">📧 给教育委员会发邮件</a>
 </div>
 
 <main class="content">
@@ -251,9 +251,7 @@ footer a{color:var(--ls)}
 <!-- LATEST UPDATES LOG -->
 <div id="updates" style="background:#fff;border:2px solid var(--border);border-left:4px solid var(--rust);border-radius:6px;padding:18px 22px;margin-bottom:30px;font-size:0.92em;line-height:1.8">
 <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--rust);font-weight:600;margin-bottom:10px">最新更新</div>
-<div><span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ls)">3月9日</span> — <strong style="background:var(--rust);color:#fff;font-size:10px;padding:1px 6px;border-radius:3px;letter-spacing:1px">新增</strong> <a href="#closures" style="color:var(--ink);font-weight:600">显著不成比例分析</a>：SJUSD已被<strong>加州教育部连续3年标记</strong>（2022–25）过度识别西班牙裔学生进入特殊教育——但至今<strong>没有公开的纠正行动计划</strong>。该学区正同时关闭服务这些社区的学校。<a href="https://www.cde.ca.gov/sp/se/qa/sigdisplea2024.asp" target="_blank" style="color:var(--rust)">查看CDE数据</a>。</div>
-<div style="margin-top:6px"><span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ls)">3月6日</span> — <strong style="background:var(--rust);color:#fff;font-size:10px;padding:1px 6px;border-radius:3px;letter-spacing:1px">突发</strong> <a href="#closures" style="color:var(--ink);font-weight:600">3月3日重大转折</a>：STIC在社区压力下<strong>废除8个方案中的5个</strong>。关校上限降至<strong>最多4所</strong>，仅限300名学生以下且无双语项目的学校。新方案将在3月10日会议上提出。原定3月12日的教育委员会投票可能推迟——STIC已请求延期至3月26日。Mercury News报道SJUSD计划<a href="https://www.mercurynews.com/2026/02/28/san-jose-unified-school-closure-plan-echoes-oakland-proposal-that-drew-state-civil-rights-warning/" target="_blank" style="color:var(--rust)">与引发州民权警告的Oakland计划如出一辙</a>。</div>
-<div style="margin-top:6px"><span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ls)">2月24日</span> — <a href="#closures" style="color:var(--ink);font-weight:600">学校关闭地图</a>：选项4、5、7的完整互动地图。子选项1.2、2.2、5.2已标注。学区承认评分"具有二元成分"。确认所有8个选项100% IEP失败。选项4分离1,479名学生（最严重）。工作人员的"改进"使情况更糟。</div>
+<div><span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ls)">2月24日</span> — <strong style="background:var(--rust);color:#fff;font-size:10px;padding:1px 6px;border-radius:3px;letter-spacing:1px">新增</strong> <a href="#closures" style="color:var(--ink);font-weight:600">学校关闭地图</a>：选项4、5、7的完整互动地图。子选项1.2、2.2、5.2已标注。学区承认评分"具有二元成分"。确认所有8个选项100% IEP失败。选项4分离1,479名学生（最严重）。工作人员的"改进"使情况更糟。</div>
 <div style="margin-top:6px"><span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ls)">2月23日</span> — <strong style="background:var(--rust);color:#fff;font-size:10px;padding:1px 6px;border-radius:3px;letter-spacing:1px">新增</strong> <a href="#metrics-audit" style="color:var(--ink);font-weight:600">数据审计</a>：学区"理想学校"公式独立分析——双语惩罚、二元评分缺陷及其他4项严重缺陷。扩展2月10日指标汇总表显示关闭在9项关键指标中7项失败。100%未获替代方案的学生有IEP。</div>
 <div style="margin-top:6px"><span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ls)">2月23日</span> — <strong style="background:var(--gold);color:#fff;font-size:10px;padding:1px 6px;border-radius:3px;letter-spacing:1px">已更新</strong> <a href="#closures" style="color:var(--ink);font-weight:600">学校关闭</a>：2月10日STIC结果——方案三已撤回，新增三个方案（4、5、7）。添加地图标签。更新至3月12日教育委员会投票的时间表。</div>
 </div>
@@ -954,8 +952,8 @@ footer a{color:var(--ls)}
 <section class="sec" id="closures">
 <div class="sec-l">第七部分</div>
 <h2>学校关闭："明日学校"计划</h2>
-<p class="dc">2025年9月，SJUSD教育委员会启动了<strong>"明日学校"</strong>倡议——评估小学进行可能的合并、关闭或学区边界调整。学区最初提出关闭<strong>多达9所小学</strong>的方案。经过6周的讨论，STIC审议了8个方案——然后在<strong>2026年3月3日</strong>，在强大的社区压力下，<strong>废除了6个剩余方案中的5个</strong>，并将关校上限降至<strong>最多4所</strong>。新方案仅限于学生人数低于300人且无双语项目的学校，将在<strong>3月10日</strong>STIC会议上提出。原定3月12日的教育委员会投票可能推迟——STIC已请求延期至<strong>3月26日</strong>。</p>
-<div class="isrc">来源： <a href="https://www.sjusd.org/about/schools-of-tomorrow" target="_blank">SJUSD – Schools of Tomorrow</a> · <a href="https://www.mercurynews.com/2026/03/03/san-jose-unified-delays-school-closure-vote-amid-community-concerns/" target="_blank">Mercury News – "推迟关校投票," 2026年3月3日</a> · <a href="https://sanjosespotlight.com/decision-on-san-jose-unified-school-district-closures-delayed/" target="_blank">San José Spotlight – "关校决定推迟," 2026年3月</a></div>
+<p class="dc">2025年9月，SJUSD教育委员会启动了<strong>"明日学校"</strong>倡议 — 一个评估小学进行可能的合并、关闭或学区边界调整的过程。学区最初发布了三个方案，每个方案都提议在2026–27学年前关闭或合并<strong>多达9所小学</strong>。2026年2月10日，STIC投票决定<strong>撤回方案三</strong>，并新增三个方案（4、5和7）供进一步审议。委员会预计将在<strong>2026年3月3日</strong>前向教育委员会提出最终建议。</p>
+<div class="isrc">来源： <a href="https://www.sjusd.org/about/schools-of-tomorrow" target="_blank">SJUSD – Schools of Tomorrow</a> · <a href="https://www.mercurynews.com/2026/02/05/up-to-9-san-jose-unified-elementary-schools-could-close-here-are-the-options/" target="_blank">Mercury News, Feb 5, 2026</a> · <a href="https://www.kron4.com/news/bay-area/san-jose-elementary-schools-facing-consolidations-relocations-closures/" target="_blank">KRON4, Feb 2026</a></div>
 
 <p>学区陈述的理由：自2017–18年以来入学人数下降了20%（减少约6000名学生）；26所小学中有12所现在学生不足350名（比几年前翻倍）；最小的学校学生不足200名；小型学校无法维持辅导员、护士、艺术/音乐项目，也无法避免混合班级。</p>
 <div class="isrc">来源： <a href="https://www.sjusd.org/about/schools-of-tomorrow" target="_blank">SJUSD Schools of Tomorrow</a></div>
@@ -963,51 +961,6 @@ footer a{color:var(--ls)}
 <h3>学区承诺了什么</h3>
 <p>SJUSD表示受影响的学校在过渡年将获得两倍于正常水平的资金。接收新学生的学校也将获得双倍资金。将为距新学校超过1.5英里的学生提供校车服务。将提供三小时免费课后活动。工作人员的职位将得到保留。</p>
 <div class="isrc">来源： <a href="https://www.kron4.com/news/bay-area/san-jose-elementary-schools-facing-consolidations-relocations-closures/" target="_blank">KRON4 – District Commitments</a> · <a href="https://hoodline.com/2026/02/san-jose-school-shakeup-looms-with-campus-closures-and-new-boundaries/" target="_blank">Hoodline, Feb 2026</a></div>
-
-<h3>未回答的问题：学校关闭后会怎样？</h3>
-<p>学区表示关闭学校将为学生提供"更好的服务"——但没有解释这些服务<em>是什么</em>、<em>如何</em>筹集资金、或<em>为什么</em>需要关闭学校。以下是学区尚未回答的关键问题：</p>
-
-<div class="co a">
-<div class="co-h">1. 如果不是为了钱——为什么要关闭学校？</div>
-<p>学区多次声明关闭学校<strong>"不是出于财务考虑"</strong>，而是为了"为所有学生提供最好的教育体验"。然而学区正面临<strong>3030万美元赤字</strong>。如果没有财务问题，将数千名儿童连根拔起的教育理由是什么？如果<em>有</em>财务问题，为什么不直说？</p>
-</div>
-
-<div class="co a">
-<div class="co-h">2. 具体是什么"更好的服务"？</div>
-<p>学区声称小型学校"无法维持心理咨询师、护士、艺术/音乐项目"。但从未发布过一份计划，说明合并后接收学校将增加<strong>哪些具体服务</strong>。会有更多心理咨询师吗？更多护士吗？新项目吗？多少人、在哪些学校、由哪项预算支付？这些都没有具体说明。</p>
-</div>
-
-<div class="co a">
-<div class="co-h">3. 预算预测是什么？</div>
-<p>学区没有公布任何关闭学校的<strong>预期节省</strong>。研究一致表明，学校关闭往往比预期花费更多——由于交通、过渡支持、空置建筑维护，以及被迫搬迁的家庭离开学区导致的入学人数下降。成本效益分析在哪里？</p>
-</div>
-
-<div class="co a">
-<div class="co-h">4. 关闭的校园会怎样？</div>
-<p>学区对关闭学校的<strong>物理资产</strong>将如何处置只字未提。会被出售吗？出租吗？改作他用吗？闲置吗？2024年11月，选民批准了<strong>11.5亿美元的Measure R债券</strong>用于学校设施——但没有披露学区正计划关闭其中多达9所学校。家长们在问：我们是否刚刚批准了债券来翻新学区已经计划关闭的建筑？</p>
-</div>
-
-<div class="co a">
-<div class="co-h">5. 学生过渡计划在哪里？</div>
-<p>学区承诺一年的"双倍资金"和"校车服务"。但<strong>第二年</strong>怎么办？当过渡资金结束时，接收学校将面对更多学生却没有额外资源。学区将如何支持<strong>情绪受影响的学生</strong>——特别是失去熟悉日程、教职员工和环境的有IEP的Special Day Class学生？学区自己的数据显示，<strong>在所有方案中，被拒绝替代入学的学生100%是IEP学生</strong>。</p>
-</div>
-
-<div class="co a">
-<div class="co-h">6. 研究实际上怎么说？</div>
-<p>关于学校关闭的全国性研究表明，它们<strong>很少兑现承诺的好处</strong>。芝加哥大学的一项研究发现，关闭学校对被转学的学生<strong>没有带来学业提升</strong>，却对其社会情感健康产生了显著的负面影响。国家教育政策中心发现，关闭学校<strong>对低收入学生和有色人种学生造成不成比例的伤害</strong>——正是SJUSD自己的数据显示将承受最大负担的群体。</p>
-</div>
-
-<div class="co a">
-<div class="co-h">7. 为什么这么急？3月15日裁员通知截止日期</div>
-<p>加州法律（<strong>教育法典 § 44949 和 § 44955</strong>）要求学区每年<strong>在3月15日之前</strong>通知持证员工（教师、咨询师、护士、图书馆员）可能的裁员。如果学区错过这个截止日期，<strong>就不能在下一学年解雇这些员工</strong>。</p>
-<p>这就是为什么教育委员会投票最初定在<strong>3月12日</strong>——恰好在裁员截止日期前三天。整个仓促的时间表——2月3日宣布方案、压缩的STIC会议、3月3日的建议——都是为了<strong>及时通过关闭投票，以便在3月15日之前发出裁员通知</strong>。3月3日，STIC推迟了建议并请求延期至3月26日——但<strong>3月15日裁员截止日期已过</strong>，引发了学区是否仍发出预防性裁员通知的疑问。</p>
-<p>对于<strong>分类员工</strong>（保管员、办公室职员、教学助理），教育法典 § 45117要求在裁员生效前提供<strong>60天书面通知</strong>——这意味着7月1日生效的通知需要在5月1日之前发出。</p>
-<p>社区有权知道：<strong>这个时间表是由学生的最佳利益驱动的，还是由人事截止日期驱动的？</strong>如果学区真的相信关闭学校是正确的决定，为什么不花时间把事情做好——即使这意味着要等到明年？</p>
-</div>
-<div class="isrc">法律来源： <a href="https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?sectionNum=44955.&lawCode=EDC" target="_blank">Education Code § 44955 – Certificated Employee Layoffs</a> · <a href="https://law.onecle.com/california/education/44949.html" target="_blank">Education Code § 44949 – Layoff Notice Requirements</a> · <a href="https://blog.csba.org/march15-layoff-notices/" target="_blank">CSBA – March 15 Layoff Notices: What Boards Should Know</a> · <a href="https://codes.findlaw.com/ca/education-code/edc-sect-45117/" target="_blank">Education Code § 45117 – Classified Employee Layoffs</a></div>
-
-<p style="font-weight:700;margin-top:16px">底线：学区正在要求社区接受不可逆转的学校关闭，而依据的是未定义的承诺、未计算的节省、未编写的关闭后计划——以及一个不是由学生需求驱动，而是由人事裁员截止日期驱动的时间表。</p>
-<div class="isrc">来源： <a href="https://sanjosespotlight.com/op-ed-san-jose-parents-question-truth-behind-pending-school-closures/" target="_blank">SJ Spotlight Op-Ed – Parents Question Truth Behind Closures</a> · <a href="https://www.mercurynews.com/2026/03/03/opinion-san-jose-unifieds-school-closure-plan-is-rushed-and-haphazard/" target="_blank">Mercury News Op-Ed – "Rushed and Haphazard," Mar 3, 2026</a> · <a href="https://www.mercurynews.com/2026/02/28/san-jose-unified-school-closure-plan-echoes-oakland-proposal-that-drew-state-civil-rights-warning/" target="_blank">Mercury News – Oakland Civil Rights Parallel, Feb 28, 2026</a></div>
 
 <h3>家长们在说什么</h3>
 <p>家长和社区成员正在强烈反对。许多人指出，一些被列为关闭目标的学校是<strong>表现优异、需求旺盛的社区学校</strong>。正如一位家长就Simonds Elementary给教育委员会写信时所说："关闭一所规模适当、学术实力强、项目丰富的学校，直接与学区所概述的框架相矛盾。"</p>
@@ -1025,116 +978,16 @@ footer a{color:var(--ls)}
 <p><strong>方案六未通过</strong> — 一项保持SDC学生在一起（不包括SDC学前班）的动议未获通过。</p>
 <div class="isrc">来源： <a href="https://sjusd.app.box.com/s/y3ce7a2iqrqxjjoyxnewavjd8131lfeh" target="_blank">SJUSD STIC Discussion Protocol – 02.10.26</a> · Actions Taken Under VI – Removals and Additions to Initial Options</div>
 
-<h3>2026年3月3日：转折点</h3>
-<p>在强大的社区压力下——家长们威胁采取法律行动，纳税人请求冻结Measure R债券资金的禁令——STIC采取了戏剧性的行动：</p>
-<ul style="margin:0 0 16px 24px;line-height:1.9">
-<li><strong>废除6个方案中的5个</strong>——所有大规模关校计划（方案1、1.2、2、2.2、4、5、5.2、7）全部废弃</li>
-<li><strong>关校上限降至最多4所</strong>——从之前的最多9所大幅缩减</li>
-<li><strong>新标准：</strong>仅限<strong>学生人数低于300人</strong>且<strong>无双语项目</strong>的学校</li>
-<li><strong>指示工作人员制定两个新方案</strong>，在3月10日会议上提出</li>
-<li><strong>请求延期至3月26日</strong>（原教育委员会投票定于3月12日）</li>
-</ul>
-<p>STIC主席Patrick Bernhardt：<em>"我相信我们迫切需要采取行动解决最小型学校的问题。但我认为关闭9所学校……不是正确的行动。"</em></p>
-<div class="isrc">来源：<a href="https://www.mercurynews.com/2026/03/03/san-jose-unified-delays-school-closure-vote-amid-community-concerns/" target="_blank">Mercury News – "推迟关校投票," 2026年3月3日</a> · <a href="https://sanjosespotlight.com/decision-on-san-jose-unified-school-district-closures-delayed/" target="_blank">San José Spotlight – "关校决定推迟," 2026年3月</a></div>
-
-<div class="co a">
-<div class="co-h">300名学生以下的8所学校</div>
-<p>根据新标准，只有以下小学有资格被考虑关闭：</p>
-<p style="margin-bottom:0"><strong>Anne Darling · Canoas · Empire Gardens · Horace Mann · Lowell · Rachel Carson · Selma Olinder · Terrell</strong></p>
-<p style="margin-top:8px;font-size:13px;color:var(--slate)">然而，双语项目排除条款可能保护其中一些学校。STIC指示工作人员将提案限制在此名单中<strong>最多4所学校</strong>。</p>
-</div>
-
-<div class="co a">
-<div class="co-h">Oakland先例：加州总检察长警告民权违规</div>
-<p><a href="https://www.mercurynews.com/2026/02/28/san-jose-unified-school-closure-plan-echoes-oakland-proposal-that-drew-state-civil-rights-warning/" target="_blank">Mercury News调查</a>（2026年2月28日）发现，SJUSD的方法论<strong>与Oakland联合学区2022年关校计划如出一辙</strong>，后者引发了加州总检察长Rob Bonta的民权调查。Bonta认定Oakland的计划<strong>"将对黑人和低收入小学生以及部分残疾学生产生统计上显著的不成比例影响。"</strong></p>
-<p>与Oakland一样，SJUSD依赖入学人数和设施条件——相同的方法论。Mercury News发现：<strong>27所潜在关校学校中有10所</strong>西班牙裔/拉丁裔学生比例高于平均水平；<strong>11所学校</strong>英语学习者比例高于学区平均水平；拟议关校<strong>主要集中在市中心和东San José</strong>，而Almaden Valley基本未受影响。</p>
-<p style="font-size:13px;color:var(--slate)">Oakland在总检察长调查后于2023年1月撤销了所有关校决定。</p>
-</div>
-<div class="isrc">来源：<a href="https://www.mercurynews.com/2026/02/28/san-jose-unified-school-closure-plan-echoes-oakland-proposal-that-drew-state-civil-rights-warning/" target="_blank">Mercury News – "与引发州民权警告的Oakland计划如出一辙," 2026年2月28日</a> · <a href="https://oag.ca.gov/system/files/attachments/press-docs/CalDOJ.LettertoOaklandUnifedRePotentialClosures.1.29.24.final_.pdf" target="_blank">加州总检察长致OUSD函, 2024年1月</a></div>
-
-<div class="co a">
-<div class="co-h">显著不成比例：加州因SJUSD过度识别西班牙裔学生进入特殊教育而发出警示</div>
-<p>加州教育部已根据联邦IDEA法律将SJUSD认定为<strong>显著不成比例</strong>，<strong>连续三年</strong>——而该学区至今仍未解决：</p>
-<ul style="margin:0 0 16px 24px;line-height:1.9">
-<li><strong>2022–23年：</strong>首次认定——<strong>西班牙裔和美洲原住民学生被归类为特定学习障碍</strong></li>
-<li><strong>2023–24年：</strong>再次被认定——相同模式持续</li>
-<li><strong>2024–25年：</strong>第三年被认定——<strong>西班牙裔学生被归类为特定学习障碍</strong></li>
-</ul>
-<p>根据联邦法律（<a href="https://sites.ed.gov/idea/" target="_blank">IDEA §618(d)</a>），显著不成比例意味着某一种族或族裔群体被归入特殊教育类别的比率远超其他群体——在同一指标上连续三年。被标记后，学区必须：</p>
-<ul style="margin:0 0 16px 24px;line-height:1.9">
-<li><strong>预留15%的IDEA资金</strong>用于综合协调早期干预服务(CCEIS)</li>
-<li>在认定后<strong>30天内提交保证书</strong></li>
-<li><strong>完成4步合规与改进监测(CIM)流程：</strong>(1)收集与调查，(2)调查根本原因，(3)制定结果计划，(4)实施与监测</li>
-<li><strong>提交CCEIS计划</strong>及跟踪进展的年度附录</li>
-</ul>
-
-<h3 style="border:none;margin:20px 0 10px;padding:0;font-size:1.1rem">三年过去了——SJUSD做了什么？</h3>
-<p>尽管自2022年起就被标记，<strong>SJUSD没有公开可查的CCEIS计划。</strong>该学区的<a href="https://www.sjusd.org/about/district-information/lcap" target="_blank">LCAP</a>和<a href="https://resources.finalsite.net/images/v1754411884/sjusdorg/kmmqbt4qvtwnjnpvi7pt/2025LCAPFederalAddendumSanJoseUnifiedSchoolDistrict.pdf" target="_blank">LCAP联邦附录</a><strong>完全未提及</strong>显著不成比例、CCEIS或针对西班牙裔过度识别的纠正措施。作为对比，<a href="https://www.sfusd.edu/sped/special-education-handbook-local-plans-compliance/cim-significant-disproportionality-cceis" target="_blank">旧金山联合学区在线公布了完整的CCEIS计划</a>，包含透明的根本原因分析和行动步骤。</p>
-<p>CIM流程<strong>没有硬性截止日期</strong>来实现结果——进展通过年度附录跟踪，CDE提供技术援助而非制裁。这意味着一个学区可以年复一年地留在名单上，几乎没有公共问责。SJUSD已连续三年被标记，没有可见的改善，也没有公开的计划。</p>
-
-<div class="co i">
-<div class="co-h">对比：邻近学区如何回应同一发现</div>
-<p><strong>Cambrian学区</strong>是同一县内的一个较小学区，因同样的问题——西班牙裔学生被归类为特定学习障碍——在2023–24和2024–25年被标记。与SJUSD不同，Cambrian采取了公开、有记录的行动：</p>
-<ul style="margin:0 0 16px 24px;line-height:1.9">
-<li><strong>创建了LCAP行动项目1.12</strong>——"解决残障学生、英语学习者和西班牙裔学生的不成比例问题"——明确遵循CDE的CIM/CCEIS流程</li>
-<li><strong>预留了$108,575的IDEA资金</strong>用于2025–26年（2024–25年为$112,000），专门用于CCEIS服务</li>
-<li><strong>通过座谈会和年度需求评估调查</strong>让IEP学生家长参与</li>
-<li><strong>在LCAP中自我识别</strong>为"不成比例目标级别2"，并发现不合规问题</li>
-<li><strong>发布进展更新</strong>，承认计划"仍在发展中"，"早期家长参与努力和系统完善正在进行中"</li>
-</ul>
-<p style="font-size:14px;color:var(--slate)">Cambrian服务约3,056名学生。SJUSD服务约32,000名学生。如果一个规模只有十分之一的学区能够公开承认其显著不成比例发现、预算纠正资金并在LCAP中报告进展——为什么SJUSD不能？</p>
-</div>
-<div class="isrc">来源：<a href="https://resources.finalsite.net/images/v1754503259/cambriansdorg/lmp2753eg8vekka2kxsy/2025-26CSDLCAPFinalUpdatedAug12025.pdf" target="_blank">Cambrian School District 2025–26 LCAP, 第10、35、40–41、82、88页</a></div>
-
-<div class="co i">
-<div class="co-h">对比：旧金山联合学区 (SFUSD) 如何应对</div>
-<p><strong>旧金山联合学区</strong>，一个同样因显著不成比例被标记的大型城市学区——非裔美国人、拉丁裔和太平洋岛民学生被过度识别——采取了全面的、公开记录的纠正措施：</p>
-<ul style="margin:0 0 16px 24px;line-height:1.9">
-<li><strong>组建了6人专职CCEIS团队</strong>，由主任Matthew Fitzsimons和Talya Huntley博士领导，隶属于特殊教育部门</li>
-<li><strong>制定并发布了经CDE批准的2025年CCEIS计划</strong>，详细说明了根本原因分析、针对性干预措施和可衡量的成果</li>
-<li><strong>启动了Shoestrings项目</strong>——与斯坦福大学幼儿研究所合作开发的全方位早期儿童干预项目，专注于普通教育中的转介前支持</li>
-<li><strong>将15%的IDEA特殊教育资金</strong>重新分配给服务于普通教育学生的CCEIS活动——完全按照联邦法律要求</li>
-<li><strong>于2025年10月举办了CCEIS峰会</strong>，汇集教育工作者、家庭和社区合作伙伴，审查进展并协调策略</li>
-<li><strong>在线发布完全透明的信息</strong>，设立专门网页详细说明其CIM流程、显著不成比例调查结果和纠正措施</li>
-</ul>
-<p style="font-size:14px;color:var(--slate)">SFUSD服务约49,000名学生——比SJUSD更大。如果旧金山能够建立完整的CCEIS基础设施，配备专职人员、与斯坦福合作并进行公开报告——SJUSD的借口是什么？</p>
-</div>
-<div class="isrc">来源：<a href="https://www.sfusd.edu/sped/special-education-handbook-local-plans-compliance/cim-significant-disproportionality-cceis" target="_blank">SFUSD — CIM / 显著不成比例 / CCEIS（学区官方页面）</a></div>
-
-<h3 style="border:none;margin:20px 0 10px;padding:0;font-size:1.1rem">这对学校关闭意味着什么</h3>
-<p>显著不成比例与"明日学校"关校计划之间的联系是直接的：</p>
-<ul style="margin:0 0 16px 24px;line-height:1.9">
-<li><strong>被列为关闭目标的学校</strong>不成比例地集中在市中心和东San José——正是西班牙裔学生集中的社区</li>
-<li><strong>SJUSD已在关闭特殊日间课程(SDC)项目</strong>——Graystone、Schallenberger和Empire Gardens的项目被合并到仅3所学校（Washington、Grant、Allen at Steinbeck）。家长们<a href="https://sanjosespotlight.com/san-jose-unified-school-district-parents-upset-over-special-education-program-day-class-consolidation/" target="_blank">仅通过电子邮件被通知，未经事先协商</a></li>
-<li><strong>教育委员Nicole Gribstad的请求</strong>——将SDC合并议题加入3月27日董事会议程——<strong>被拒绝</strong></li>
-<li>该学区同时<strong>因过度将西班牙裔学生识别为特殊教育而被标记</strong>，又在<strong>关闭服务这些学生的学校</strong></li>
-</ul>
-
-<h3 style="border:none;margin:20px 0 10px;padding:0;font-size:1.1rem">SJUSD更广泛的差距</h3>
-<p><a href="https://projects.propublica.org/miseducation/district/0634590" target="_blank">ProPublica的Miseducation项目</a>记录了该学区的更多差距：</p>
-<div class="sg">
-<div class="sc r"><div class="sn">3.1×</div><div class="sl">黑人停学率 vs. 白人</div><div class="ss"><a href="https://projects.propublica.org/miseducation/district/0634590" target="_blank">ProPublica</a></div></div>
-<div class="sc g"><div class="sn">1.8×</div><div class="sl">白人AP机会 vs. 西班牙裔</div><div class="ss"><a href="https://projects.propublica.org/miseducation/district/0634590" target="_blank">ProPublica</a></div></div>
-<div class="sc r"><div class="sn">3.1</div><div class="sl">成绩差距：西班牙裔 vs. 白人</div><div class="ss"><a href="https://projects.propublica.org/miseducation/district/0634590" target="_blank">ProPublica</a></div></div>
-<div class="sc b"><div class="sn">0%</div><div class="sl">天才项目注册率</div><div class="ss"><a href="https://projects.propublica.org/miseducation/district/0634590" target="_blank">ProPublica</a></div></div>
-</div>
-<p style="font-size:14px;color:var(--slate)"><strong>模式很清晰：</strong>SJUSD过度将西班牙裔学生识别为特殊教育，在AP和天才项目中招收不足，以3倍于白人学生的比率停学黑人学生，现在又在关闭服务这些社区的学校——同时在被列入州监视名单三年后仍未提出公开的纠正行动计划。</p>
-</div>
-<div class="isrc">来源：<a href="https://www.cde.ca.gov/sp/se/qa/sigdisplea2024.asp" target="_blank">CDE – 2024–25 Sig Dis LEA名单</a> · <a href="https://www.cde.ca.gov/sp/se/qa/sigdisplea2023.asp" target="_blank">CDE – 2023–24 Sig Dis LEA名单</a> · <a href="https://www.cde.ca.gov/sp/se/qa/sigdisplea2022.asp" target="_blank">CDE – 2022–23 Sig Dis LEA名单</a> · <a href="https://projects.propublica.org/miseducation/district/0634590" target="_blank">ProPublica Miseducation – SJUSD</a> · <a href="https://sanjosespotlight.com/san-jose-unified-school-district-parents-upset-over-special-education-program-day-class-consolidation/" target="_blank">San José Spotlight – SDC合并</a> · <a href="https://spptap.org/cim-process-for-sig-dis/" target="_blank">SPPTAP – Sig Dis CIM流程</a></div>
-
 <div class="co q">
-<div class="co-h">更新后的STIC时间表</div>
-<p style="margin-bottom:0"><strong>2月24日：</strong>新选项及完整指标已发布。子选项1.2、2.2、5.2推出。<span style="color:var(--teal);font-weight:700">&#10003;</span><br>
-<strong>3月3日：</strong>STIC废除6个方案中的5个。指示工作人员制定新方案（最多4所关校，300人以下，无双语学校）。<span style="color:var(--teal);font-weight:700">&#10003;</span><br>
-<strong><s>3月5日：</s></strong> <span style="color:var(--slate)">已取消。</span><br>
-<strong>3月7日：</strong>教育委员会公开听证会——审议STIC建议。855 Lenzen Ave。<br>
-<strong>3月10日：</strong>特别教育委员会会议（下午4:30）+ STIC会议（下午6:00）。新方案将在此提出。855 Lenzen Ave, Room 150。<br>
-<strong style="color:var(--rust)"><s>3月12日：</s></strong> <span style="color:var(--slate)">原定教育委员会投票日——可能推迟。</span><br>
-<strong style="color:var(--rust)">3月26日：</strong>STIC请求的最终建议新截止日期。</p>
+<div class="co-h">STIC剩余时间表</div>
+<p style="margin-bottom:0"><strong>2月24日：</strong>新选项及完整指标已发布。<span style="color:var(--teal);font-weight:700">&#10003;</span><br>
+<strong>3月3日：</strong>最终讨论。确定STIC向教育委员会推荐的方案。<br>
+<strong>3月5日：</strong>如3月3日未达成建议的备用日期。<br>
+<strong style="color:var(--rust)">3月12日：</strong>教育委员会就学校关闭进行投票。855 Lenzen Ave，下午6:00。</p>
 </div>
 
 <h3>地图：面临关闭风险的学校</h3>
-<p>以下地图显示3月3日重置前所有曾考虑的方案。<strong>所有这些方案均已废除。</strong>它们保留于此供参考——展示学区在社区压力迫使其改变方向之前所提议的范围。新方案（最多4所关校，300人以下）将在3月10日STIC会议上提出。</p>
+<p>STIC最初于2026年2月3日发布了三个选项。2月10日，<strong>选项3被撤回</strong>，引入了三个新选项（4、5、7）。2月24日，学区发布了所有新选项的完整关校名单以及<strong>三个子选项</strong>（1.2、2.2、5.2）——工作人员建议用边界调整版本替换选项1和选项2。</p>
 
 <div class="map-tabs" style="flex-wrap:wrap">
 <div class="map-tab active" onclick="showMap(0)"><span class="tab-count">9+1</span>方案一</div>
@@ -1306,7 +1159,7 @@ footer a{color:var(--ls)}
 
 <div class="co a">
 <div class="co-h">不能基于有缺陷的数据推进关校</div>
-<p>关闭学校是<strong>不可逆转的</strong>。它会动摇学生的稳定性，撕裂社区，并永久性地降低公众对公共教育的信任。当底层方法论存在缺陷时 — 数据表明确实如此 — 由此得出的结论不能被视为可靠。教育委员会在这些方法论缺陷得到独立审查和纠正之前，不得就学校关闭进行投票。</p>
+<p>关闭学校是<strong>不可逆转的</strong>。它会动摇学生的稳定性，撕裂社区，并永久性地降低公众对公共教育的信任。当底层方法论存在缺陷时 — 数据表明确实如此 — 由此得出的结论不能被视为可靠。教育委员会在这些方法论缺陷得到独立审查和纠正之前，不得在3月12日就学校关闭进行投票。</p>
 </div>
 
 <p><strong>法律保护是存在的。</strong>加州法律和联邦民权法规为挑战基于有缺陷或歧视性方法论的关校决定提供了多种依据：</p>
@@ -1321,7 +1174,7 @@ footer a{color:var(--ls)}
 
 <div class="co q">
 <div class="co-h">行动呼吁：要求独立审查</div>
-<p>在教育委员会就学校关闭投票之前，社区应该要求：</p>
+<p>在教育委员会3月12日投票之前，社区应该要求：</p>
 <p style="margin-bottom:0"><strong>1.</strong> 对STIC指标电子表格和STAC"理想学校"公式进行<strong>独立的第三方审计</strong>。<br>
 <strong>2.</strong> 从方法论中移除<strong>双语惩罚</strong> — 双语学校不应面临更高的入学门槛。<br>
 <strong>3.</strong> 采用<strong>连续量表</strong>而非二元开/关开关来衡量学校质量的方法论。<br>
@@ -1541,12 +1394,12 @@ footer a{color:var(--ls)}
 <!-- COUNTDOWN TIMER -->
 <div style="background:linear-gradient(135deg,#b71c1c,#d32f2f);color:#fff;border-radius:12px;padding:30px;text-align:center;margin-bottom:30px;box-shadow:0 4px 20px rgba(183,28,28,0.3);">
 <div style="font-size:0.85em;text-transform:uppercase;letter-spacing:3px;margin-bottom:8px;opacity:0.9;">教育委员会学校关闭投票</div>
-<div style="font-size:2.4em;font-weight:800;margin-bottom:5px;">日期待定</div>
-<div id="countdown-timer" style="font-size:1.6em;font-weight:700;margin-top:10px;">原定3月12日——STIC已请求延期至3月26日</div>
-<div style="font-size:0.8em;opacity:0.8;margin-top:8px;">855 Lenzen Ave, San José · 允许公众发言</div>
+<div style="font-size:2.4em;font-weight:800;margin-bottom:5px;">March 12, 2026</div>
+<div id="countdown-timer" style="font-size:1.6em;font-weight:700;margin-top:10px;"></div>
+<div style="font-size:0.8em;opacity:0.8;margin-top:8px;">855 Lenzen Ave, San José · 下午6:00 · 允许公众发言</div>
 </div>
 <script>
-/* Countdown disabled — vote date TBD. STIC requested extension to March 26. */
+function updateCountdown(){var e=new Date("2026-03-12T18:00:00-08:00")-new Date(),t=Math.floor(e/864e5),n=Math.floor(e%864e5/36e5),a=Math.floor(e%36e5/6e4);document.getElementById("countdown-timer").innerHTML=e>0?t+"d "+n+"h "+a+"分钟 剩余":(e>-86400000?"投票正在进行中":"投票已结束")}updateCountdown();setInterval(updateCountdown,6e4);
 </script>
 
 <!-- SIGN THE PETITION — Live counter updates from Google Sheets -->
@@ -1581,8 +1434,8 @@ footer a{color:var(--ls)}
 <script>
 document.getElementById('email-board-btn').addEventListener('click',function(){
 var to='ccollins@sjusd.org,jmagana@sjusd.org,tcastellanos@sjusd.org,bwheatley@sjusd.org,ngribstad@sjusd.org,nalbarran@sjusd.org,schoolsoftomorrow@sjusd.org';
-var subject=encodeURIComponent('Demand for Financial Transparency Before School Closures');
-var body=encodeURIComponent('Dear SJUSD Board of Education and Superintendent Albarrán,\n\nI am writing as a concerned [parent/community member/teacher] in the San José Unified School District regarding the proposed elementary school closures.\n\nBefore the Board votes on school closures, I urge you to:\n\n1. CONDUCT AN INDEPENDENT FINANCIAL AUDIT — The district adopted a $30.3 million deficit budget for 2024-25 with $0 in reserves for economic uncertainties, below the state-required 2% minimum. The community deserves to understand how this happened.\n\n2. EXPLAIN THE $49 MILLION SWING — SJUSD went from surpluses of $25.7M and $18.9M to a $30M deficit in just two years. What changed?\n\n3. REVIEW ADMINISTRATIVE COSTS BEFORE CLOSING SCHOOLS — With 99.5 administrators averaging $215K in salary, has the district explored reducing administrative overhead before disrupting children\'s education?\n\n4. ADDRESS THE GRAND JURY FINDINGS — In 2024, the Santa Clara County Civil Grand Jury found serious leadership and transparency issues. The Board rejected nearly all findings. The community has not forgotten.\n\n5. ACCOUNT FOR BENEFITS UNDERFUNDING — Unions have revealed $30M+ in underfunded employee benefits. How does this impact the true financial picture?\n\nClosing schools is irreversible. Our children deserve better than rushed decisions based on incomplete financial data.\n\nI will be watching the upcoming vote closely.\n\nSincerely,\n[Your Name]\n[Your School/Neighborhood]');
+var subject=encodeURIComponent('Demand for Financial Transparency Before School Closures — March 12 Vote');
+var body=encodeURIComponent('Dear SJUSD Board of Education and Superintendent Albarrán,\n\nI am writing as a concerned [parent/community member/teacher] in the San José Unified School District regarding the proposed closure of up to 9 elementary schools.\n\nBefore the Board votes on March 12, I urge you to:\n\n1. CONDUCT AN INDEPENDENT FINANCIAL AUDIT — The district adopted a $30.3 million deficit budget for 2024-25 with $0 in reserves for economic uncertainties, below the state-required 2% minimum. The community deserves to understand how this happened.\n\n2. EXPLAIN THE $49 MILLION SWING — SJUSD went from surpluses of $25.7M and $18.9M to a $30M deficit in just two years. What changed?\n\n3. REVIEW ADMINISTRATIVE COSTS BEFORE CLOSING SCHOOLS — With 99.5 administrators averaging $215K in salary, has the district explored reducing administrative overhead before disrupting children\'s education?\n\n4. ADDRESS THE GRAND JURY FINDINGS — In 2024, the Santa Clara County Civil Grand Jury found serious leadership and transparency issues. The Board rejected nearly all findings. The community has not forgotten.\n\n5. ACCOUNT FOR BENEFITS UNDERFUNDING — Unions have revealed $30M+ in underfunded employee benefits. How does this impact the true financial picture?\n\nClosing schools is irreversible. Our children deserve better than rushed decisions based on incomplete financial data.\n\nI will be watching the March 12 vote closely.\n\nSincerely,\n[Your Name]\n[Your School/Neighborhood]');
 window.location.href='mailto:'+to+'?subject='+subject+'&body='+body;
 });
 </script>
@@ -1592,7 +1445,7 @@ window.location.href='mailto:'+to+'?subject='+subject+'&body='+body;
 <div style="font-size:1.3em;font-weight:700;color:#bf360c;margin-bottom:8px;">💬 向"明日学校"委员会提交公众意见</div>
 <p style="color:#333;margin-bottom:12px;">该委员会在向教育委员会提交建议之前正在接受社区意见：</p>
 <a href="mailto:schoolsoftomorrow@sjusd.org?subject=Public%20Comment%20on%20School%20Closures&body=Dear%20Schools%20of%20Tomorrow%20Implementation%20Committee%2C%0A%0AI%20am%20writing%20to%20share%20my%20concerns%20about%20the%20proposed%20elementary%20school%20closures.%0A%0A[Your%20comments%20here]%0A%0ASincerely%2C%0A[Your%20Name]%0A[Your%20School]" style="display:inline-block;background:#e65100;color:#fff;padding:12px 30px;border-radius:8px;font-size:1em;font-weight:700;text-decoration:none;">发送邮件至SCHOOLSOFTOMORROW@SJUSD.ORG →</a>
-<div style="font-size:0.8em;color:#888;margin-top:10px;">下次STIC会议：3月10日下午6:00，855 Lenzen Ave, Room 150（当天下午4:30另有特别教育委员会会议）</div>
+<div style="font-size:0.8em;color:#888;margin-top:10px;">下次STIC会议：每周二下午6-8点，855 Lenzen Ave, Room 150</div>
 </div>
 
 <!-- SHARE THE DATA -->
@@ -1609,7 +1462,7 @@ window.location.href='mailto:'+to+'?subject='+subject+'&body='+body;
 
 <!-- NEWSLETTER SIGNUP -->
 <div class="newsletter-box">
-<h3>保持关注 — 获取学校关闭投票前的最新信息</h3>
+<h3>保持关注 — 获取3月12日投票前的最新信息</h3>
 <p>我们将发送关于学校关闭、教育委员会会议和行动方式的重要更新。绝不发送垃圾邮件。</p>
 <div class="newsletter-form">
 <a href="https://docs.google.com/forms/d/e/1FAIpQLSeXL7bDlVocJFLDLKzoxrbUfz9edl4paypQ46u8en7cspaJOg/viewform?usp=sf_link" target="_blank" style="display:inline-block;padding:12px 32px;background:var(--rust);color:#fff;border-radius:8px;font-weight:700;font-size:14px;cursor:pointer;font-family:'Source Sans 3',serif;text-decoration:none;transition:background .2s">订阅</a>
@@ -1619,7 +1472,7 @@ window.location.href='mailto:'+to+'?subject='+subject+'&body='+body;
 
 <!-- KNOW YOUR BOARD — VOTING RECORD TRACKER -->
 <h3 style="margin-top:40px">了解您的教育委员会：投票记录追踪</h3>
-<p>五位民选教育委员会成员将就学校关闭进行投票（原定3月12日，STIC已请求延期至3月26日）。以下是他们在关键财务问责问题上的<strong>公开投票记录</strong>。</p>
+<p>五位民选教育委员会成员将于3月12日对学校关闭进行投票。以下是他们在关键财务问责问题上的<strong>公开投票记录</strong>。</p>
 
 <div class="board-grid">
 <div class="board-member" id="bm-collins">
@@ -1683,7 +1536,7 @@ window.location.href='mailto:'+to+'?subject='+subject+'&body='+body;
 <p class="dc">如果您是受拟议学校关闭影响的家长、教师或社区成员，以下是代表您的官员及其联系方式。</p>
 
 <h3>SJUSD教育委员会（直接管辖）</h3>
-<p>教育委员会将就学校关闭进行投票（原定2026年3月12日，STIC已请求延期至3月26日——最终日期待定）。教育委员会会议在每月第一个和第三个周四下午6:00在855 Lenzen Ave, San José举行。允许公众发言——请在会议前提交"发言申请"卡。</p>
+<p>教育委员会将于<strong>2026年3月12日</strong>对学校关闭进行投票。教育委员会会议在每月第一个和第三个周四下午6:00在855 Lenzen Ave, San José举行。允许公众发言——请在会议前提交"发言申请"卡。</p>
 <div style="background:#fafafa;border:1px solid #ddd;border-radius:8px;padding:15px;margin:15px 0;">
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:0.9em;">
 <div><strong>José Magaña</strong> （主席，选区2）</div><div>jmagana@sjusd.org</div>
@@ -1731,8 +1584,8 @@ Capitol: (916) 319-2025 · District: (408) 277-2525 · <a href="https://a25.asmd
 <div class="co-h">如何发出您的声音</div>
 <p><strong>1. 签署请愿书</strong> — <a href="https://www.change.org/p/simonds-elementary-school-cornerstone-of-the-sjusd-needs-to-stay-open" target="_blank" style="color:#1565c0;font-weight:600;" id="petition-join-text" data-prefix="加入已签名的" data-suffix="+人 →">加入已签名的12,830+人 →</a></p>
 <p><strong>2. 给教育委员会发邮件</strong> — 使用上方的一键邮件按钮。用您家庭的故事进行个性化。</p>
-<p><strong>3. 参加教育委员会会议</strong> — 855 Lenzen Ave，下午6:00。提交"发言申请"卡。带上邻居。</p>
-<p><strong>4. 参加STIC会议</strong> — 3月10日下午6:00，855 Lenzen Ave, Room 150（当天下午4:30另有特别教育委员会会议）。接受公众发言。</p>
+<p><strong>3. 参加3月12日的教育委员会会议</strong> — 855 Lenzen Ave，下午6:00。提交"发言申请"卡。带上邻居。</p>
+<p><strong>4. 参加STIC会议</strong> — 每周二下午6-8点，855 Lenzen Ave, Room 150。接受公众发言。</p>
 <p><strong>5. 要求正式调查</strong> — 请求参议员Cortese和县监事会对SJUSD财务进行独立审计。</p>
 <p><strong>6. 分享此页面</strong> — 将behindsiliconvalley.com转发给您认识的每一位SJUSD家长、教师和邻居。</p>
 <p><strong>7. 写一封纸质信件</strong> — 邮寄信件比电子邮件更有分量。寄至：SJUSD Board of Education, 855 Lenzen Ave, San José, CA 95126。</p>
@@ -1909,7 +1762,7 @@ document.querySelectorAll('.bc').forEach(function(c){obs.observe(c)});
 <span class="cta-countdown" id="sticky-countdown"></span>
 <span class="cta-text">不要让他们关闭你的学校</span>
 <a href="https://www.change.org/p/simonds-elementary-school-cornerstone-of-the-sjusd-needs-to-stay-open" target="_blank" class="btn-petition" id="sticky-petition-btn" data-prefix="✍️ 签署请愿书（" data-suffix="+）">✍️ 签署请愿书（12,830+）</a>
-<a href="#" onclick="window.location.href='mailto:ccollins@sjusd.org,jmagana@sjusd.org,tcastellanos@sjusd.org,bwheatley@sjusd.org,ngribstad@sjusd.org,nalbarran@sjusd.org,schoolsoftomorrow@sjusd.org?subject='+encodeURIComponent('Demand for Financial Transparency Before School Closures')+'&body='+encodeURIComponent('Dear SJUSD Board of Education and Superintendent Albarrán,\n\nI am writing as a concerned [parent/community member/teacher] regarding the proposed elementary school closures.\n\nBefore the Board votes on school closures, I urge you to conduct an independent financial audit. The district adopted a $30.3M deficit budget with $0 in reserves — below the state-required 2% minimum. How did we go from surpluses to a $30M deficit in two years?\n\nClosing schools is irreversible. Our children deserve better.\n\nSincerely,\n[Your Name]\n[Your School]');return false;" class="btn-email">📧 Email Board</a>
+<a href="#" onclick="window.location.href='mailto:ccollins@sjusd.org,jmagana@sjusd.org,tcastellanos@sjusd.org,bwheatley@sjusd.org,ngribstad@sjusd.org,nalbarran@sjusd.org,schoolsoftomorrow@sjusd.org?subject='+encodeURIComponent('Demand for Financial Transparency Before School Closures — March 12 Vote')+'&body='+encodeURIComponent('Dear SJUSD Board of Education and Superintendent Albarrán,\n\nI am writing as a concerned [parent/community member/teacher] regarding the proposed closure of up to 9 elementary schools.\n\nBefore the Board votes on March 12, I urge you to conduct an independent financial audit. The district adopted a $30.3M deficit budget with $0 in reserves — below the state-required 2% minimum. How did we go from surpluses to a $30M deficit in two years?\n\nClosing schools is irreversible. Our children deserve better.\n\nSincerely,\n[Your Name]\n[Your School]');return false;" class="btn-email">📧 Email Board</a>
 <button class="btn-close" onclick="document.getElementById('sticky-bar').style.display='none'" aria-label="关闭">&times;</button>
 </div>
 <script>
